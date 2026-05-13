@@ -1,0 +1,441 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const experiences = [
+  {
+    company: 'RD Station',
+    role: { pt: 'Engenheiro de Dados Sênior', en: 'Senior Data Engineer', fr: 'Ingénieur de Données Senior' },
+    period: { pt: 'jun. 2025 – o momento', en: 'Jun. 2025 – Present', fr: 'Juin 2025 – Maintenant' },
+    location: { pt: 'Remoto', en: 'Remote', fr: 'Télétravail' },
+    bullets: {
+      pt: [
+        'Pipelines de CI/CD no CircleCI para automatizar builds e testes.',
+        'IaC com Terraform para criação de recursos no GCP e monitores no Datadog.',
+        'Pipelines de Change Data Capture (CDC) no Dataflow (Java/Apache Beam) com enriquecimento em tempo real via Redis e publicação no Pub/Sub.',
+      ],
+      en: [
+        'CI/CD pipelines on CircleCI to automate builds and tests.',
+        'IaC with Terraform for GCP resource provisioning and Datadog monitors.',
+        'Change Data Capture (CDC) pipelines on Dataflow (Java/Apache Beam) with real-time Redis enrichment and Pub/Sub publishing.',
+      ],
+      fr: [
+        'Pipelines CI/CD sur CircleCI pour automatiser les builds et les tests.',
+        'IaC avec Terraform pour les ressources GCP et les moniteurs Datadog.',
+        'Pipelines CDC sur Dataflow (Java/Apache Beam) avec enrichissement Redis en temps réel et publication sur Pub/Sub.',
+      ],
+    },
+    tags: ['Apache Beam', 'Terraform', 'GCP', 'Dataflow', 'CircleCI', 'Pub/Sub', 'Redis'],
+    color: 'cyan',
+  },
+  {
+    company: 'Shopee',
+    role: { pt: 'Engenheiro de Dados Sênior', en: 'Senior Data Engineer', fr: 'Ingénieur de Données Senior' },
+    period: { pt: 'jan. 2024 – mai. 2025', en: 'Jan. 2024 – May 2025', fr: 'Janv. 2024 – Mai 2025' },
+    location: { pt: 'São Paulo · Híbrido', en: 'São Paulo · Hybrid', fr: 'São Paulo · Hybride' },
+    bullets: {
+      pt: [
+        'Liderança técnica em projetos de ingestão de dados em ambiente Kubernetes na GCP.',
+        'Pipelines de ingestão com Argo Workflows em ambiente de alta escala.',
+        'Pipelines Near Real-Time com Apache Kafka, Apache Flink e Apache Hudi, reduzindo delay para segundos.',
+        'Pipelines PySpark para múltiplas fontes de dados armazenadas em HDFS com consultas via Hive.',
+        'Automação de deploys com GitLab CI em Kubernetes.',
+      ],
+      en: [
+        'Technical leadership on data ingestion projects in a Kubernetes/GCP environment.',
+        'Ingestion pipelines with Argo Workflows at high scale.',
+        'Near Real-Time pipelines with Apache Kafka, Flink, and Hudi, reducing latency to seconds.',
+        'PySpark pipelines for multiple data sources stored in HDFS, queried via Hive.',
+        'Automated deploys with GitLab CI on Kubernetes.',
+      ],
+      fr: [
+        'Leadership technique sur des projets d\'ingestion de données dans un environnement Kubernetes/GCP.',
+        'Pipelines d\'ingestion avec Argo Workflows à haute échelle.',
+        'Pipelines Near Real-Time avec Apache Kafka, Flink et Hudi, réduisant la latence à quelques secondes.',
+        'Pipelines PySpark pour plusieurs sources stockées en HDFS, interrogées via Hive.',
+        'Déploiements automatisés avec GitLab CI sur Kubernetes.',
+      ],
+    },
+    tags: ['Apache Kafka', 'Apache Flink', 'Apache Hudi', 'PySpark', 'Kubernetes', 'GCP', 'Argo Workflows', 'Hive'],
+    color: 'lime',
+  },
+  {
+    company: 'Shopee',
+    role: { pt: 'Engenheiro de Dados', en: 'Data Engineer', fr: 'Ingénieur de Données' },
+    period: { pt: 'nov. 2022 – jan. 2024', en: 'Nov. 2022 – Jan. 2024', fr: 'Nov. 2022 – Janv. 2024' },
+    location: { pt: 'São Paulo · Híbrido', en: 'São Paulo · Hybrid', fr: 'São Paulo · Hybride' },
+    bullets: {
+      pt: [
+        'Pipelines ETL/ELT para tabelas com bilhões de registros usando Airflow, PySpark e Amazon S3.',
+        'Operadores customizados no Airflow reutilizáveis em múltiplas DAGs.',
+        'Automação de workflows de deploy com Jenkins.',
+        'Liderança na implementação de arquitetura de medalhões (bronze, prata e ouro).',
+      ],
+      en: [
+        'ETL/ELT pipelines for tables with billions of records using Airflow, PySpark, and Amazon S3.',
+        'Custom Airflow operators reusable across multiple DAGs.',
+        'Deploy workflow automation with Jenkins.',
+        'Led the implementation of a medallion architecture (bronze, silver, gold).',
+      ],
+      fr: [
+        'Pipelines ETL/ELT pour des tables de milliards de lignes via Airflow, PySpark et Amazon S3.',
+        'Opérateurs Airflow personnalisés réutilisables sur plusieurs DAGs.',
+        'Automatisation des déploiements avec Jenkins.',
+        'Direction de l\'implémentation d\'une architecture médaillon (bronze, argent, or).',
+      ],
+    },
+    tags: ['Apache Airflow', 'PySpark', 'Amazon S3', 'Jenkins', 'Hive'],
+    color: 'lime',
+  },
+  {
+    company: 'Icaro Tech',
+    role: { pt: 'Engenheiro de Dados', en: 'Data Engineer', fr: 'Ingénieur de Données' },
+    period: { pt: 'jun. 2022 – nov. 2022', en: 'Jun. 2022 – Nov. 2022', fr: 'Juin 2022 – Nov. 2022' },
+    location: { pt: 'Remoto', en: 'Remote', fr: 'Télétravail' },
+    bullets: {
+      pt: [
+        'ETL com Pentaho Data Integration e Oracle, garantindo integridade dos dados.',
+        'Procedures e rotinas de administração em PL/SQL.',
+        'Como Analista Júnior: algoritmos de correlação de alarmes para infraestrutura de telecomunicações.',
+      ],
+      en: [
+        'ETL with Pentaho Data Integration and Oracle ensuring data integrity.',
+        'PL/SQL procedures and administrative routines.',
+        'As Junior Analyst: alarm correlation algorithms for telecom infrastructure root-cause analysis.',
+      ],
+      fr: [
+        'ETL avec Pentaho Data Integration et Oracle, garantissant l\'intégrité des données.',
+        'Procédures PL/SQL et routines d\'administration.',
+        'En tant qu\'Analyste Junior : algorithmes de corrélation d\'alarmes pour l\'infrastructure télécom.',
+      ],
+    },
+    tags: ['Pentaho', 'Oracle', 'PL/SQL', 'ETL'],
+    color: 'cyan',
+  },
+  {
+    company: 'Intelbras',
+    role: { pt: 'Estagiário de Engenharia', en: 'Engineering Intern', fr: 'Stagiaire en Ingénierie' },
+    period: { pt: 'out. 2020 – abr. 2021', en: 'Oct. 2020 – Apr. 2021', fr: 'Oct. 2020 – Avr. 2021' },
+    location: { pt: 'São José, SC', en: 'São José, SC', fr: 'São José, SC' },
+    bullets: {
+      pt: [
+        'Integração Python entre equipamentos de teste e API de monitoramento na linha de produção.',
+        'Testes de conformidade de equipamentos de rede com iPerf.',
+      ],
+      en: [
+        'Python integration between test equipment and a monitoring API on the production line.',
+        'Network equipment compliance testing with iPerf.',
+      ],
+      fr: [
+        'Intégration Python entre les équipements de test et une API de surveillance sur la ligne de production.',
+        'Tests de conformité des équipements réseau avec iPerf.',
+      ],
+    },
+    tags: ['Python', 'iPerf'],
+    color: 'cyan',
+  },
+  {
+    company: 'Bionexo',
+    role: { pt: 'Analista de Produto Júnior', en: 'Junior Product Analyst', fr: 'Analyste Produit Junior' },
+    period: { pt: 'jan. 2020 – set. 2020', en: 'Jan. 2020 – Sep. 2020', fr: 'Janv. 2020 – Sept. 2020' },
+    location: { pt: 'Florianópolis, SC', en: 'Florianópolis, SC', fr: 'Florianópolis, SC' },
+    bullets: {
+      pt: [
+        'Desenvolvimento de tecnologias e melhorias do Coldchain, armário refrigerado com leitor RFID.',
+        'Testes para obter as melhores configurações de leitura RFID.',
+        'Bulk encoding de tags RFID UHF e desenvolvimento de interfaces via LLRP e APIs proprietárias.',
+        'Contato direto com fornecedores e fabricantes parceiros.',
+      ],
+      en: [
+        'Development of the Coldchain refrigerated cabinet with RFID reader.',
+        'Testing to achieve optimal RFID read configurations.',
+        'Bulk encoding of UHF RFID tags and interface development via LLRP and proprietary APIs.',
+        'Direct contact with partner suppliers and manufacturers.',
+      ],
+      fr: [
+        'Développement du Coldchain, armoire réfrigérée avec lecteur RFID.',
+        'Tests pour les meilleures configurations de lecture RFID.',
+        'Encodage en masse de tags RFID UHF et développement d\'interfaces via LLRP et APIs propriétaires.',
+        'Contact direct avec les fournisseurs et fabricants partenaires.',
+      ],
+    },
+    tags: ['RFID', 'LLRP', 'Python'],
+    color: 'lime',
+  },
+  {
+    company: 'GTT Healthcare',
+    role: { pt: 'Estagiário de Produto', en: 'Product Intern', fr: 'Stagiaire Produit' },
+    period: { pt: 'nov. 2018 – dez. 2019', en: 'Nov. 2018 – Dec. 2019', fr: 'Nov. 2018 – Déc. 2019' },
+    location: { pt: 'Florianópolis, SC', en: 'Florianópolis, SC', fr: 'Florianópolis, SC' },
+    bullets: {
+      pt: [
+        'Pesquisa e testes de componentes e tecnologias RFID para supply chain na área da saúde.',
+        'Montagem e testes de equipamentos na fase de produção antes do envio ao cliente.',
+        'Criação de novo produto de bulk encoding de etiquetas RFID, reduzindo o tempo de comissionamento.',
+      ],
+      en: [
+        'Research and component testing for RFID technology in healthcare supply chain.',
+        'Equipment assembly and testing in production phase prior to customer delivery.',
+        'Designed a new RFID bulk encoding product, significantly reducing commissioning time.',
+      ],
+      fr: [
+        'Recherche et tests de composants RFID pour la chaîne d\'approvisionnement en santé.',
+        'Assemblage et tests d\'équipements en phase de production avant livraison client.',
+        'Création d\'un produit d\'encodage en masse RFID, réduisant considérablement le temps de mise en service.',
+      ],
+    },
+    tags: ['RFID', 'Supply Chain'],
+    color: 'cyan',
+  },
+  {
+    company: 'PET EEL · UFSC',
+    role: { pt: 'Bolsista de Pesquisa', en: 'Research Fellow', fr: 'Boursier de Recherche' },
+    period: { pt: 'mar. 2017 – nov. 2018', en: 'Mar. 2017 – Nov. 2018', fr: 'Mars 2017 – Nov. 2018' },
+    location: { pt: 'Florianópolis, SC', en: 'Florianópolis, SC', fr: 'Florianópolis, SC' },
+    bullets: {
+      pt: [
+        'Grupo acadêmico financiado pelo Governo Federal com foco em pesquisa, ensino e extensão.',
+        'Organização de eventos acadêmicos e participação em pesquisa científica.',
+        'Projetos com Python, PHP e R; desenvolvimento de soft e hard skills em ambiente universitário.',
+      ],
+      en: [
+        'Government-funded academic group focused on research, teaching, and community outreach.',
+        'Academic event organization and participation in scientific research.',
+        'Projects using Python, PHP, and R; development of soft and hard skills in a university environment.',
+      ],
+      fr: [
+        'Groupe académique financé par le gouvernement axé sur la recherche, l\'enseignement et l\'extension.',
+        'Organisation d\'événements académiques et participation à la recherche scientifique.',
+        'Projets en Python, PHP et R ; développement de compétences en environnement universitaire.',
+      ],
+    },
+    tags: ['Python', 'PHP', 'R'],
+    color: 'lime',
+  },
+];
+
+const skills = [
+  'Python', 'SQL', 'Apache Kafka', 'Apache Airflow', 'Apache Spark / PySpark',
+  'GCP', 'Microsoft Azure', 'Terraform', 'Apache Beam', 'Kubernetes',
+  'Apache Flink', 'Apache Hudi', 'Argo Workflows', 'Amazon S3',
+  'GitLab CI', 'CircleCI', 'Jenkins', 'Redis', 'Pub/Sub',
+  'Dataflow', 'Hive', 'HDFS', 'PL/SQL', 'Oracle', 'Pentaho',
+];
+---
+
+<Layout title="Sobre | Lucas Ramos">
+  <article class="max-w-4xl mx-auto py-8">
+
+    <!-- Voltar -->
+    <a href="/" class="text-neonCyan font-mono text-xs hover:underline mb-10 inline-flex items-center gap-1 pt-only">&larr; VOLTAR</a>
+    <a href="/" class="text-neonCyan font-mono text-xs hover:underline mb-10 inline-flex items-center gap-1 en-only">&larr; BACK</a>
+    <a href="/" class="text-neonCyan font-mono text-xs hover:underline mb-10 inline-flex items-center gap-1 fr-only">&larr; RETOUR</a>
+
+    <!-- Hero -->
+    <header class="mb-16 pb-10 border-b border-surfaceHighlight">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+        <div>
+          <p class="font-mono text-xs text-neonCyan mb-3 tracking-widest pt-only">ENGENHEIRO DE DADOS & FOTÓGRAFO</p>
+          <p class="font-mono text-xs text-neonCyan mb-3 tracking-widest en-only">DATA ENGINEER & PHOTOGRAPHER</p>
+          <p class="font-mono text-xs text-neonCyan mb-3 tracking-widest fr-only">INGÉNIEUR DE DONNÉES & PHOTOGRAPHE</p>
+          <h1 class="text-5xl sm:text-6xl font-bold tracking-tight">Lucas<br/><span class="text-neonLime">Ramos</span><span class="text-neonCyan">.</span></h1>
+          <p class="text-textMuted mt-3 font-mono text-sm">São José, Santa Catarina, Brasil</p>
+        </div>
+        <div class="flex flex-col gap-2 text-right sm:pb-1">
+          <a href="https://www.linkedin.com/in/ramoslucas-lr/" target="_blank" rel="noopener" class="font-mono text-xs text-textMuted hover:text-neonCyan transition-colors flex items-center gap-2 sm:justify-end">
+            <span>linkedin.com/in/ramoslucas-lr/</span>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <span class="font-mono text-xs text-textMuted">📍 RD Station · Remoto</span>
+        </div>
+      </div>
+
+      <!-- Bio -->
+      <div class="mt-8 text-textMuted leading-relaxed max-w-2xl">
+        <p class="pt-only">Engenheiro de Dados Sênior com experiência em pipelines de alta escala, ETL/ELT, processamento em tempo real e automação de workflows. Proficiente em Python, SQL, Apache Kafka, Airflow e GCP/Azure. Fora do trabalho, capturo o mundo com uma câmera Canon — paisagens, texturas e instantes que a engenharia não consegue calcular.</p>
+        <p class="en-only">Senior Data Engineer experienced in high-scale pipelines, ETL/ELT, real-time processing, and workflow automation. Proficient in Python, SQL, Apache Kafka, Airflow, GCP, and Azure. Outside work, I capture the world with a Canon camera — landscapes, textures, and moments that engineering cannot calculate.</p>
+        <p class="fr-only">Ingénieur de Données Senior expérimenté en pipelines haute échelle, ETL/ELT, traitement en temps réel et automatisation de workflows. Maîtrise de Python, SQL, Apache Kafka, Airflow, GCP et Azure. En dehors du travail, je capture le monde avec un appareil photo Canon — paysages, textures et instants que l'ingénierie ne sait pas calculer.</p>
+      </div>
+    </header>
+
+    <!-- Experiência -->
+    <section class="mb-16">
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-8 pt-only">// EXPERIÊNCIA</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-8 en-only">// EXPERIENCE</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-8 fr-only">// EXPÉRIENCE</h2>
+
+      <div class="relative">
+        <!-- linha vertical -->
+        <div class="absolute left-0 top-0 bottom-0 w-px bg-surfaceHighlight ml-[7px] hidden sm:block"></div>
+
+        <div class="flex flex-col gap-10">
+          {experiences.map((exp) => (
+            <div class="sm:pl-8 relative group">
+              <!-- dot -->
+              <div class={`hidden sm:block absolute left-0 top-1 w-4 h-4 rounded-full border-2 ${exp.color === 'cyan' ? 'border-neonCyan bg-base group-hover:bg-neonCyan' : 'border-neonLime bg-base group-hover:bg-neonLime'} transition-colors`}></div>
+
+              <div class="bg-surface border border-surfaceHighlight rounded-2xl p-6 hover:border-opacity-60 transition-all duration-300 hover:shadow-lg">
+                <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+                  <div>
+                    <span class={`font-mono text-xs tracking-wider ${exp.color === 'cyan' ? 'text-neonCyan' : 'text-neonLime'}`}>{exp.company}</span>
+                    <h3 class="text-lg font-bold mt-0.5 pt-only">{exp.role.pt}</h3>
+                    <h3 class="text-lg font-bold mt-0.5 en-only">{exp.role.en}</h3>
+                    <h3 class="text-lg font-bold mt-0.5 fr-only">{exp.role.fr}</h3>
+                  </div>
+                  <div class="text-right">
+                    <p class="font-mono text-xs text-textMuted pt-only">{exp.period.pt}</p>
+                    <p class="font-mono text-xs text-textMuted en-only">{exp.period.en}</p>
+                    <p class="font-mono text-xs text-textMuted fr-only">{exp.period.fr}</p>
+                    <p class="font-mono text-xs text-textMuted mt-0.5 pt-only">{exp.location.pt}</p>
+                    <p class="font-mono text-xs text-textMuted mt-0.5 en-only">{exp.location.en}</p>
+                    <p class="font-mono text-xs text-textMuted mt-0.5 fr-only">{exp.location.fr}</p>
+                  </div>
+                </div>
+
+                <ul class="space-y-1.5 mb-4">
+                  {exp.bullets.pt.map((b) => (
+                    <li class="text-sm text-textMuted pt-only flex gap-2"><span class="text-neonLime mt-0.5 flex-shrink-0">›</span><span>{b}</span></li>
+                  ))}
+                  {exp.bullets.en.map((b) => (
+                    <li class="text-sm text-textMuted en-only flex gap-2"><span class="text-neonLime mt-0.5 flex-shrink-0">›</span><span>{b}</span></li>
+                  ))}
+                  {exp.bullets.fr.map((b) => (
+                    <li class="text-sm text-textMuted fr-only flex gap-2"><span class="text-neonLime mt-0.5 flex-shrink-0">›</span><span>{b}</span></li>
+                  ))}
+                </ul>
+
+                <div class="flex flex-wrap gap-1.5">
+                  {exp.tags.map((tag) => (
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded-full border border-surfaceHighlight text-textMuted">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="mb-16">
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-8 pt-only">// COMPETÊNCIAS TÉCNICAS</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-8 en-only">// TECHNICAL SKILLS</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-8 fr-only">// COMPÉTENCES TECHNIQUES</h2>
+
+      <div class="flex flex-wrap gap-2">
+        {skills.map((skill) => (
+          <span class="font-mono text-xs px-3 py-1.5 rounded-full border border-transparent bg-gradient-to-r from-neonCyan/10 to-neonLime/10 hover:from-neonCyan/20 hover:to-neonLime/20 text-textMain transition-colors duration-200" style="border-image: linear-gradient(to right, var(--color-accent-1), var(--color-accent-2)) 1">
+            {skill}
+          </span>
+        ))}
+      </div>
+    </section>
+
+    <!-- Formação & Certificações -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+
+      <!-- Formação -->
+      <section>
+        <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 pt-only">// FORMAÇÃO</h2>
+        <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 en-only">// EDUCATION</h2>
+        <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 fr-only">// FORMATION</h2>
+
+        <div class="flex flex-col gap-4">
+          <div class="bg-surface border border-surfaceHighlight rounded-2xl p-5">
+            <span class="font-mono text-xs text-neonLime">UFSC</span>
+            <p class="font-bold text-sm mt-1 pt-only">Bacharelado em Sistemas de Informação</p>
+            <p class="font-bold text-sm mt-1 en-only">B.Sc. in Information Systems</p>
+            <p class="font-bold text-sm mt-1 fr-only">Licence en Systèmes d'Information</p>
+            <p class="font-mono text-xs text-textMuted mt-1">2025 – 2029</p>
+          </div>
+          <div class="bg-surface border border-surfaceHighlight rounded-2xl p-5">
+            <span class="font-mono text-xs text-neonLime">UFSC</span>
+            <p class="font-bold text-sm mt-1 pt-only">Engenharia Elétrica (curso interrompido)</p>
+            <p class="font-bold text-sm mt-1 en-only">Electrical Engineering (incomplete)</p>
+            <p class="font-bold text-sm mt-1 fr-only">Génie Électrique (non terminé)</p>
+            <p class="font-mono text-xs text-textMuted mt-1">2016 – …</p>
+          </div>
+          <div class="bg-surface border border-surfaceHighlight rounded-2xl p-5">
+            <span class="font-mono text-xs text-neonLime">IFC</span>
+            <p class="font-bold text-sm mt-1 pt-only">Técnico em Informática Integrado ao Ensino Médio</p>
+            <p class="font-bold text-sm mt-1 en-only">High School with Technical IT Degree</p>
+            <p class="font-bold text-sm mt-1 fr-only">Bac Technologique en Informatique</p>
+            <p class="font-mono text-xs text-textMuted mt-1">2013 – 2015</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certificações + Idiomas -->
+      <div class="flex flex-col gap-8">
+        <section>
+          <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 pt-only">// CERTIFICAÇÕES</h2>
+          <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 en-only">// CERTIFICATIONS</h2>
+          <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 fr-only">// CERTIFICATIONS</h2>
+
+          <div class="flex flex-col gap-3">
+            <div class="bg-surface border border-surfaceHighlight rounded-2xl p-5">
+              <span class="font-mono text-xs text-neonCyan">Microsoft</span>
+              <p class="font-bold text-sm mt-1">Azure Data Engineer Associate</p>
+              <p class="font-mono text-xs text-textMuted mt-1">2022 · DP-203</p>
+            </div>
+            <div class="bg-surface border border-surfaceHighlight rounded-2xl p-5">
+              <span class="font-mono text-xs text-neonCyan">TOEFL</span>
+              <p class="font-bold text-sm mt-1">TOEFL ITP — B2</p>
+              <p class="font-mono text-xs text-textMuted mt-1">2016</p>
+            </div>
+            <div class="bg-surface border border-surfaceHighlight rounded-2xl p-5">
+              <span class="font-mono text-xs text-neonCyan">Ministère de l'Éducation nationale</span>
+              <p class="font-bold text-sm mt-1">TCF — Test de Connaissance du Français · C1</p>
+              <p class="font-mono text-xs text-textMuted mt-1">2019</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 pt-only">// IDIOMAS</h2>
+          <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 en-only">// LANGUAGES</h2>
+          <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 fr-only">// LANGUES</h2>
+
+          <div class="flex flex-col gap-3">
+            {[
+              { lang: 'Português', level: { pt: 'Nativo', en: 'Native', fr: 'Langue maternelle' }, pct: 100, color: 'from-neonCyan to-neonLime' },
+              { lang: 'Inglês / English', level: { pt: 'Avançado', en: 'Advanced', fr: 'Avancé' }, pct: 88, color: 'from-neonCyan to-neonLime' },
+              { lang: 'Français', level: { pt: 'Avançado', en: 'Advanced', fr: 'Avancé' }, pct: 80, color: 'from-neonCyan to-neonLime' },
+            ].map((l) => (
+              <div class="bg-surface border border-surfaceHighlight rounded-2xl p-4">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="font-mono text-sm font-bold">{l.lang}</span>
+                  <span class="font-mono text-xs text-textMuted pt-only">{l.level.pt}</span>
+                  <span class="font-mono text-xs text-textMuted en-only">{l.level.en}</span>
+                  <span class="font-mono text-xs text-textMuted fr-only">{l.level.fr}</span>
+                </div>
+                <div class="h-1 bg-surfaceHighlight rounded-full overflow-hidden">
+                  <div class={`h-full bg-gradient-to-r ${l.color} rounded-full`} style={`width: ${l.pct}%`}></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Recomendação -->
+    <section class="mb-8">
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 pt-only">// RECOMENDAÇÃO</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 en-only">// RECOMMENDATION</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 fr-only">// RECOMMANDATION</h2>
+
+      <blockquote class="bg-surface border border-surfaceHighlight rounded-2xl p-6 relative">
+        <span class="absolute top-4 left-5 text-5xl text-neonLime leading-none opacity-40 font-serif select-none">"</span>
+        <p class="text-textMuted leading-relaxed pl-6 italic">Lucas é um profissional excelente! Sendo criativo e altamente qualificado tecnicamente, é com certeza um valioso quadro para qualquer empresa. Adorei trabalhar com o Lucas e o recomendo fortemente.</p>
+        <footer class="mt-4 pl-6 flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-surfaceHighlight flex items-center justify-center font-mono text-xs font-bold text-neonCyan">AR</div>
+          <div>
+            <p class="font-bold text-sm">André Ribeiro</p>
+            <p class="font-mono text-xs text-textMuted">Data Chapter Lead · Business Intelligence & Data Warehousing</p>
+          </div>
+        </footer>
+      </blockquote>
+    </section>
+
+  </article>
+</Layout>

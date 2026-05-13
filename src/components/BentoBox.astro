@@ -1,0 +1,25 @@
+---
+interface Props {
+  className?: string;
+  spanCol?: string;
+  spanRow?: string;
+  glowColor?: 'cyan' | 'lime' | 'none';
+  href?: string;
+  noPadding?: boolean;
+}
+
+const { className = "", spanCol = "col-span-1", spanRow = "row-span-1", glowColor = "none", href, noPadding = false } = Astro.props;
+
+const glowClasses = {
+  cyan: "hover:border-neonCyan hover:shadow-[0_0_15px_var(--color-accent-1)] hover:shadow-neonCyan/30",
+  lime: "hover:border-neonLime hover:shadow-[0_0_15px_var(--color-accent-2)] hover:shadow-neonLime/30",
+  none: "hover:border-surfaceHighlight"
+};
+
+const Element = href ? "a" : "div";
+const padClass = noPadding ? "" : "p-6";
+---
+
+<Element href={href} class={`block bg-surface border border-surfaceHighlight rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:z-10 ${spanCol} ${spanRow} ${glowClasses[glowColor]} ${padClass} ${className} group overflow-hidden relative cursor-${href ? 'pointer' : 'default'}`}>
+  <slot />
+</Element>

@@ -1,0 +1,50 @@
+{
+  "r2BaseUrl": "https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev",
+  "essays": [
+    {
+      "id": "lineu",
+      "title": "O Álbum do Lineu",
+      "folder": "lineu"
+    },
+    {
+      "id": "misc",
+      "title": "Miscelânea",
+      "folder": "misc"
+    },
+    {
+      "id": "morro-cruz-fln",
+      "title": "Morro da Cruz | Florianópolis, SC",
+      "date": "2025-07-05",
+      "folder": "morro-cruz-fln"
+    },
+    {
+      "id": "praia-igrejinha",
+      "title": "Praia da Igrejinha | Florianópolis, SC",
+      "date": "2026-03-04",
+      "folder": "praia-igrejinha"
+    },
+    {
+      "id": "ufsc",
+      "title": "UFSC | Florianópolis, SC",
+      "folder": "ufsc"
+    },
+    {
+      "id": "viagem-serra",
+      "title": "Viagem à Serra | Santa Catarina",
+      "date": "2025-07-19",
+      "folder": "viagem-serra"
+    },
+    {
+      "id": "viagem-sombrio",
+      "title": "Viagem à Sombrio | Sombrio, SC",
+      "date": "2026-04-18",
+      "folder": "viagem-sombrio"
+    },
+    {
+      "id": "viagem-torres",
+      "title": "Viagem à Torres | Torres, RS",
+      "date": "2026-02-21",
+      "folder": "viagem-torres"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+// getStaticPaths diz ao Astro para gerar as páginas individuais na hora do build
+export async function getStaticPaths() {
+  const diceEntries = await getCollection('dice-awards');
+  return diceEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+// Content é o componente que renderiza o markdown propriamente dito
+const { Content } = await entry.render();
+---
+
+<Layout title={`${entry.data.game} Review | Lucas Ramos`}>
+  <article class="max-w-3xl mx-auto py-8">
+    <a href="/dice-awards" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block pt-only">&lt; VOLTAR PARA REVIEWS</a>
+    <a href="/dice-awards" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block en-only">&lt; BACK TO REVIEWS</a>
+    <a href="/dice-awards" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block fr-only">&lt; RETOUR AUX CRITIQUES</a>
+    
+    {entry.data.cover && (
+      <div class="w-full h-[300px] mb-12 rounded-2xl overflow-hidden relative">
+        <img src={entry.data.cover} alt={entry.data.game} class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-base to-transparent opacity-80"></div>
+      </div>
+    )}
+
+    <header class="mb-12 border-b border-surfaceHighlight pb-8">
+      <span class="text-neonLime font-mono text-sm block mb-4">DICE AWARDS {entry.data.year}</span>
+      <h1 class="text-4xl font-bold mb-4 pt-only">{entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 en-only">{entry.data.titleEn || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 fr-only">{entry.data.titleFr || entry.data.title}</h1>
+      
+      <div class="flex items-center gap-24 mt-6">
+        <div class="flex flex-col">
+          <span class="text-xs text-textMuted font-mono pt-only">JOGO</span>
+          <span class="text-xs text-textMuted font-mono en-only">GAME</span>
+          <span class="text-xs text-textMuted font-mono fr-only">JEU</span>
+          <span class="font-bold">{entry.data.game}</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xs text-textMuted font-mono pt-only">NOTA</span>
+          <span class="text-xs text-textMuted font-mono en-only">RATING</span>
+          <span class="text-xs text-textMuted font-mono fr-only">NOTE</span>
+          <span class="font-bold text-neonLime text-2xl">{entry.data.rating}<span class="text-sm text-textMuted">/10</span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Área onde o corpo do arquivo Markdown será injetado -->
+    <div class="text-textMuted leading-relaxed space-y-6 [&>h1]:text-3xl [&>h1]:font-bold [&>h1]:text-textMain [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-textMain [&>h2]:mt-10 [&>p]:mb-4 [&>ul]:list-disc [&>ul]:ml-6 [&>a]:text-neonCyan hover:[&>a]:underline">
+      <Content />
+    </div>
+  </article>
+</Layout>

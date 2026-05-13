@@ -1,0 +1,39 @@
+# Dependências
+node_modules/
+
+# Build gerado pelo Astro
+dist/
+
+# Cache interno do Astro
+.astro/
+
+# Variáveis de ambiente (credenciais do R2, etc.)
+.env
+.env.local
+.env.*.local
+
+# Cache do script sync-essays
+.essays-cache.json
+
+# Imagens locais (as fotos estão no Cloudflare R2, não no repo)
+public/static/img/photography/*.jpg
+public/static/img/photography/*.jpeg
+public/static/img/photography/*.png
+public/static/img/photography/*.webp
+public/static/img/photography/*.avif
+
+# Pasta de fotos brutas para processamento EXIF (uso local apenas)
+photos/
+
+# Rascunhos e backups locais
+backfup/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/settings.json
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,96 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('photography');
+  return entries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={`${entry.data.title} | Lucas Ramos`}>
+  <article class="max-w-5xl mx-auto py-8">
+    <a href="/photography" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block pt-only">&lt; VOLTAR PARA GALERIA</a>
+    <a href="/photography" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block en-only">&lt; BACK TO GALLERY</a>
+    <a href="/photography" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block fr-only">&lt; RETOUR À LA GALERIE</a>
+    
+    <header class="mb-12 border-b border-surfaceHighlight pb-8">
+      <h1 class="text-4xl font-bold mb-4 pt-only">{entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 en-only">{entry.data.titleEn || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 fr-only">{entry.data.titleFr || entry.data.title}</h1>
+      <div class="flex flex-wrap gap-4 text-xs font-mono text-textMuted mb-6">
+        {entry.data.date && (
+          <>
+            <span class="bg-surfaceHighlight px-3 py-1 rounded pt-only">DATA: {entry.data.date.toLocaleDateString('pt-BR')}</span>
+            <span class="bg-surfaceHighlight px-3 py-1 rounded en-only">DATE: {entry.data.date.toLocaleDateString('en-US')}</span>
+            <span class="bg-surfaceHighlight px-3 py-1 rounded fr-only">DATE: {entry.data.date.toLocaleDateString('fr-FR')}</span>
+          </>
+        )}
+      </div>
+    </header>
+
+    <div class="text-textMuted leading-relaxed space-y-6 [&>p]:mb-4">
+      <Content />
+    </div>
+
+    {entry.data.gallery && entry.data.gallery.length > 0 && (
+      <div class="mt-16">
+        <h3 class="text-xl font-bold mb-6 font-mono text-neonLime pt-only">GALERIA</h3>
+        <h3 class="text-xl font-bold mb-6 font-mono text-neonLime en-only">GALLERY</h3>
+        <h3 class="text-xl font-bold mb-6 font-mono text-neonLime fr-only">GALERIE</h3>
+        <div class="flex flex-wrap gap-2 items-center justify-center">
+          {entry.data.gallery.map((img: any, index: number) => (
+            <a href={`#img-${index}`} class="relative group h-40 md:h-64 hover:h-48 md:hover:h-72 transition-all duration-500 overflow-hidden rounded-xl bg-surfaceHighlight flex-shrink-0">
+              <img src={img.src} alt={img.caption || `Gallery image ${index}`} class="h-full w-auto object-cover max-w-full" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4">
+                 <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                   {img.camera && <span class="text-[10px] md:text-xs font-mono text-neonLime block">{img.camera}</span>}
+                   {img.lens && <span class="text-[10px] md:text-xs font-mono text-gray-300 block">{img.lens}</span>}
+                 </div>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        {/* CSS Lightbox System */}
+        {entry.data.gallery.map((img: any, index: number) => (
+          <div id={`img-${index}`} class="fixed inset-0 z-[100] bg-base/95 backdrop-blur-md hidden target:flex flex-col items-center justify-center p-4 opacity-0 target:opacity-100 transition-opacity duration-300">
+            <a href="#" class="absolute top-6 right-8 text-textMuted hover:text-neonLime text-5xl font-mono">&times;</a>
+            
+            {index > 0 && (
+              <a href={`#img-${index - 1}`} class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-neonLime text-white hover:text-black rounded-full w-12 h-12 flex items-center justify-center transition-all shadow-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+              </a>
+            )}
+            {index < entry.data.gallery.length - 1 && (
+              <a href={`#img-${index + 1}`} class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-neonLime text-white hover:text-black rounded-full w-12 h-12 flex items-center justify-center transition-all shadow-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+            )}
+
+            <img src={img.src} alt={img.caption || `Gallery image ${index}`} class="max-w-full max-h-[75vh] rounded shadow-2xl border border-surfaceHighlight" />
+            
+            <div class="mt-6 flex flex-col items-center gap-2 text-center max-w-3xl bg-base px-6 py-4 rounded-xl border border-surfaceHighlight shadow-xl">
+              {img.caption && <p class="text-textMain font-medium pt-only">{img.caption}</p>}
+              {img.captionEn && <p class="text-textMain font-medium en-only">{img.captionEn}</p>}
+              {img.captionFr && <p class="text-textMain font-medium fr-only">{img.captionFr}</p>}
+              <div class="flex flex-wrap gap-3 text-xs md:text-sm font-mono text-neonLime justify-center mt-2">
+                {img.camera && <span class="bg-black/60 px-2 py-1 rounded border border-white/10">[CAM: {img.camera}]</span>}
+                {img.lens && <span class="bg-black/60 px-2 py-1 rounded border border-white/10">[LENS: {img.lens}]</span>}
+                {img.aperture && <span class="bg-black/60 px-2 py-1 rounded border border-white/10">[APERTURE: {img.aperture}]</span>}
+                {img.iso && <span class="bg-black/60 px-2 py-1 rounded border border-white/10">[ISO: {img.iso}]</span>}
+                {img.shutterSpeed && <span class="bg-black/60 px-2 py-1 rounded border border-white/10">[SHUTTER: {img.shutterSpeed}]</span>}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    )}
+  </article>
+</Layout>

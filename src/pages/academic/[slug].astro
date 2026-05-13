@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('academic');
+  return entries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={`${entry.data.title} | Lucas Ramos`}>
+  <article class="max-w-3xl mx-auto py-8">
+    <a href="/academic" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block pt-only">&lt; VOLTAR PARA ACADÊMICO</a>
+    <a href="/academic" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block en-only">&lt; BACK TO ACADEMIC</a>
+    <a href="/academic" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block fr-only">&lt; RETOUR À ACADÉMIQUE</a>
+    
+    <header class="mb-12 border-b border-surfaceHighlight pb-8">
+      <span class="text-neonCyan font-mono text-sm block mb-4 pt-only">{entry.data.semester} | {entry.data.course}</span>
+      <span class="text-neonCyan font-mono text-sm block mb-4 en-only">{entry.data.semester} | {entry.data.courseEn || entry.data.course}</span>
+      <span class="text-neonCyan font-mono text-sm block mb-4 fr-only">{entry.data.semester} | {entry.data.courseFr || entry.data.course}</span>
+      <h1 class="text-4xl font-bold mb-4 pt-only">{entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 en-only">{entry.data.titleEn || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 fr-only">{entry.data.titleFr || entry.data.title}</h1>
+      <div class="mt-4 text-neonCyan font-mono text-xl pt-only">NOTA: <span class="font-bold">{entry.data.grade || 'N/A'}</span></div>
+      <div class="mt-4 text-neonCyan font-mono text-xl en-only">GRADE: <span class="font-bold">{entry.data.grade || 'N/A'}</span></div>
+      <div class="mt-4 text-neonCyan font-mono text-xl fr-only">NOTE: <span class="font-bold">{entry.data.grade || 'N/A'}</span></div>
+    </header>
+
+    <div class="text-textMuted leading-relaxed space-y-6 [&>p]:mb-4">
+      <Content />
+    </div>
+  </article>
+</Layout>

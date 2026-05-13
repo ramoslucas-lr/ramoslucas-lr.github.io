@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BentoBox from '../../components/BentoBox.astro';
+import { getCollection } from 'astro:content';
+
+const photoEntries = await getCollection('photography');
+// Ordena pelas fotos mais recentes primeiro
+const sortedPhotos = photoEntries.sort((a, b) => (b.data.date?.valueOf() || 0) - (a.data.date?.valueOf() || 0));
+---
+
+<Layout title="Photography | Ramos">
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold mb-2 pt-only">Fotografia<span class="text-neonLime">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 en-only">Photography<span class="text-neonLime">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 fr-only">Photographie<span class="text-neonLime">.</span></h1>
+    <p class="text-textMuted font-mono text-sm pt-only">Ensaios fotográficos em alta definição, processados via Antigravity AVIF/WebP.</p>
+    <p class="text-textMuted font-mono text-sm en-only">High-definition photo essays, processed via Antigravity AVIF/WebP.</p>
+    <p class="text-textMuted font-mono text-sm fr-only">Essais photographiques haute définition, traités via Antigravity AVIF/WebP.</p>
+  </header>
+
+  <main>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {sortedPhotos.map(entry => (
+        <BentoBox glowColor="lime" href={`/photography/${entry.slug}`} noPadding={true}>
+          <div class="relative w-full h-[400px] flex flex-col justify-end p-6">
+            <div class="absolute inset-4 group-hover:inset-0 transition-all duration-500 z-0 overflow-hidden rounded-xl group-hover:rounded-2xl">
+              <img 
+                src={entry.data.cover} 
+                alt={entry.data.title} 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300 pointer-events-none"></div>
+            </div>
+            
+            <div class="relative z-20 pointer-events-none">
+              <h3 class="text-2xl font-bold mb-1 text-gray-100 pt-only">{entry.data.title}</h3>
+              <h3 class="text-2xl font-bold mb-1 text-gray-100 en-only">{entry.data.titleEn || entry.data.title}</h3>
+              <h3 class="text-2xl font-bold mb-1 text-gray-100 fr-only">{entry.data.titleFr || entry.data.title}</h3>
+              {entry.data.date && (
+                <>
+                  <p class="text-xs font-mono text-neonLime mb-2 pt-only">
+                    {entry.data.date.toLocaleDateString('pt-BR')}
+                  </p>
+                  <p class="text-xs font-mono text-neonLime mb-2 en-only">
+                    {entry.data.date.toLocaleDateString('en-US')}
+                  </p>
+                  <p class="text-xs font-mono text-neonLime mb-2 fr-only">
+                    {entry.data.date.toLocaleDateString('fr-FR')}
+                  </p>
+                </>
+              )}
+            </div>
+          </div>
+        </BentoBox>
+      ))}
+    </div>
+  </main>
+</Layout>

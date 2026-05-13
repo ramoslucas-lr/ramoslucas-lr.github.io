@@ -1,0 +1,40 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BentoBox from '../../components/BentoBox.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('academic');
+---
+
+<Layout title="Academic Archive | Lucas Ramos">
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold mb-2 pt-only">Arquivo Acadêmico<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 en-only">Academic Archive<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 fr-only">Archives Académiques<span class="text-neonCyan">.</span></h1>
+    <p class="text-textMuted font-mono text-sm pt-only">Relatórios, pesquisas e notas universitárias.</p>
+    <p class="text-textMuted font-mono text-sm en-only">Reports, research, and university notes.</p>
+    <p class="text-textMuted font-mono text-sm fr-only">Rapports, recherches et notes universitaires.</p>
+  </header>
+
+  <main>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {entries.map(entry => (
+        <BentoBox glowColor="cyan" href={`/academic/${entry.slug}`}>
+          <div class="flex flex-col h-full justify-between">
+            <div>
+              <span class="text-xs font-mono text-neonCyan mb-2 block pt-only">{entry.data.semester} | {entry.data.course}</span>
+              <span class="text-xs font-mono text-neonCyan mb-2 block en-only">{entry.data.semester} | {entry.data.courseEn || entry.data.course}</span>
+              <span class="text-xs font-mono text-neonCyan mb-2 block fr-only">{entry.data.semester} | {entry.data.courseFr || entry.data.course}</span>
+              <h3 class="font-bold text-lg mb-2 pt-only">{entry.data.title}</h3>
+              <h3 class="font-bold text-lg mb-2 en-only">{entry.data.titleEn || entry.data.title}</h3>
+              <h3 class="font-bold text-lg mb-2 fr-only">{entry.data.titleFr || entry.data.title}</h3>
+            </div>
+            <div class="mt-6 flex items-end justify-between">
+              <span class="text-2xl font-bold font-mono text-neonCyan">{entry.data.grade || 'N/A'}</span>
+            </div>
+          </div>
+        </BentoBox>
+      ))}
+    </div>
+  </main>
+</Layout>

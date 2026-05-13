@@ -1,0 +1,67 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BentoBox from '../../components/BentoBox.astro';
+import { getCollection } from 'astro:content';
+
+// Obtém todas as reviews da coleção 'dice-awards'
+const diceEntries = await getCollection('dice-awards');
+// Em um caso real, você poderia fazer um sort() por data ou rating aqui
+---
+
+<Layout title="Game Reviews | Lucas Ramos">
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold mb-2 pt-only">Game Reviews<span class="text-neonLime">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 en-only">Game Reviews<span class="text-neonLime">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 fr-only">Critiques de Jeux<span class="text-neonLime">.</span></h1>
+    <p class="text-textMuted font-mono text-sm pt-only">Projeto pessoal de reviews analíticos focado nos jogos nomeados a Game of the Year no DICE Awards.</p>
+    <p class="text-textMuted font-mono text-sm en-only">Personal analytical review project focused on Game of the Year nominees at the DICE Awards.</p>
+    <p class="text-textMuted font-mono text-sm fr-only">Projet personnel de critiques analytiques axé sur les jeux nominés au titre de Jeu de l'Année (GOTY) aux DICE Awards.</p>
+  </header>
+
+  <main>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {diceEntries.map(entry => (
+        <BentoBox glowColor="lime" href={`/dice-awards/${entry.slug}`} noPadding={!!entry.data.cover} className="group overflow-hidden">
+          {entry.data.cover ? (
+            <div class="relative h-full min-h-[200px]">
+              <div class="absolute inset-0 z-0">
+                <img 
+                  src={entry.data.cover} 
+                  alt={entry.data.game} 
+                  class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-base via-base/80 to-transparent pointer-events-none"></div>
+              </div>
+              <div class="relative z-10 p-6 flex flex-col h-full justify-between">
+                <div>
+                  <span class="text-xs font-mono text-neonLime mb-2 block">{entry.data.year}</span>
+                  <h3 class="font-bold text-lg mb-2 text-gray-100">{entry.data.game}</h3>
+                  <h4 class="text-sm text-gray-300 pt-only">{entry.data.title}</h4>
+                  <h4 class="text-sm text-gray-300 en-only">{entry.data.titleEn || entry.data.title}</h4>
+                  <h4 class="text-sm text-gray-300 fr-only">{entry.data.titleFr || entry.data.title}</h4>
+                </div>
+                <div class="mt-6 flex items-end justify-between">
+                  <span class="text-3xl font-bold text-gray-100">{entry.data.rating}<span class="text-sm text-gray-400">/10</span></span>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div class="flex flex-col h-full justify-between">
+              <div>
+                <span class="text-xs font-mono text-neonLime mb-2 block">{entry.data.year}</span>
+                <h3 class="font-bold text-lg mb-2">{entry.data.game}</h3>
+                <h4 class="text-sm text-textMuted pt-only">{entry.data.title}</h4>
+                <h4 class="text-sm text-textMuted en-only">{entry.data.titleEn || entry.data.title}</h4>
+                <h4 class="text-sm text-textMuted fr-only">{entry.data.titleFr || entry.data.title}</h4>
+              </div>
+              <div class="mt-6 flex items-end justify-between">
+                <span class="text-3xl font-bold">{entry.data.rating}<span class="text-sm text-textMuted">/10</span></span>
+              </div>
+            </div>
+          )}
+        </BentoBox>
+      ))}
+    </div>
+  </main>
+</Layout>
