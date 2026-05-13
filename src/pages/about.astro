@@ -232,36 +232,96 @@ const skills = [
 
     <!-- Hero -->
     <header class="mb-16 pb-10 border-b border-surfaceHighlight">
-      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
-        <div>
-          <p class="font-mono text-xs text-neonCyan mb-3 tracking-widest pt-only">ENGENHEIRO DE DADOS & FOTÓGRAFO</p>
-          <p class="font-mono text-xs text-neonCyan mb-3 tracking-widest en-only">DATA ENGINEER & PHOTOGRAPHER</p>
-          <p class="font-mono text-xs text-neonCyan mb-3 tracking-widest fr-only">INGÉNIEUR DE DONNÉES & PHOTOGRAPHE</p>
-          <h1 class="text-5xl sm:text-6xl font-bold tracking-tight">Lucas<br/><span class="text-neonLime">Ramos</span><span class="text-neonCyan">.</span></h1>
-          <p class="text-textMuted mt-3 font-mono text-sm">São José, Santa Catarina, Brasil</p>
+
+      <!-- Nome + saudação -->
+      <div class="mb-10">
+        <p class="font-mono text-xs text-neonCyan mb-4 tracking-widest">lucasramos.dev ~/ $</p>
+        <h1 class="text-5xl sm:text-6xl font-bold tracking-tight leading-tight">
+          Lucas<br/>
+          <span class="text-neonLime">Ramos</span><span class="text-neonCyan">.</span>
+        </h1>
+        <p class="font-mono text-sm text-textMuted mt-3 pt-only">São José, SC · trabalha remoto · dorme tarde</p>
+        <p class="font-mono text-sm text-textMuted mt-3 en-only">São José, SC · works remote · sleeps late</p>
+        <p class="font-mono text-sm text-textMuted mt-3 fr-only">São José, SC · télétravail · se couche tard</p>
+      </div>
+
+      <!-- Bio — texto legível em textMain -->
+      <div class="max-w-2xl space-y-4 text-base leading-relaxed mb-10">
+        <div class="pt-only space-y-4 text-textMain">
+          <p>Sou engenheiro de dados na RD Station. Fora do trabalho, ando por aí com uma Canon tentando fotografar coisas antes que a luz vá embora.</p>
+          <p>
+            Gosto de  pensar que gosto de trilha (apesar de odiar cada segundo delas), de fotografia que parece analógica,
+            de cozinhar um negócio demorado num domingo e de explorar estradas sem muito plano.
+          </p>
+          <p>
+            Este site é meio que um diário, uma galeria de fotos e um registro dos projetos que eu acho que valem a pena.
+          </p>
         </div>
-        <div class="flex flex-col gap-2 text-right sm:pb-1">
-          <a href="https://www.linkedin.com/in/ramoslucas-lr/" target="_blank" rel="noopener" class="font-mono text-xs text-textMuted hover:text-neonCyan transition-colors flex items-center gap-2 sm:justify-end">
-            <span>linkedin.com/in/ramoslucas-lr/</span>
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          </a>
-          <span class="font-mono text-xs text-textMuted">📍 RD Station · Remoto</span>
+        <div class="en-only space-y-4 text-textMain">
+          <p>I'm a data engineer at RD Station. Outside of work, I walk around with a Canon trying to photograph things before the light goes away.</p>
+          <p>
+            I like to think I enjoy hiking (despite hating every second of it), photography that looks like it could be film,
+            cooking something that takes forever on a Sunday, and driving down roads without much of a plan.
+          </p>
+          <p>
+            This site is kind of a diary, a photo gallery, and a record of the projects I think are worth keeping.
+          </p>
+        </div>
+        <div class="fr-only space-y-4 text-textMain">
+          <p>Je suis ingénieur de données chez RD Station. En dehors du boulot, je me balade avec un Canon en essayant de photographier des trucs avant que la lumière parte.</p>
+          <p>
+            J'aime me convaincre que j'aime la randonnée (même si j'en déteste chaque seconde), la photographie qui ressemble à de l'argentique,
+            cuisiner un truc qui prend des heures un dimanche, et explorer des routes sans trop de plan.
+          </p>
+          <p>
+            Ce site c'est un peu un journal, une galerie de photos et un recueil des projets qui me semblent valoir la peine.
+          </p>
         </div>
       </div>
 
-      <!-- Bio -->
-      <div class="mt-8 text-textMuted leading-relaxed max-w-2xl">
-        <p class="pt-only">Engenheiro de Dados Sênior com experiência em pipelines de alta escala, ETL/ELT, processamento em tempo real e automação de workflows. Proficiente em Python, SQL, Apache Kafka, Airflow e GCP/Azure. Fora do trabalho, capturo o mundo com uma câmera Canon — paisagens, texturas e instantes que a engenharia não consegue calcular.</p>
-        <p class="en-only">Senior Data Engineer experienced in high-scale pipelines, ETL/ELT, real-time processing, and workflow automation. Proficient in Python, SQL, Apache Kafka, Airflow, GCP, and Azure. Outside work, I capture the world with a Canon camera — landscapes, textures, and moments that engineering cannot calculate.</p>
-        <p class="fr-only">Ingénieur de Données Senior expérimenté en pipelines haute échelle, ETL/ELT, traitement en temps réel et automatisation de workflows. Maîtrise de Python, SQL, Apache Kafka, Airflow, GCP et Azure. En dehors du travail, je capture le monde avec un appareil photo Canon — paysages, textures et instants que l'ingénierie ne sait pas calculer.</p>
+      <!-- Currently -->
+      <div class="mb-10 bg-surface border border-surfaceHighlight rounded-2xl p-5 max-w-lg">
+        <p class="font-mono text-xs text-neonCyan mb-4 tracking-widest pt-only">// AGORA MESMO</p>
+        <p class="font-mono text-xs text-neonCyan mb-4 tracking-widest en-only">// CURRENTLY</p>
+        <p class="font-mono text-xs text-neonCyan mb-4 tracking-widest fr-only">// EN CE MOMENT</p>
+        <ul class="space-y-2 font-mono text-sm">
+          <li class="flex gap-3"><span class="text-neonLime flex-shrink-0">▸</span><span class="text-textMain pt-only">trabalhando em pipelines CDC na RD Station</span><span class="text-textMain en-only">building CDC pipelines at RD Station</span><span class="text-textMain fr-only">pipelines CDC chez RD Station</span></li>
+          <li class="flex gap-3"><span class="text-neonLime flex-shrink-0">▸</span><span class="text-textMain pt-only">voltando a estudar → Sistemas de Informação na UFSC</span><span class="text-textMain en-only">back to studying → Info Systems at UFSC</span><span class="text-textMain fr-only">retour aux études → Info à l'UFSC</span></li>
+          <li class="flex gap-3"><span class="text-neonLime flex-shrink-0">▸</span><span class="text-textMain pt-only">saindo pra fotografar sempre que dá</span><span class="text-textMain en-only">going out to shoot whenever I can</span><span class="text-textMain fr-only">sorties photo dès que possible</span></li>
+          <li class="flex gap-3"><span class="text-neonLime flex-shrink-0">▸</span><span class="text-textMain pt-only">construindo este site</span><span class="text-textMain en-only">building this site</span><span class="text-textMain fr-only">construisant ce site</span></li>
+        </ul>
+      </div>
+
+      <!-- Gosto de / I like -->
+      <div class="mb-10">
+        <p class="font-mono text-xs text-textMuted mb-4 pt-only">coisas que gosto:</p>
+        <p class="font-mono text-xs text-textMuted mb-4 en-only">things i like:</p>
+        <p class="font-mono text-xs text-textMuted mb-4 fr-only">des trucs que j'aime :</p>
+        <div class="flex flex-wrap gap-2">
+          {['fotografia', 'cozinhar', 'Python (com moderação)', 'café', 'gatos', 'viajar de carro', 'música', 'ficar em casa'].map(tag => (
+            <span class="font-mono text-xs px-3 py-1.5 rounded-full bg-surface border border-surfaceHighlight text-textMain hover:border-neonLime/40 transition-colors">{tag}</span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="flex flex-wrap gap-3">
+        <a href="/photography" class="font-mono text-xs px-4 py-2 rounded-full bg-neonLime/10 border border-neonLime/30 text-neonLime hover:bg-neonLime/20 transition-colors pt-only">📷 ver álbuns</a>
+        <a href="/photography" class="font-mono text-xs px-4 py-2 rounded-full bg-neonLime/10 border border-neonLime/30 text-neonLime hover:bg-neonLime/20 transition-colors en-only">📷 see essays</a>
+        <a href="/photography" class="font-mono text-xs px-4 py-2 rounded-full bg-neonLime/10 border border-neonLime/30 text-neonLime hover:bg-neonLime/20 transition-colors fr-only">📷 voir essais</a>
+        <a href="https://github.com/ramoslucas-lr" target="_blank" rel="noopener" class="font-mono text-xs px-4 py-2 rounded-full bg-surfaceHighlight border border-surfaceHighlight text-textMuted hover:text-neonCyan hover:border-neonCyan/30 transition-colors">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/ramoslucas-lr/" target="_blank" rel="noopener" class="font-mono text-xs px-4 py-2 rounded-full bg-surfaceHighlight border border-surfaceHighlight text-textMuted hover:text-neonCyan hover:border-neonCyan/30 transition-colors">LinkedIn ↗</a>
       </div>
     </header>
 
     <!-- Experiência -->
     <section class="mb-16">
-      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-8 pt-only">// EXPERIÊNCIA</h2>
-      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-8 en-only">// EXPERIENCE</h2>
-      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-8 fr-only">// EXPÉRIENCE</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-2 pt-only">// O LADO PROFISSIONAL</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-2 en-only">// THE PROFESSIONAL SIDE</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-2 fr-only">// LE CÔTÉ PROFESSIONNEL</h2>
+      <p class="text-textMuted text-xs font-mono mb-8 pt-only">(caso você esteja aqui por isso)</p>
+      <p class="text-textMuted text-xs font-mono mb-8 en-only">(in case you're here for this)</p>
+      <p class="text-textMuted text-xs font-mono mb-8 fr-only">(au cas où c'est pour ça que vous êtes là)</p>
 
       <div class="relative">
         <!-- linha vertical -->
