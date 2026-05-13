@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 // getStaticPaths diz ao Astro para gerar as páginas individuais na hora do build
@@ -11,7 +11,8 @@ export async function getStaticPaths() {
   }));
 }
 
-const { entry } = Astro.props;
+type Props = { entry: CollectionEntry<'dice-awards'> };
+const { entry }: Props = Astro.props;
 // Content é o componente que renderiza o markdown propriamente dito
 const { Content } = await entry.render();
 ---
