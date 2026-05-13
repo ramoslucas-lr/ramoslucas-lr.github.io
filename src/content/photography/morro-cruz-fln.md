@@ -20,13 +20,6 @@ gallery:
     iso: 100
     shutterSpeed: 1/160s
   - src: >-
-      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/morro-cruz-fln/55254134438_6493baaa90_o.jpg
-    camera: Canon EOS M50m2
-    lens: EF-M22mm f/2 STM
-    aperture: f/9.0
-    iso: 100
-    shutterSpeed: 1/80s
-  - src: >-
       https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/morro-cruz-fln/55254134503_457bf840ef_o.jpg
     camera: Canon EOS M50m2
     lens: EF50mm f/1.8 II
@@ -50,26 +43,12 @@ gallery:
   - src: >-
       https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/morro-cruz-fln/55254229014_f3259779b6_o.jpg
   - src: >-
-      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/morro-cruz-fln/55254229079_01457556e4_o.jpg
-    camera: Canon EOS M50m2
-    lens: EF50mm f/1.8 II
-    aperture: f/1.8
-    iso: 100
-    shutterSpeed: 1/250s
-  - src: >-
       https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/morro-cruz-fln/55254229129_4ab37cc411_o.jpg
     camera: Canon EOS M50m2
     lens: EF50mm f/1.8 II
     aperture: f/5.0
     iso: 100
     shutterSpeed: 1/800s
-  - src: >-
-      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/morro-cruz-fln/55254388510_4388264f0a_o.jpg
-    camera: Canon EOS M50m2
-    lens: EF50mm f/1.8 II
-    aperture: f/1.8
-    iso: 100
-    shutterSpeed: 1/250s
 date: '2025-07-05T00:00:00.000-03:00'
 ---
 

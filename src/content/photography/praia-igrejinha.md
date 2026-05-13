@@ -1,17 +1,10 @@
 ---
 title: 'Praia da Igrejinha | Florianópolis, SC'
-titleEn: 'Little Church Beach | Florianópolis, SC'
-titleFr: Plage de la Petite Église | Florianópolis, SC
+titleEn: 'Praia da Igrejinha | Florianópolis, SC'
+titleFr: 'Praia da Igrejinha | Florianópolis, SC'
 cover: >-
-  https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/praia-igrejinha/55249679411_6ab773609c_o.jpg
+  https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/praia-igrejinha/55249679436_ffefebf7ce_o.jpg
 gallery:
-  - src: >-
-      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/praia-igrejinha/55249679411_6ab773609c_o.jpg
-    camera: Canon EOS M50m2
-    lens: EF-M22mm f/2 STM
-    aperture: f/2.0
-    iso: 100
-    shutterSpeed: 1/640s
   - src: >-
       https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/praia-igrejinha/55249679436_ffefebf7ce_o.jpg
     camera: Canon EOS M50m2

@@ -1,7 +1,7 @@
 ---
 title: Miscelânea
-titleEn: Miscellaneous
-titleFr: Miscellanée
+titleEn: Miscelânea
+titleFr: Miscelânea
 cover: >-
   https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/misc/55248804842_953f7c5a00_o.jpg
 gallery:
@@ -11,13 +11,6 @@ gallery:
     lens: EF-M22mm f/2 STM
     aperture: f/2.0
     iso: 400
-    shutterSpeed: 1/200s
-  - src: >-
-      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/misc/hana-matsuri--florianpolis-sc--11042026_55249948759_o.jpg
-    camera: Canon EOS M50m2
-    lens: EF-M22mm f/2 STM
-    aperture: f/4.5
-    iso: 100
     shutterSpeed: 1/200s
 ---
 
