@@ -20,35 +20,30 @@ const latestAcademic = academicEntries[0];
 ---
 
 <Layout title="Lucas Ramos | Portfolio">
-  <header class="mb-12">
-    <h1 class="text-4xl font-bold mb-2">Lucas Ramos<span class="text-neonLime">.</span></h1>
-    <p class="text-textMuted font-mono text-sm pt-only">Engenheiro de Dados & Entusiasta de Fotografia</p>
-    <p class="text-textMuted font-mono text-sm en-only">Data Engineer & Photography Hobbyist</p>
-    <p class="text-textMuted font-mono text-sm fr-only">Ingénieur de Données & Amateur de Photographie</p>
-  </header>
+  <h1 class="sr-only">Lucas Ramos</h1>
 
   <main>
     <div class="bento-grid">
       
       <!-- Welcome / About Box -->
-      <!-- Welcome / About Box -->
       <BentoBox spanCol="col-span-4 md:col-span-2" spanRow="row-span-2" glowColor="cyan" href="/about" className="flex flex-col justify-end group">
         <div class="absolute inset-0 bg-gradient-to-br from-surface to-base opacity-50 group-hover:opacity-30 transition-opacity"></div>
         <div class="relative z-10">
-          <h2 class="text-2xl font-bold mb-4 pt-only">oi, eu sou o Lucas.</h2>
-          <h2 class="text-2xl font-bold mb-4 en-only">hi, I'm Lucas.</h2>
-          <h2 class="text-2xl font-bold mb-4 fr-only">salut, je suis Lucas.</h2>
+          <span class="font-mono text-xs text-neonLime tracking-widest mb-3 block">✦ lucasramos.dev</span>
+          <h2 class="text-2xl font-bold mb-4 pt-only">oi, eu sou o <span class="text-neonLime">Lucas</span>.</h2>
+          <h2 class="text-2xl font-bold mb-4 en-only">hi, I'm <span class="text-neonLime">Lucas</span>.</h2>
+          <h2 class="text-2xl font-bold mb-4 fr-only">salut, je suis <span class="text-neonLime">Lucas</span>.</h2>
           
           <div class="text-textMuted text-sm mb-6 space-y-3 pt-only">
-            <p>Esse é o meu cantinho da internet. Aqui do lado tem as fotos que eu não sinto vergonha de compartilhar e abaixo tem os artigos que me forço tanto a escrever quanto a postar.</p>
+            <p>Esse é o meu cantinho da internet. Aqui do lado tem as <span class="text-neonLime/80">fotos</span> que eu não sinto vergonha de compartilhar e abaixo tem os <span class="text-neonLime/80">artigos</span> que me forço tanto a escrever quanto a postar.</p>
             <p>Não sei como você parou aqui, mas não espalha: se eu tiver muitos acessos começo a pagar o armazenamento das fotos.</p>
           </div>
           <div class="text-textMuted text-sm mb-6 space-y-3 en-only">
-            <p>This is my little corner of the internet. Over there are the photos I'm not embarrassed to share, and below are the articles I force myself to both write and actually post.</p>
+            <p>This is my little corner of the internet. Over there are the <span class="text-neonLime/80">photos</span> I'm not embarrassed to share, and below are the <span class="text-neonLime/80">articles</span> I force myself to both write and actually post.</p>
             <p>Not sure how you ended up here, but keep it quiet — if I get too many visitors I'll have to start paying for photo storage.</p>
           </div>
           <div class="text-textMuted text-sm mb-6 space-y-3 fr-only">
-            <p>C'est mon petit coin d'internet. À côté il y a les photos dont je n'ai pas honte de partager, et en bas les articles que je me force autant à écrire qu'à publier.</p>
+            <p>C'est mon petit coin d'internet. À côté il y a les <span class="text-neonLime/80">photos</span> dont je n'ai pas honte de partager, et en bas les <span class="text-neonLime/80">articles</span> que je me force autant à écrire qu'à publier.</p>
             <p>Je sais pas trop comment tu es arrivé ici, mais garde ça pour toi : si j'ai trop de visites je vais devoir payer le stockage des photos.</p>
           </div>
           
@@ -64,7 +59,7 @@ const latestAcademic = academicEntries[0];
       <BentoBox spanCol="col-span-4 md:col-span-2" spanRow="row-span-2" glowColor="lime" href="/photography" noPadding={true}>
         {latestPhoto && latestPhoto.data.gallery && latestPhoto.data.gallery.length > 0 ? (
           <div class="relative w-full h-full min-h-[300px] flex flex-col justify-end p-6">
-            <div class="absolute inset-4 group-hover:inset-0 transition-all duration-500 z-0 overflow-hidden rounded-xl group-hover:rounded-2xl">
+            <div class="absolute inset-0 transition-all duration-500 z-0 overflow-hidden">
               <img 
                 src={latestPhoto.data.gallery[0].src} 
                 alt={latestPhoto.data.gallery[0].caption || latestPhoto.data.title} 
@@ -100,7 +95,7 @@ const latestAcademic = academicEntries[0];
           </div>
         ) : latestPhoto ? (
           <div class="relative w-full h-full min-h-[300px] flex flex-col justify-end p-6">
-            <div class="absolute inset-4 group-hover:inset-0 transition-all duration-500 z-0 overflow-hidden rounded-xl group-hover:rounded-2xl">
+            <div class="absolute inset-0 transition-all duration-500 z-0 overflow-hidden">
               <img src={latestPhoto.data.cover} alt={latestPhoto.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none"></div>
             </div>
