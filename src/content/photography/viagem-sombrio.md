@@ -1,7 +1,7 @@
 ---
 title: 'Viagem à Sombrio | Sombrio, SC'
-titleEn: 'Viagem à Sombrio | Sombrio, SC'
-titleFr: 'Viagem à Sombrio | Sombrio, SC'
+titleEn: 'Trip to Sombrio | Sombrio, SC'
+titleFr: 'Voyage à Sombrio | Sombrio, SC'
 cover: >-
   https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/viagem-sombrio/55248794862_45a3182481_o.jpg
 gallery:

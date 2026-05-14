@@ -1,7 +1,7 @@
 ---
 title: 'Viagem à Torres | Torres, RS'
-titleEn: 'Viagem à Torres | Torres, RS'
-titleFr: 'Viagem à Torres | Torres, RS'
+titleEn: 'Trip to Torres | Torres, RS'
+titleFr: 'Voyage à Torres | Torres, RS'
 cover: >-
   https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/viagem-torres/55248845622_1184fa1c09_o.jpg
 gallery:

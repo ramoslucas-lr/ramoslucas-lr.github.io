@@ -1,7 +1,7 @@
 ---
 title: Miscelânea
-titleEn: Miscelânea
-titleFr: Miscelânea
+titleEn: Miscellaneous
+titleFr: Miscellanée
 cover: >-
   https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/misc/55248804842_953f7c5a00_o.jpg
 gallery:
