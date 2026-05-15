@@ -16,9 +16,11 @@ const photographyCollection = defineCollection({
     titleFr: z.string().optional(),
     date: z.coerce.date().optional(),
     cover: z.string(),
+    coverThumb: z.string().optional(),
     gallery: z.array(
       z.object({
         src: z.string(),
+        thumb: z.string().optional(),
         camera: z.string().optional(),
         lens: z.string().optional(),
         aperture: z.string().optional(),

@@ -1,12 +1,16 @@
 ---
 title: 'Praia da Igrejinha | Florianópolis, SC'
 titleEn: 'Little Church Beach | Florianópolis, SC'
-titleFr: Plage de la Petite Église | Florianópolis, SC
+titleFr: 'Plage de la Petite Église | Florianópolis, SC'
 cover: >-
   https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/praia-igrejinha/55249679436_ffefebf7ce_o.jpg
+coverThumb: >-
+  https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/praia-igrejinha/55249679436_ffefebf7ce_o.webp
 gallery:
   - src: >-
       https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/praia-igrejinha/55249679436_ffefebf7ce_o.jpg
+    thumb: >-
+      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/praia-igrejinha/55249679436_ffefebf7ce_o.webp
     camera: Canon EOS M50m2
     lens: EF-M22mm f/2 STM
     aperture: f/4.5
@@ -14,6 +18,8 @@ gallery:
     shutterSpeed: 1/1000s
   - src: >-
       https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/praia-igrejinha/55249827303_e1456226da_o.jpg
+    thumb: >-
+      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/praia-igrejinha/55249827303_e1456226da_o.webp
     camera: Canon EOS M50m2
     lens: EF-M22mm f/2 STM
     aperture: f/4.5
@@ -21,6 +27,8 @@ gallery:
     shutterSpeed: 1/2500s
   - src: >-
       https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/praia-igrejinha/__55249827298_o.jpg
+    thumb: >-
+      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/praia-igrejinha/__55249827298_o.webp
     camera: Canon EOS M50m2
     lens: EF-M22mm f/2 STM
     aperture: f/4.5

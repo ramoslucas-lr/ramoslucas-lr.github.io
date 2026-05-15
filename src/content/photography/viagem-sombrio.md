@@ -4,9 +4,13 @@ titleEn: 'Trip to Sombrio | Sombrio, SC'
 titleFr: 'Voyage à Sombrio | Sombrio, SC'
 cover: >-
   https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/viagem-sombrio/55248794862_45a3182481_o.jpg
+coverThumb: >-
+  https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/viagem-sombrio/55248794862_45a3182481_o.webp
 gallery:
   - src: >-
       https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/viagem-sombrio/55248794862_45a3182481_o.jpg
+    thumb: >-
+      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/viagem-sombrio/55248794862_45a3182481_o.webp
     camera: Canon EOS M50m2
     lens: EF-M22mm f/2 STM
     aperture: f/2.2
@@ -14,6 +18,8 @@ gallery:
     shutterSpeed: 1/125s
   - src: >-
       https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/viagem-sombrio/55249692151_3ba1d306cd_o.jpg
+    thumb: >-
+      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/viagem-sombrio/55249692151_3ba1d306cd_o.webp
     camera: Canon EOS M50m2
     lens: EF-M22mm f/2 STM
     aperture: f/2.0
@@ -21,6 +27,8 @@ gallery:
     shutterSpeed: 1/320s
   - src: >-
       https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/viagem-sombrio/55249839913_9127600c91_o.jpg
+    thumb: >-
+      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/viagem-sombrio/55249839913_9127600c91_o.webp
     camera: Canon EOS M50m2
     lens: EF-M22mm f/2 STM
     aperture: f/2.0
@@ -28,6 +36,8 @@ gallery:
     shutterSpeed: 1/200s
   - src: >-
       https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/viagem-sombrio/55249933284_1452ffa94d_o.jpg
+    thumb: >-
+      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/viagem-sombrio/55249933284_1452ffa94d_o.webp
     camera: Canon EOS M50m2
     lens: EF-M22mm f/2 STM
     aperture: f/2.0

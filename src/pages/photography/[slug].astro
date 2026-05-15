@@ -47,8 +47,8 @@ const { Content } = await entry.render();
         <h3 class="text-xl font-bold mb-6 font-mono text-neonLime fr-only">GALERIE</h3>
         <div class="flex flex-wrap gap-2 items-center justify-center">
           {entry.data.gallery.map((img: any, index: number) => (
-            <a href={`#img-${index}`} class="relative group h-40 md:h-64 hover:h-48 md:hover:h-72 transition-all duration-500 overflow-hidden rounded-xl bg-surfaceHighlight flex-shrink-0">
-              <img src={img.src} alt={img.caption || `Gallery image ${index}`} class="h-full w-auto object-cover max-w-full" loading="lazy" />
+            <a href={`#img-${index}`} class="lightbox-trigger relative group h-40 md:h-64 hover:h-48 md:hover:h-72 transition-all duration-500 overflow-hidden rounded-xl bg-surfaceHighlight flex-shrink-0" data-index={index}>
+              <img src={img.thumb || img.src} alt={img.caption || `Gallery image ${index}`} class="h-full w-auto object-cover max-w-full" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4">
                  <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                    {img.camera && <span class="text-[10px] md:text-xs font-mono text-neonLime block">{img.camera}</span>}
@@ -59,25 +59,35 @@ const { Content } = await entry.render();
           ))}
         </div>
 
-        {/* CSS Lightbox System */}
+        {/* CSS Lightbox System — full-res loads only on click */}
         {entry.data.gallery.map((img: any, index: number) => (
-          <div id={`img-${index}`} class="fixed inset-0 z-[100] bg-base/95 backdrop-blur-md hidden target:flex flex-col items-center justify-center p-4 opacity-0 target:opacity-100 transition-opacity duration-300">
+          <div id={`img-${index}`} class="lightbox-panel fixed inset-0 z-[100] bg-base/95 backdrop-blur-md hidden target:flex flex-col items-center justify-center p-4 opacity-0 target:opacity-100 transition-opacity duration-300">
             <a href="#" class="absolute top-6 right-8 text-textMuted hover:text-neonLime text-5xl font-mono">&times;</a>
             
             {index > 0 && (
-              <a href={`#img-${index - 1}`} class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-neonLime text-white hover:text-black rounded-full w-12 h-12 flex items-center justify-center transition-all shadow-lg">
+              <a href={`#img-${index - 1}`} class="lightbox-nav absolute left-4 md:left-8 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-neonLime text-white hover:text-black rounded-full w-12 h-12 flex items-center justify-center transition-all shadow-lg">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
               </a>
             )}
             {index < entry.data.gallery.length - 1 && (
-              <a href={`#img-${index + 1}`} class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-neonLime text-white hover:text-black rounded-full w-12 h-12 flex items-center justify-center transition-all shadow-lg">
+              <a href={`#img-${index + 1}`} class="lightbox-nav absolute right-4 md:right-8 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-neonLime text-white hover:text-black rounded-full w-12 h-12 flex items-center justify-center transition-all shadow-lg">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
               </a>
             )}
 
-            <img src={img.src} alt={img.caption || `Gallery image ${index}`} class="max-w-full max-h-[75vh] rounded shadow-2xl border border-surfaceHighlight" />
+            {/* Spinner de loading */}
+            <div class="lightbox-spinner hidden absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+              <div class="w-10 h-10 border-4 border-neonLime/30 border-t-neonLime rounded-full animate-spin"></div>
+            </div>
+
+            {/* Imagem full-res: começa sem src, carrega sob demanda */}
+            <img 
+              data-fullsrc={img.src}
+              alt={img.caption || `Gallery image ${index}`} 
+              class="lightbox-img max-w-full max-h-[75vh] rounded shadow-2xl border border-surfaceHighlight relative z-20 opacity-0 transition-opacity duration-300" 
+            />
             
-            <div class="mt-6 flex flex-col items-center gap-2 text-center max-w-3xl bg-base px-6 py-4 rounded-xl border border-surfaceHighlight shadow-xl">
+            <div class="mt-6 flex flex-col items-center gap-2 text-center max-w-3xl bg-base px-6 py-4 rounded-xl border border-surfaceHighlight shadow-xl relative z-20">
               {img.caption && <p class="text-textMain font-medium pt-only">{img.caption}</p>}
               {img.captionEn && <p class="text-textMain font-medium en-only">{img.captionEn}</p>}
               {img.captionFr && <p class="text-textMain font-medium fr-only">{img.captionFr}</p>}
@@ -95,3 +105,51 @@ const { Content } = await entry.render();
     )}
   </article>
 </Layout>
+
+<script>
+  // Lazy-load full-res images only when the lightbox is opened
+  function loadFullResForHash() {
+    const hash = window.location.hash;
+    if (!hash || !hash.startsWith('#img-')) return;
+
+    const panel = document.querySelector(hash);
+    if (!panel) return;
+
+    const img = panel.querySelector('.lightbox-img') as HTMLImageElement;
+    const spinner = panel.querySelector('.lightbox-spinner') as HTMLElement;
+    if (!img || img.getAttribute('src')) return; // já carregou
+
+    const fullSrc = img.dataset.fullsrc;
+    if (!fullSrc) return;
+
+    // Mostra o spinner
+    if (spinner) spinner.classList.remove('hidden');
+    img.style.opacity = '0';
+
+    img.onload = () => {
+      img.style.opacity = '1';
+      if (spinner) spinner.classList.add('hidden');
+    };
+
+    img.onerror = () => {
+      if (spinner) spinner.classList.add('hidden');
+    };
+
+    img.src = fullSrc;
+  }
+
+  // Carrega ao clicar num thumbnail
+  window.addEventListener('hashchange', loadFullResForHash);
+
+  // Carrega se a página abriu já com um hash (link direto)
+  loadFullResForHash();
+
+  // Também intercepta cliques na navegação prev/next do lightbox
+  document.querySelectorAll('.lightbox-nav').forEach(nav => {
+    nav.addEventListener('click', () => {
+      // hashchange vai disparar automaticamente, mas damos um timeout
+      // para garantir que o hash já atualizou
+      setTimeout(loadFullResForHash, 50);
+    });
+  });
+</script>

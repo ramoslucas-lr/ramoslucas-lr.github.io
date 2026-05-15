@@ -3,8 +3,9 @@ import path from 'path';
 import crypto from 'crypto';
 import matter from 'gray-matter';
 import exifr from 'exifr';
+import sharp from 'sharp';
 import dotenv from 'dotenv';
-import { S3Client, ListObjectsV2Command } from '@aws-sdk/client-s3';
+import { S3Client, ListObjectsV2Command, PutObjectCommand, HeadObjectCommand } from '@aws-sdk/client-s3';
 
 // Carrega as variáveis de ambiente do .env
 dotenv.config();
@@ -21,6 +22,11 @@ const CACHE_FILE = path.join(process.cwd(), '.essays-cache.json');
 
 // Extensões de imagem suportadas
 const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp', '.avif'];
+
+// Configurações de otimização do thumb
+const THUMB_MAX_WIDTH = 1200;    // Largura máxima do thumbnail
+const THUMB_QUALITY = 80;        // Qualidade WebP (0-100)
+const THUMB_PREFIX = 'thumbs';   // Prefixo/pasta no R2 para os thumbnails
 
 // ==========================================
 // HELPERS
@@ -44,6 +50,67 @@ function hashFileList(contents) {
  */
 function toUTCMinus3ISOString(dateStr) {
   return `${dateStr}T00:00:00.000-03:00`;
+}
+
+/**
+ * Baixa uma imagem a partir de uma URL e retorna o Buffer.
+ */
+async function downloadImage(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status} ao baixar ${url}`);
+  }
+  const arrayBuffer = await response.arrayBuffer();
+  return Buffer.from(arrayBuffer);
+}
+
+/**
+ * Gera a chave (path) do thumbnail no R2 a partir da chave original.
+ * Ex: "viagem-serra/foto.jpg" -> "thumbs/viagem-serra/foto.webp"
+ */
+function getThumbKey(originalKey) {
+  const parsed = path.parse(originalKey);
+  return `${THUMB_PREFIX}/${parsed.dir}/${parsed.name}.webp`;
+}
+
+/**
+ * Verifica se um objeto já existe no R2.
+ */
+async function objectExists(s3Client, bucketName, key) {
+  try {
+    await s3Client.send(new HeadObjectCommand({
+      Bucket: bucketName,
+      Key: key,
+    }));
+    return true;
+  } catch (err) {
+    if (err.name === 'NotFound' || err.$metadata?.httpStatusCode === 404) {
+      return false;
+    }
+    throw err;
+  }
+}
+
+/**
+ * Converte uma imagem (Buffer) para WebP otimizado com resolução reduzida.
+ */
+async function createOptimizedWebp(imageBuffer) {
+  return sharp(imageBuffer)
+    .resize({ width: THUMB_MAX_WIDTH, withoutEnlargement: true })
+    .webp({ quality: THUMB_QUALITY })
+    .toBuffer();
+}
+
+/**
+ * Faz upload de um Buffer para o R2.
+ */
+async function uploadToR2(s3Client, bucketName, key, buffer, contentType = 'image/webp') {
+  await s3Client.send(new PutObjectCommand({
+    Bucket: bucketName,
+    Key: key,
+    Body: buffer,
+    ContentType: contentType,
+  }));
 }
 
 // ==========================================
@@ -101,7 +168,7 @@ async function syncEssays() {
     console.log(`\n📸 Processando ensaio: ${title} (${id})`);
     console.log(`  🌐 Listando arquivos na pasta R2: ${folder}/`);
 
-    // --- 1. Lista arquivos no R2 ---
+    // --- 1. Lista arquivos no R2 (originais, ignora thumbs/) ---
     let r2Contents = [];
     try {
       const command = new ListObjectsV2Command({
@@ -118,7 +185,8 @@ async function syncEssays() {
 
       r2Contents = response.Contents.filter(obj => {
         const ext = path.extname(obj.Key).toLowerCase();
-        return IMAGE_EXTENSIONS.includes(ext);
+        // Filtra apenas imagens válidas E ignora a pasta thumbs/
+        return IMAGE_EXTENSIONS.includes(ext) && !obj.Key.startsWith(`${THUMB_PREFIX}/`);
       });
 
     } catch (err) {
@@ -148,18 +216,23 @@ async function syncEssays() {
       console.log(`  ✨ Arquivo .md não existe ainda. Gerando...`);
     }
 
-    // --- 3. Extrai EXIF de cada imagem via URL pública ---
+    // --- 3. Extrai EXIF + gera thumb otimizado para cada imagem ---
     const imageFiles = r2Contents.map(obj => obj.Key).sort();
     const gallery = [];
 
     for (const key of imageFiles) {
       const r2Url = `${baseUrl.replace(/\/$/, '')}/${key}`;
-      console.log(`  🔍 Extraindo metadados EXIF: ${path.basename(key)}`);
+      const thumbKey = getThumbKey(key);
+      const thumbUrl = `${baseUrl.replace(/\/$/, '')}/${thumbKey}`;
+      const fileName = path.basename(key);
+
+      console.log(`  🔍 Processando: ${fileName}`);
 
       try {
-        // exifr faz Range Requests HTTP — baixa só o início do arquivo onde fica o EXIF
+        // 3a. Extrai EXIF via Range Request (só baixa o header do arquivo)
+        console.log(`    📋 Extraindo metadados EXIF...`);
         const exif = await exifr.parse(r2Url, { tiff: true, exif: true });
-        const photoData = { src: r2Url };
+        const photoData = { src: r2Url, thumb: thumbUrl };
 
         if (exif) {
           if (exif.Model) photoData.camera = exif.Model;
@@ -173,10 +246,36 @@ async function syncEssays() {
           }
         }
 
+        // 3b. Verifica se o thumb já existe no R2
+        const thumbExists = await objectExists(s3Client, bucketName, thumbKey);
+
+        if (thumbExists) {
+          console.log(`    ✅ Thumb já existe no R2: ${thumbKey}`);
+        } else {
+          // 3c. Baixa a imagem original completa
+          console.log(`    ⬇️  Baixando imagem original para gerar thumb...`);
+          const imageBuffer = await downloadImage(r2Url);
+
+          // 3d. Gera o WebP otimizado
+          console.log(`    🖼️  Gerando WebP otimizado (max ${THUMB_MAX_WIDTH}px, qualidade ${THUMB_QUALITY})...`);
+          const webpBuffer = await createOptimizedWebp(imageBuffer);
+
+          const originalSize = (imageBuffer.length / 1024).toFixed(0);
+          const thumbSize = (webpBuffer.length / 1024).toFixed(0);
+          const reduction = ((1 - webpBuffer.length / imageBuffer.length) * 100).toFixed(1);
+          console.log(`    📊 ${originalSize}KB → ${thumbSize}KB (${reduction}% menor)`);
+
+          // 3e. Faz upload do thumb para o R2
+          console.log(`    ⬆️  Enviando thumb para R2: ${thumbKey}`);
+          await uploadToR2(s3Client, bucketName, thumbKey, webpBuffer);
+          console.log(`    ✅ Thumb enviado com sucesso!`);
+        }
+
         gallery.push(photoData);
       } catch (err) {
-        console.warn(`  ⚠️ Sem EXIF para ${path.basename(key)}: ${err.message}`);
-        gallery.push({ src: r2Url });
+        console.warn(`  ⚠️ Erro ao processar ${fileName}: ${err.message}`);
+        // Fallback: usa a original como thumb também
+        gallery.push({ src: r2Url, thumb: r2Url });
       }
     }
 
@@ -186,6 +285,7 @@ async function syncEssays() {
       titleEn: title,
       titleFr: title,
       cover: gallery[0].src,
+      coverThumb: gallery[0].thumb,
       gallery: gallery,
     };
 
@@ -199,6 +299,9 @@ async function syncEssays() {
     if (mdExists) {
       const existingContent = matter(fs.readFileSync(targetMdFile, 'utf8'));
       existingBody = existingContent.content;
+      // Preserva títulos traduzidos se já existirem
+      if (existingContent.data.titleEn) frontmatter.titleEn = existingContent.data.titleEn;
+      if (existingContent.data.titleFr) frontmatter.titleFr = existingContent.data.titleFr;
       console.log(`  ♻️ Atualizando frontmatter de ${id}.md preservando o texto.`);
     } else {
       console.log(`  ✨ Criando novo arquivo ${id}.md`);
