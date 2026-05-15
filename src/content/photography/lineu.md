@@ -1,7 +1,12 @@
 ---
 title: O Álbum do Lineu
-titleEn: Lineu's Album
-titleFr: L'Album de Lineu
+titleEn: 'Lineu | São José, SC'
+titleFr: 'Lineu | São José, SC'
+titleEs: 'Lineu | São José, SC'
+titleJa: 'リネウ | サン・ジョゼ、SC'
+titleZh: '利内乌 | 圣若泽，SC'
+titleDe: 'Lineu | São José, SC'
+titleRu: 'Линеу | Сан-Жозе, SC'
 cover: >-
   https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/lineu/55248816442_752f76dd42_o.jpg
 coverThumb: >-

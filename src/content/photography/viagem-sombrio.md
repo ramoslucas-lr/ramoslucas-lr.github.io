@@ -2,6 +2,11 @@
 title: 'Viagem à Sombrio | Sombrio, SC'
 titleEn: 'Trip to Sombrio | Sombrio, SC'
 titleFr: 'Voyage à Sombrio | Sombrio, SC'
+titleEs: 'Viaje a Sombrio | Sombrio, SC'
+titleJa: 'ソンブリオへの旅 | ソンブリオ、SC'
+titleZh: '颂布里奥之旅 | 颂布里奥，SC'
+titleDe: 'Reise nach Sombrio | Sombrio, SC'
+titleRu: 'Поездка в Сомбриу | Сомбриу, SC'
 cover: >-
   https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/viagem-sombrio/55248794862_45a3182481_o.jpg
 coverThumb: >-

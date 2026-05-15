@@ -20,17 +20,32 @@ const { Content } = await entry.render();
     <a href="/photography" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block pt-only">&lt; VOLTAR PARA GALERIA</a>
     <a href="/photography" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block en-only">&lt; BACK TO GALLERY</a>
     <a href="/photography" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block fr-only">&lt; RETOUR À LA GALERIE</a>
+    <a href="/photography" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block es-only">&lt; VOLVER A LA GALERÍA</a>
+    <a href="/photography" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block ja-only">&lt; ギャラリーに戻る</a>
+    <a href="/photography" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block zh-only">&lt; 返回图库</a>
+    <a href="/photography" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block de-only">&lt; ZURÜCK ZUR GALERIE</a>
+    <a href="/photography" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block ru-only">&lt; НАЗАД В ГАЛЕРЕЮ</a>
     
     <header class="mb-12 border-b border-surfaceHighlight pb-8">
       <h1 class="text-4xl font-bold mb-4 pt-only">{entry.data.title}</h1>
       <h1 class="text-4xl font-bold mb-4 en-only">{entry.data.titleEn || entry.data.title}</h1>
       <h1 class="text-4xl font-bold mb-4 fr-only">{entry.data.titleFr || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 es-only">{entry.data.titleEs || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 ja-only">{entry.data.titleJa || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 zh-only">{entry.data.titleZh || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 de-only">{entry.data.titleDe || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 ru-only">{entry.data.titleRu || entry.data.title}</h1>
       <div class="flex flex-wrap gap-4 text-xs font-mono text-textMuted mb-6">
         {entry.data.date && (
           <>
             <span class="bg-surfaceHighlight px-3 py-1 rounded pt-only">DATA: {entry.data.date.toLocaleDateString('pt-BR')}</span>
             <span class="bg-surfaceHighlight px-3 py-1 rounded en-only">DATE: {entry.data.date.toLocaleDateString('en-US')}</span>
             <span class="bg-surfaceHighlight px-3 py-1 rounded fr-only">DATE: {entry.data.date.toLocaleDateString('fr-FR')}</span>
+            <span class="bg-surfaceHighlight px-3 py-1 rounded es-only">FECHA: {entry.data.date.toLocaleDateString('es-ES')}</span>
+            <span class="bg-surfaceHighlight px-3 py-1 rounded ja-only">日付: {entry.data.date.toLocaleDateString('ja-JP')}</span>
+            <span class="bg-surfaceHighlight px-3 py-1 rounded zh-only">日期: {entry.data.date.toLocaleDateString('zh-CN')}</span>
+            <span class="bg-surfaceHighlight px-3 py-1 rounded de-only">DATUM: {entry.data.date.toLocaleDateString('de-DE')}</span>
+            <span class="bg-surfaceHighlight px-3 py-1 rounded ru-only">ДАТА: {entry.data.date.toLocaleDateString('ru-RU')}</span>
           </>
         )}
       </div>
@@ -45,6 +60,11 @@ const { Content } = await entry.render();
         <h3 class="text-xl font-bold mb-6 font-mono text-neonLime pt-only">GALERIA</h3>
         <h3 class="text-xl font-bold mb-6 font-mono text-neonLime en-only">GALLERY</h3>
         <h3 class="text-xl font-bold mb-6 font-mono text-neonLime fr-only">GALERIE</h3>
+        <h3 class="text-xl font-bold mb-6 font-mono text-neonLime es-only">GALERÍA</h3>
+        <h3 class="text-xl font-bold mb-6 font-mono text-neonLime ja-only">ギャラリー</h3>
+        <h3 class="text-xl font-bold mb-6 font-mono text-neonLime zh-only">图库</h3>
+        <h3 class="text-xl font-bold mb-6 font-mono text-neonLime de-only">GALERIE</h3>
+        <h3 class="text-xl font-bold mb-6 font-mono text-neonLime ru-only">ГАЛЕРЕЯ</h3>
         <div class="flex flex-wrap gap-2 items-center justify-center">
           {entry.data.gallery.map((img: any, index: number) => (
             <a href={`#img-${index}`} class="lightbox-trigger relative group h-40 md:h-64 hover:h-48 md:hover:h-72 transition-all duration-500 overflow-hidden rounded-xl bg-surfaceHighlight flex-shrink-0" data-index={index}>
@@ -91,6 +111,11 @@ const { Content } = await entry.render();
               {img.caption && <p class="text-textMain font-medium pt-only">{img.caption}</p>}
               {img.captionEn && <p class="text-textMain font-medium en-only">{img.captionEn}</p>}
               {img.captionFr && <p class="text-textMain font-medium fr-only">{img.captionFr}</p>}
+              {img.captionEs && <p class="text-textMain font-medium es-only">{img.captionEs}</p>}
+              {img.captionJa && <p class="text-textMain font-medium ja-only">{img.captionJa}</p>}
+              {img.captionZh && <p class="text-textMain font-medium zh-only">{img.captionZh}</p>}
+              {img.captionDe && <p class="text-textMain font-medium de-only">{img.captionDe}</p>}
+              {img.captionRu && <p class="text-textMain font-medium ru-only">{img.captionRu}</p>}
               <div class="flex flex-wrap gap-3 text-xs md:text-sm font-mono text-neonLime justify-center mt-2">
                 {img.camera && <span class="bg-black/60 px-2 py-1 rounded border border-white/10">[CAM: {img.camera}]</span>}
                 {img.lens && <span class="bg-black/60 px-2 py-1 rounded border border-white/10">[LENS: {img.lens}]</span>}

@@ -2,6 +2,11 @@
 title: 'UFSC | Florianópolis, SC'
 titleEn: 'UFSC | Florianópolis, SC'
 titleFr: 'UFSC | Florianópolis, SC'
+titleEs: 'UFSC | Florianópolis, SC'
+titleJa: 'UFSC | フロリアノーポリス、SC'
+titleZh: 'UFSC | 弗洛里亚诺波利斯，SC'
+titleDe: 'UFSC | Florianópolis, SC'
+titleRu: 'UFSC | Флорианополис, SC'
 cover: >-
   https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/ufsc/55249852263_ab31ea74c1_o.jpg
 coverThumb: >-

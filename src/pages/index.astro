@@ -33,6 +33,11 @@ const latestAcademic = academicEntries[0];
           <h2 class="text-2xl font-bold mb-4 pt-only">oi, eu sou o <span class="text-neonLime">Lucas</span>.</h2>
           <h2 class="text-2xl font-bold mb-4 en-only">hi, I'm <span class="text-neonLime">Lucas</span>.</h2>
           <h2 class="text-2xl font-bold mb-4 fr-only">salut, je suis <span class="text-neonLime">Lucas</span>.</h2>
+          <h2 class="text-2xl font-bold mb-4 es-only">hola, soy <span class="text-neonLime">Lucas</span>.</h2>
+          <h2 class="text-2xl font-bold mb-4 ja-only">こんにちは、<span class="text-neonLime">ルカス</span>です。</h2>
+          <h2 class="text-2xl font-bold mb-4 zh-only">你好，我是 <span class="text-neonLime">Lucas</span>。</h2>
+          <h2 class="text-2xl font-bold mb-4 de-only">hi, ich bin <span class="text-neonLime">Lucas</span>.</h2>
+          <h2 class="text-2xl font-bold mb-4 ru-only">привет, я <span class="text-neonLime">Лукас</span>.</h2>
           
           <div class="text-textMuted text-sm mb-6 space-y-3 pt-only">
             <p>Esse é o meu cantinho da internet. Aqui do lado tem as <span class="text-neonLime/80">fotos</span> que eu não sinto vergonha de compartilhar e abaixo tem os <span class="text-neonLime/80">artigos</span> que me forço tanto a escrever quanto a postar.</p>
@@ -46,11 +51,36 @@ const latestAcademic = academicEntries[0];
             <p>C'est mon petit coin d'internet. À côté il y a les <span class="text-neonLime/80">photos</span> dont je n'ai pas honte de partager, et en bas les <span class="text-neonLime/80">articles</span> que je me force autant à écrire qu'à publier.</p>
             <p>Je sais pas trop comment tu es arrivé ici, mais garde ça pour toi : si j'ai trop de visites je vais devoir payer le stockage des photos.</p>
           </div>
+          <div class="text-textMuted text-sm mb-6 space-y-3 es-only">
+            <p>Este es mi pequeño rincón de internet. Aquí al lado están las <span class="text-neonLime/80">fotos</span> que no me da vergüenza compartir, y debajo están los <span class="text-neonLime/80">artículos</span> que me obligo a escribir y publicar.</p>
+            <p>No estoy seguro de cómo terminaste aquí, pero no lo digas: si recibo demasiadas visitas tendré que empezar a pagar por el almacenamiento de las fotos.</p>
+          </div>
+          <div class="text-textMuted text-sm mb-6 space-y-3 ja-only">
+            <p>これは私のインターネット上の小さなコーナーです。あちらには共有しても恥ずかしくない<span class="text-neonLime/80">写真</span>があり、下には無理やり書いて投稿した<span class="text-neonLime/80">記事</span>があります。</p>
+            <p>どうやってここにたどり着いたのか分かりませんが、内緒にしてください。訪問者が多すぎると、写真のストレージ料金を払い始めなければならなくなります。</p>
+          </div>
+          <div class="text-textMuted text-sm mb-6 space-y-3 zh-only">
+            <p>这是我在互联网上的一个小角落。旁边是我不以为耻分享的<span class="text-neonLime/80">照片</span>，下面是我强迫自己撰写并发布的<span class="text-neonLime/80">文章</span>。</p>
+            <p>不知道你是怎么来到这里的，但请保持低调：如果访客太多，我就不得不开始支付照片存储费用了。</p>
+          </div>
+          <div class="text-textMuted text-sm mb-6 space-y-3 de-only">
+            <p>Das ist meine kleine Ecke im Internet. Dort drüben sind die <span class="text-neonLime/80">Fotos</span>, die mir nicht peinlich sind zu teilen, und unten sind die <span class="text-neonLime/80">Artikel</span>, die ich mich zwinge zu schreiben und tatsächlich zu posten.</p>
+            <p>Nicht sicher, wie du hier gelandet bist, aber behalte es für dich — wenn ich zu viele Besucher bekomme, muss ich anfangen für den Fotospeicher zu bezahlen.</p>
+          </div>
+          <div class="text-textMuted text-sm mb-6 space-y-3 ru-only">
+            <p>Это мой маленький уголок в интернете. Там <span class="text-neonLime/80">фотографии</span>, которыми мне не стыдно поделиться, а ниже — <span class="text-neonLime/80">статьи</span>, которые я заставляю себя писать и публиковать.</p>
+            <p>Не знаю, как вы здесь оказались, но никому не говорите: если будет слишком много посетителей, мне придется начать платить за хранение фотографий.</p>
+          </div>
           
           <div class="flex items-center text-neonCyan font-mono text-xs group-hover:translate-x-1 transition-transform">
             <span class="pt-only">sobre mim &rarr;</span>
             <span class="en-only">about me &rarr;</span>
             <span class="fr-only">à propos &rarr;</span>
+            <span class="es-only">sobre mí &rarr;</span>
+            <span class="ja-only">私について &rarr;</span>
+            <span class="zh-only">关于我 &rarr;</span>
+            <span class="de-only">über mich &rarr;</span>
+            <span class="ru-only">обо мне &rarr;</span>
           </div>
         </div>
       </BentoBox>
@@ -73,9 +103,19 @@ const latestAcademic = academicEntries[0];
               <span class="text-xs font-mono text-neonLime mb-1 block pt-only">ÚLTIMA FOTO</span>
               <span class="text-xs font-mono text-neonLime mb-1 block en-only">LATEST PHOTO</span>
               <span class="text-xs font-mono text-neonLime mb-1 block fr-only">DERNIÈRE PHOTO</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block es-only">ÚLTIMA FOTO</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block ja-only">最新の写真</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block zh-only">最新照片</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block de-only">LETZTES FOTO</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block ru-only">ПОСЛЕДНЕЕ ФОТО</span>
               <h3 class="text-xl font-bold text-gray-100 pt-only">{latestPhoto.data.gallery[0].caption || latestPhoto.data.title}</h3>
               <h3 class="text-xl font-bold text-gray-100 en-only">{latestPhoto.data.gallery[0].captionEn || latestPhoto.data.titleEn || latestPhoto.data.title}</h3>
               <h3 class="text-xl font-bold text-gray-100 fr-only">{latestPhoto.data.gallery[0].captionFr || latestPhoto.data.titleFr || latestPhoto.data.title}</h3>
+              <h3 class="text-xl font-bold text-gray-100 es-only">{latestPhoto.data.gallery[0].captionEs || latestPhoto.data.titleEs || latestPhoto.data.title}</h3>
+              <h3 class="text-xl font-bold text-gray-100 ja-only">{latestPhoto.data.gallery[0].captionJa || latestPhoto.data.titleJa || latestPhoto.data.title}</h3>
+              <h3 class="text-xl font-bold text-gray-100 zh-only">{latestPhoto.data.gallery[0].captionZh || latestPhoto.data.titleZh || latestPhoto.data.title}</h3>
+              <h3 class="text-xl font-bold text-gray-100 de-only">{latestPhoto.data.gallery[0].captionDe || latestPhoto.data.titleDe || latestPhoto.data.title}</h3>
+              <h3 class="text-xl font-bold text-gray-100 ru-only">{latestPhoto.data.gallery[0].captionRu || latestPhoto.data.titleRu || latestPhoto.data.title}</h3>
               
               <div class="flex gap-2 text-[10px] font-mono text-gray-300 mt-3 flex-wrap">
                 {latestPhoto.data.date && (
@@ -83,6 +123,11 @@ const latestAcademic = academicEntries[0];
                     <span class="bg-black/50 border border-white/10 px-2 py-1 rounded pt-only">{latestPhoto.data.date.toLocaleDateString('pt-BR')}</span>
                     <span class="bg-black/50 border border-white/10 px-2 py-1 rounded en-only">{latestPhoto.data.date.toLocaleDateString('en-US')}</span>
                     <span class="bg-black/50 border border-white/10 px-2 py-1 rounded fr-only">{latestPhoto.data.date.toLocaleDateString('fr-FR')}</span>
+                    <span class="bg-black/50 border border-white/10 px-2 py-1 rounded es-only">{latestPhoto.data.date.toLocaleDateString('es-ES')}</span>
+                    <span class="bg-black/50 border border-white/10 px-2 py-1 rounded ja-only">{latestPhoto.data.date.toLocaleDateString('ja-JP')}</span>
+                    <span class="bg-black/50 border border-white/10 px-2 py-1 rounded zh-only">{latestPhoto.data.date.toLocaleDateString('zh-CN')}</span>
+                    <span class="bg-black/50 border border-white/10 px-2 py-1 rounded de-only">{latestPhoto.data.date.toLocaleDateString('de-DE')}</span>
+                    <span class="bg-black/50 border border-white/10 px-2 py-1 rounded ru-only">{latestPhoto.data.date.toLocaleDateString('ru-RU')}</span>
                   </>
                 )}
                 {latestPhoto.data.gallery[0].camera && <span class="bg-black/50 border border-white/10 px-2 py-1 rounded">{latestPhoto.data.gallery[0].camera}</span>}
@@ -103,9 +148,19 @@ const latestAcademic = academicEntries[0];
               <span class="text-xs font-mono text-neonLime mb-1 block pt-only">ÚLTIMA FOTO</span>
               <span class="text-xs font-mono text-neonLime mb-1 block en-only">LATEST PHOTO</span>
               <span class="text-xs font-mono text-neonLime mb-1 block fr-only">DERNIÈRE PHOTO</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block es-only">ÚLTIMA FOTO</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block ja-only">最新の写真</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block zh-only">最新照片</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block de-only">LETZTES FOTO</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block ru-only">ПОСЛЕДНЕЕ ФОТО</span>
               <h3 class="text-xl font-bold text-gray-100 pt-only">{latestPhoto.data.title}</h3>
               <h3 class="text-xl font-bold text-gray-100 en-only">{latestPhoto.data.titleEn || latestPhoto.data.title}</h3>
               <h3 class="text-xl font-bold text-gray-100 fr-only">{latestPhoto.data.titleFr || latestPhoto.data.title}</h3>
+              <h3 class="text-xl font-bold text-gray-100 es-only">{latestPhoto.data.titleEs || latestPhoto.data.title}</h3>
+              <h3 class="text-xl font-bold text-gray-100 ja-only">{latestPhoto.data.titleJa || latestPhoto.data.title}</h3>
+              <h3 class="text-xl font-bold text-gray-100 zh-only">{latestPhoto.data.titleZh || latestPhoto.data.title}</h3>
+              <h3 class="text-xl font-bold text-gray-100 de-only">{latestPhoto.data.titleDe || latestPhoto.data.title}</h3>
+              <h3 class="text-xl font-bold text-gray-100 ru-only">{latestPhoto.data.titleRu || latestPhoto.data.title}</h3>
             </div>
           </div>
         ) : (
@@ -114,6 +169,11 @@ const latestAcademic = academicEntries[0];
              <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain pt-only">VER GALERIA</span>
              <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain en-only">VIEW GALLERY</span>
              <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain fr-only">VOIR GALERIE</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain es-only">VER GALERÍA</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain ja-only">ギャラリーを見る</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain zh-only">查看图库</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain de-only">GALERIE ANSEHEN</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain ru-only">ПОСМОТРЕТЬ ГАЛЕРЕЮ</span>
           </div>
         )}
       </BentoBox>
@@ -126,9 +186,19 @@ const latestAcademic = academicEntries[0];
               <span class="text-xs font-mono text-neonCyan mb-1 block pt-only">ÚLTIMO PROJETO DE ENGENHARIA DE DADOS</span>
               <span class="text-xs font-mono text-neonCyan mb-1 block en-only">LATEST DATA ENGINEERING PROJECT</span>
               <span class="text-xs font-mono text-neonCyan mb-1 block fr-only">DERNIER PROJET D'INGÉNIERIE DES DONNÉES</span>
+              <span class="text-xs font-mono text-neonCyan mb-1 block es-only">ÚLTIMO PROYECTO DE INGENIERÍA DE DATOS</span>
+              <span class="text-xs font-mono text-neonCyan mb-1 block ja-only">最新のデータエンジニアリングプロジェクト</span>
+              <span class="text-xs font-mono text-neonCyan mb-1 block zh-only">最新数据工程项目</span>
+              <span class="text-xs font-mono text-neonCyan mb-1 block de-only">NEUESTES DATENPROJEKT</span>
+              <span class="text-xs font-mono text-neonCyan mb-1 block ru-only">ПОСЛЕДНИЙ ПРОЕКТ ПО ДАННЫМ</span>
               <h3 class="font-bold text-lg mb-2 pt-only mt-2">{latestDataProject.data.title}</h3>
               <h3 class="font-bold text-lg mb-2 en-only mt-2">{latestDataProject.data.titleEn || latestDataProject.data.title}</h3>
               <h3 class="font-bold text-lg mb-2 fr-only mt-2">{latestDataProject.data.titleFr || latestDataProject.data.title}</h3>
+              <h3 class="font-bold text-lg mb-2 es-only mt-2">{latestDataProject.data.titleEs || latestDataProject.data.title}</h3>
+              <h3 class="font-bold text-lg mb-2 ja-only mt-2">{latestDataProject.data.titleJa || latestDataProject.data.title}</h3>
+              <h3 class="font-bold text-lg mb-2 zh-only mt-2">{latestDataProject.data.titleZh || latestDataProject.data.title}</h3>
+              <h3 class="font-bold text-lg mb-2 de-only mt-2">{latestDataProject.data.titleDe || latestDataProject.data.title}</h3>
+              <h3 class="font-bold text-lg mb-2 ru-only mt-2">{latestDataProject.data.titleRu || latestDataProject.data.title}</h3>
             </div>
             <div class="flex flex-wrap gap-2 mt-3">
               {latestDataProject.data.technologies.map((tech: string) => (
@@ -144,6 +214,11 @@ const latestAcademic = academicEntries[0];
              <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain pt-only">VER PROJETOS</span>
              <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain en-only">VIEW PROJECTS</span>
              <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain fr-only">VOIR PROJETS</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain es-only">VER PROYECTOS</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain ja-only">プロジェクトを見る</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain zh-only">查看项目</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain de-only">PROJEKTE ANSEHEN</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain ru-only">ПОСМОТРЕТЬ ПРОЕКТЫ</span>
           </div>
         )}
       </BentoBox>
@@ -161,6 +236,11 @@ const latestAcademic = academicEntries[0];
                   <span class="text-xs font-mono text-neonLime mb-1 block pt-only">ÚLTIMA REVIEW</span>
                   <span class="text-xs font-mono text-neonLime mb-1 block en-only">LATEST REVIEW</span>
                   <span class="text-xs font-mono text-neonLime mb-1 block fr-only">DERNIÈRE CRITIQUE</span>
+                  <span class="text-xs font-mono text-neonLime mb-1 block es-only">ÚLTIMA RESEÑA</span>
+                  <span class="text-xs font-mono text-neonLime mb-1 block ja-only">最新のレビュー</span>
+                  <span class="text-xs font-mono text-neonLime mb-1 block zh-only">最新评论</span>
+                  <span class="text-xs font-mono text-neonLime mb-1 block de-only">LETZTE BEWERTUNG</span>
+                  <span class="text-xs font-mono text-neonLime mb-1 block ru-only">ПОСЛЕДНИЙ ОБЗОР</span>
                   <h3 class="font-bold text-sm truncate text-gray-100 mt-2">{latestDice.data.game}</h3>
                </div>
                <div class="mt-4 flex items-end justify-between">
@@ -175,6 +255,11 @@ const latestAcademic = academicEntries[0];
               <span class="text-xs font-mono text-neonLime mb-1 block pt-only">ÚLTIMA REVIEW</span>
               <span class="text-xs font-mono text-neonLime mb-1 block en-only">LATEST REVIEW</span>
               <span class="text-xs font-mono text-neonLime mb-1 block fr-only">DERNIÈRE CRITIQUE</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block es-only">ÚLTIMA RESEÑA</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block ja-only">最新のレビュー</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block zh-only">最新评论</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block de-only">LETZTE BEWERTUNG</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block ru-only">ПОСЛЕДНИЙ ОБЗОР</span>
               <h3 class="font-bold text-sm truncate mt-2">{latestDice.data.game}</h3>
             </div>
             <div class="mt-4 flex items-end justify-between">
@@ -188,6 +273,11 @@ const latestAcademic = academicEntries[0];
              <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain pt-only">VER REVIEWS</span>
              <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain en-only">VIEW REVIEWS</span>
              <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain fr-only">VOIR CRITIQUES</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain es-only">VER RESEÑAS</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain ja-only">レビューを見る</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain zh-only">查看评论</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain de-only">BEWERTUNGEN ANSEHEN</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain ru-only">ПОСМОТРЕТЬ ОБЗОРЫ</span>
           </div>
         )}
       </BentoBox>
@@ -200,14 +290,29 @@ const latestAcademic = academicEntries[0];
               <span class="text-xs font-mono text-neonCyan mb-1 block pt-only">ÚLTIMO ARTIGO</span>
               <span class="text-xs font-mono text-neonCyan mb-1 block en-only">LATEST POST</span>
               <span class="text-xs font-mono text-neonCyan mb-1 block fr-only">DERNIER POST</span>
+              <span class="text-xs font-mono text-neonCyan mb-1 block es-only">ÚLTIMO POST</span>
+              <span class="text-xs font-mono text-neonCyan mb-1 block ja-only">最新の投稿</span>
+              <span class="text-xs font-mono text-neonCyan mb-1 block zh-only">最新帖子</span>
+              <span class="text-xs font-mono text-neonCyan mb-1 block de-only">LETZTER BEITRAG</span>
+              <span class="text-xs font-mono text-neonCyan mb-1 block ru-only">ПОСЛЕДНИЙ ПОСТ</span>
               <h3 class="font-bold text-sm mb-2 mt-2 pt-only">{latestAcademic.data.title}</h3>
               <h3 class="font-bold text-sm mb-2 mt-2 en-only">{latestAcademic.data.titleEn || latestAcademic.data.title}</h3>
               <h3 class="font-bold text-sm mb-2 mt-2 fr-only">{latestAcademic.data.titleFr || latestAcademic.data.title}</h3>
+              <h3 class="font-bold text-sm mb-2 mt-2 es-only">{latestAcademic.data.titleEs || latestAcademic.data.title}</h3>
+              <h3 class="font-bold text-sm mb-2 mt-2 ja-only">{latestAcademic.data.titleJa || latestAcademic.data.title}</h3>
+              <h3 class="font-bold text-sm mb-2 mt-2 zh-only">{latestAcademic.data.titleZh || latestAcademic.data.title}</h3>
+              <h3 class="font-bold text-sm mb-2 mt-2 de-only">{latestAcademic.data.titleDe || latestAcademic.data.title}</h3>
+              <h3 class="font-bold text-sm mb-2 mt-2 ru-only">{latestAcademic.data.titleRu || latestAcademic.data.title}</h3>
             </div>
             <div class="mt-4 flex items-end justify-between">
               <span class="text-xs text-textMuted font-mono pt-only">{latestAcademic.data.semester} | {latestAcademic.data.course}</span>
               <span class="text-xs text-textMuted font-mono en-only">{latestAcademic.data.semester} | {latestAcademic.data.courseEn || latestAcademic.data.course}</span>
               <span class="text-xs text-textMuted font-mono fr-only">{latestAcademic.data.semester} | {latestAcademic.data.courseFr || latestAcademic.data.course}</span>
+              <span class="text-xs text-textMuted font-mono es-only">{latestAcademic.data.semester} | {latestAcademic.data.courseEs || latestAcademic.data.course}</span>
+              <span class="text-xs text-textMuted font-mono ja-only">{latestAcademic.data.semester} | {latestAcademic.data.courseJa || latestAcademic.data.course}</span>
+              <span class="text-xs text-textMuted font-mono zh-only">{latestAcademic.data.semester} | {latestAcademic.data.courseZh || latestAcademic.data.course}</span>
+              <span class="text-xs text-textMuted font-mono de-only">{latestAcademic.data.semester} | {latestAcademic.data.courseDe || latestAcademic.data.course}</span>
+              <span class="text-xs text-textMuted font-mono ru-only">{latestAcademic.data.semester} | {latestAcademic.data.courseRu || latestAcademic.data.course}</span>
             </div>
           </div>
         ) : (
@@ -216,6 +321,11 @@ const latestAcademic = academicEntries[0];
              <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain pt-only">ACESSAR ARQUIVO</span>
              <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain en-only">ACCESS ARCHIVE</span>
              <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain fr-only">ACCÉDER AUX ARCHIVES</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain es-only">ACCEDER AL ARCHIVO</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain ja-only">アーカイブにアクセス</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain zh-only">访问存档</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain de-only">ARCHIV AUFRUFEN</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain ru-only">ДОСТУП К АРХИВУ</span>
           </div>
         )}
       </BentoBox>

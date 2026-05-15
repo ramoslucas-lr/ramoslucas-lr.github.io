@@ -28,9 +28,14 @@
   }
 
   /* Language Toggle Logic */
-  html[lang="pt"] .en-only, html[lang="pt"] .fr-only { display: none !important; }
-  html[lang="en"] .pt-only, html[lang="en"] .fr-only { display: none !important; }
-  html[lang="fr"] .pt-only, html[lang="fr"] .en-only { display: none !important; }
+  html[lang="pt"] :is(.en-only, .fr-only, .es-only, .ja-only, .zh-only, .de-only, .ru-only) { display: none !important; }
+  html[lang="en"] :is(.pt-only, .fr-only, .es-only, .ja-only, .zh-only, .de-only, .ru-only) { display: none !important; }
+  html[lang="fr"] :is(.pt-only, .en-only, .es-only, .ja-only, .zh-only, .de-only, .ru-only) { display: none !important; }
+  html[lang="es"] :is(.pt-only, .en-only, .fr-only, .ja-only, .zh-only, .de-only, .ru-only) { display: none !important; }
+  html[lang="ja"] :is(.pt-only, .en-only, .fr-only, .es-only, .zh-only, .de-only, .ru-only) { display: none !important; }
+  html[lang="zh"] :is(.pt-only, .en-only, .fr-only, .es-only, .ja-only, .de-only, .ru-only) { display: none !important; }
+  html[lang="de"] :is(.pt-only, .en-only, .fr-only, .es-only, .ja-only, .zh-only, .ru-only) { display: none !important; }
+  html[lang="ru"] :is(.pt-only, .en-only, .fr-only, .es-only, .ja-only, .zh-only, .de-only) { display: none !important; }
 
   body {
     @apply bg-base text-textMain font-sans antialiased transition-colors duration-500;

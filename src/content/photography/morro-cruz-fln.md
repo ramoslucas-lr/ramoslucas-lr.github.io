@@ -1,7 +1,12 @@
 ---
 title: 'Morro da Cruz | Florianópolis, SC'
-titleEn: 'Morro da Cruz | Florianópolis, SC'
-titleFr: 'Morro da Cruz | Florianópolis, SC'
+titleEn: 'Cruz Hill | Florianópolis, SC'
+titleFr: 'Colline de la Croix | Florianópolis, SC'
+titleEs: 'Cerro de la Cruz | Florianópolis, SC'
+titleJa: 'クルスの丘 | フロリアノーポリス、SC'
+titleZh: '十字架山 | 弗洛里亚诺波利斯，SC'
+titleDe: 'Morro da Cruz | Florianópolis, SC'
+titleRu: 'Морру-да-Крус | Флорианополис, SC'
 cover: >-
   https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/morro-cruz-fln/55253094402_cc101ba780_o.jpg
 coverThumb: >-

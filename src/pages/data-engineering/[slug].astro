@@ -20,14 +20,23 @@ const { Content } = await entry.render();
     <a href="/data-engineering" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block pt-only">&lt; VOLTAR PARA ENGENHARIA DE DADOS</a>
     <a href="/data-engineering" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block en-only">&lt; BACK TO DATA ENGINEERING</a>
     <a href="/data-engineering" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block fr-only">&lt; RETOUR À L'INGÉNIERIE DES DONNÉES</a>
+    <a href="/data-engineering" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block es-only">&lt; VOLVER A INGENIERÍA DE DATOS</a>
+    <a href="/data-engineering" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block ja-only">&lt; データエンジニアリングに戻る</a>
+    <a href="/data-engineering" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block zh-only">&lt; 返回数据工程</a>
     
     <header class="mb-12 border-b border-surfaceHighlight pb-8">
       <span class="text-neonCyan font-mono text-sm block mb-4 pt-only">{entry.data.date.toLocaleDateString('pt-BR')}</span>
       <span class="text-neonCyan font-mono text-sm block mb-4 en-only">{entry.data.date.toLocaleDateString('en-US')}</span>
       <span class="text-neonCyan font-mono text-sm block mb-4 fr-only">{entry.data.date.toLocaleDateString('fr-FR')}</span>
+      <span class="text-neonCyan font-mono text-sm block mb-4 es-only">{entry.data.date.toLocaleDateString('es-ES')}</span>
+      <span class="text-neonCyan font-mono text-sm block mb-4 ja-only">{entry.data.date.toLocaleDateString('ja-JP')}</span>
+      <span class="text-neonCyan font-mono text-sm block mb-4 zh-only">{entry.data.date.toLocaleDateString('zh-CN')}</span>
       <h1 class="text-4xl font-bold mb-6 pt-only">{entry.data.title}</h1>
       <h1 class="text-4xl font-bold mb-6 en-only">{entry.data.titleEn || entry.data.title}</h1>
       <h1 class="text-4xl font-bold mb-6 fr-only">{entry.data.titleFr || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-6 es-only">{entry.data.titleEs || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-6 ja-only">{entry.data.titleJa || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-6 zh-only">{entry.data.titleZh || entry.data.title}</h1>
       
       <div class="flex flex-wrap gap-3 mb-6">
         {entry.data.technologies.map((tech: string) => (
@@ -41,6 +50,9 @@ const { Content } = await entry.render();
           <span class="pt-only">VER NO GITHUB</span>
           <span class="en-only">VIEW ON GITHUB</span>
           <span class="fr-only">VOIR SUR GITHUB</span>
+          <span class="es-only">VER EN GITHUB</span>
+          <span class="ja-only">GITHUBで見る</span>
+          <span class="zh-only">在 GITHUB 上查看</span>
         </a>
       )}
     </header>

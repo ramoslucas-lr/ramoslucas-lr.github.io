@@ -1,7 +1,12 @@
 ---
 title: Viagem à Serra | Santa Catarina
-titleEn: Trip to the Mountains | Santa Catarina
-titleFr: Voyage à la Montagne | Santa Catarina
+titleEn: 'Trip to the Mountains | Bom Jardim da Serra, SC'
+titleFr: 'Voyage à la Montagne | Bom Jardim da Serra, SC'
+titleEs: 'Viaje a la Sierra | Bom Jardim da Serra, SC'
+titleJa: '山脈への旅 | ボン・ジャルディン・ダ・セラ、SC'
+titleZh: '山区之旅 | 邦若尔丁达塞拉，SC'
+titleDe: 'Reise in die Berge | Bom Jardim da Serra, SC'
+titleRu: 'Поездка в горы | Бон-Жардин-да-Серра, SC'
 cover: >-
   https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/viagem-serra/55249961492_964df80c3b_o.jpg
 coverThumb: >-

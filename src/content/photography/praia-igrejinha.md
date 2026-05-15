@@ -2,6 +2,11 @@
 title: 'Praia da Igrejinha | Florianópolis, SC'
 titleEn: 'Little Church Beach | Florianópolis, SC'
 titleFr: 'Plage de la Petite Église | Florianópolis, SC'
+titleEs: 'Playa de la Igrejinha | Florianópolis, SC'
+titleJa: 'イグレジーニャ・ビーチ | フロリアノーポリス、SC'
+titleZh: '伊格雷齐尼亚海滩 | 弗洛里亚诺波利斯，SC'
+titleDe: 'Strand von Igrejinha | Florianópolis, SC'
+titleRu: 'Пляж Игрежинья | Флорианополис, SC'
 cover: >-
   https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/praia-igrejinha/55249679436_ffefebf7ce_o.jpg
 coverThumb: >-

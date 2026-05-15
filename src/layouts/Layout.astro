@@ -9,7 +9,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Portfolio by Antigravity SSG" />
@@ -52,22 +52,50 @@ const { title } = Astro.props;
 						<a href="/photography" class="hover:text-neonLime transition-colors pt-only">/foto</a>
 						<a href="/photography" class="hover:text-neonLime transition-colors en-only">/photo</a>
 						<a href="/photography" class="hover:text-neonLime transition-colors fr-only">/photo</a>
+						<a href="/photography" class="hover:text-neonLime transition-colors es-only">/foto</a>
+						<a href="/photography" class="hover:text-neonLime transition-colors ja-only">/写真</a>
+						<a href="/photography" class="hover:text-neonLime transition-colors zh-only">/摄影</a>
+						<a href="/photography" class="hover:text-neonLime transition-colors de-only">/foto</a>
+						<a href="/photography" class="hover:text-neonLime transition-colors ru-only">/фото</a>
+
 						<a href="/data-engineering" class="hover:text-neonCyan transition-colors pt-only">/dados</a>
 						<a href="/data-engineering" class="hover:text-neonCyan transition-colors en-only">/data</a>
 						<a href="/data-engineering" class="hover:text-neonCyan transition-colors fr-only">/données</a>
+						<a href="/data-engineering" class="hover:text-neonCyan transition-colors es-only">/datos</a>
+						<a href="/data-engineering" class="hover:text-neonCyan transition-colors ja-only">/データ</a>
+						<a href="/data-engineering" class="hover:text-neonCyan transition-colors zh-only">/数据</a>
+						<a href="/data-engineering" class="hover:text-neonCyan transition-colors de-only">/daten</a>
+						<a href="/data-engineering" class="hover:text-neonCyan transition-colors ru-only">/данные</a>
+
 						<a href="/dice-awards" class="hover:text-neonLime transition-colors pt-only">/reviews</a>
 						<a href="/dice-awards" class="hover:text-neonLime transition-colors en-only">/reviews</a>
 						<a href="/dice-awards" class="hover:text-neonLime transition-colors fr-only">/critiques</a>
+						<a href="/dice-awards" class="hover:text-neonLime transition-colors es-only">/reseñas</a>
+						<a href="/dice-awards" class="hover:text-neonLime transition-colors ja-only">/レビュー</a>
+						<a href="/dice-awards" class="hover:text-neonLime transition-colors zh-only">/评论</a>
+						<a href="/dice-awards" class="hover:text-neonLime transition-colors de-only">/bewertungen</a>
+						<a href="/dice-awards" class="hover:text-neonLime transition-colors ru-only">/обзоры</a>
+
 						<a href="/academic" class="hover:text-neonCyan transition-colors pt-only">/academico</a>
 						<a href="/academic" class="hover:text-neonCyan transition-colors en-only">/academic</a>
 						<a href="/academic" class="hover:text-neonCyan transition-colors fr-only">/académique</a>
+						<a href="/academic" class="hover:text-neonCyan transition-colors es-only">/académico</a>
+						<a href="/academic" class="hover:text-neonCyan transition-colors ja-only">/学術</a>
+						<a href="/academic" class="hover:text-neonCyan transition-colors zh-only">/学术</a>
+						<a href="/academic" class="hover:text-neonCyan transition-colors de-only">/akademisch</a>
+						<a href="/academic" class="hover:text-neonCyan transition-colors ru-only">/академический</a>
 					</div>
 					<div class="flex items-center ml-2 border-l border-surfaceHighlight pl-4">
-						<button id="lang-toggle" class="p-2 rounded hover:bg-surfaceHighlight transition-colors font-mono font-bold text-neonCyan w-12 text-center" aria-label="Toggle language">
-							<span class="pt-only">PT</span>
-							<span class="en-only">EN</span>
-							<span class="fr-only">FR</span>
-						</button>
+						<select id="lang-select" class="bg-surfaceHighlight border-none rounded px-2 py-1 text-xs font-mono font-bold text-neonCyan focus:ring-1 focus:ring-neonCyan outline-none appearance-none cursor-pointer">
+							<option value="pt">PT</option>
+							<option value="en">EN</option>
+							<option value="fr">FR</option>
+							<option value="es">ES</option>
+							<option value="ja">JA</option>
+							<option value="zh">ZH</option>
+							<option value="de">DE</option>
+							<option value="ru">RU</option>
+						</select>
 						<button id="theme-toggle" class="ml-2 p-2 rounded-full hover:bg-surfaceHighlight transition-colors" aria-label="Toggle theme">
 							<svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
 							<svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
@@ -116,16 +144,17 @@ const { title } = Astro.props;
 				}
 			});
 
-			const langToggleBtn = document.getElementById('lang-toggle');
-			langToggleBtn?.addEventListener('click', function() {
-				const currentLang = document.documentElement.lang;
-				let newLang = 'pt';
-				if (currentLang === 'pt') newLang = 'en';
-				else if (currentLang === 'en') newLang = 'fr';
+			const langSelect = document.getElementById('lang-select') as HTMLSelectElement;
+			if (langSelect) {
+				// Sincroniza o valor inicial baseado no que o script do head definiu
+				langSelect.value = document.documentElement.lang || 'pt';
 				
-				document.documentElement.lang = newLang;
-				localStorage.setItem('lang', newLang);
-			});
+				langSelect.addEventListener('change', (e) => {
+					const newLang = (e.target as HTMLSelectElement).value;
+					document.documentElement.lang = newLang;
+					localStorage.setItem('lang', newLang);
+				});
+			}
 		</script>
 	</body>
 </html>

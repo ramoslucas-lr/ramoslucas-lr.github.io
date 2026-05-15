@@ -4,9 +4,9 @@ import Layout from '../layouts/Layout.astro';
 const experiences = [
   {
     company: 'RD Station',
-    role: { pt: 'Engenheiro de Dados Sênior', en: 'Senior Data Engineer', fr: 'Ingénieur de Données Senior' },
-    period: { pt: 'jun. 2025 – o momento', en: 'Jun. 2025 – Present', fr: 'Juin 2025 – Maintenant' },
-    location: { pt: 'Remoto', en: 'Remote', fr: 'Télétravail' },
+    role: { pt: 'Engenheiro de Dados Sênior', en: 'Senior Data Engineer', fr: 'Ingénieur de Données Senior', es: 'Ingeniero de Datos Senior', ja: 'シニアデータエンジニア', zh: '高级数据工程师', de: 'Senior Daten-Ingenieur', ru: 'Старший инженер данных' },
+    period: { pt: 'jun. 2025 – o momento', en: 'Jun. 2025 – Present', fr: 'Juin 2025 – Maintenant', es: 'Jun. 2025 – Presente', ja: '2025年6月 – 現在', zh: '2025年6月 – 至今', de: 'Jun. 2025 – Heute', ru: 'Июнь 2025 – Наст. время' },
+    location: { pt: 'Remoto', en: 'Remote', fr: 'Télétravail', es: 'Remoto', ja: 'リモート', zh: '远程', de: 'Remote', ru: 'Удаленно' },
     bullets: {
       pt: [
         'Pipelines de CI/CD no CircleCI para automatizar builds e testes.',
@@ -23,15 +23,40 @@ const experiences = [
         'IaC avec Terraform pour les ressources GCP et les moniteurs Datadog.',
         'Pipelines CDC sur Dataflow (Java/Apache Beam) avec enrichissement Redis en temps réel et publication sur Pub/Sub.',
       ],
+      es: [
+        'Pipelines de CI/CD en CircleCI para automatizar construcciones y pruebas.',
+        'IaC con Terraform para la provisión de recursos en GCP y monitores en Datadog.',
+        'Pipelines de Change Data Capture (CDC) en Dataflow (Java/Apache Beam) con enriquecimento en tiempo real vía Redis.',
+      ],
+      ja: [
+        'CircleCIでのCI/CDパイプラインによるビルドとテストの自動化。',
+        'Terraformを使用したGCPリソースのプロビジョニングとDatadogモニターの管理。',
+        'Dataflow（Java/Apache Beam）を使用したCDCパイプライン、Redisによるリアルタイム濃縮。',
+      ],
+      zh: [
+        '在 CircleCI 上构建 CI/CD 流水线，实现自动化构建和测试。',
+        '使用 Terraform 进行 GCP 资源配置和 Datadog 监控管理。',
+        '在 Dataflow (Java/Apache Beam) 上构建 CDC 流水线，结合 Redis 实现实时数据增强。',
+      ],
+      de: [
+        'CI/CD-Pipelines auf CircleCI zur Automatisierung von Builds und Tests.',
+        'IaC mit Terraform für GCP-Ressourcen und Datadog-Monitore.',
+        'CDC-Pipelines auf Dataflow (Java/Apache Beam) mit Echtzeit-Redis-Enrichment.',
+      ],
+      ru: [
+        'CI/CD конвейеры на CircleCI для автоматизации сборки и тестирования.',
+        'IaC с использованием Terraform для управления ресурсами GCP и мониторинга Datadog.',
+        'CDC конвейеры на Dataflow (Java/Apache Beam) с обогащением данных через Redis.',
+      ],
     },
     tags: ['Apache Beam', 'Terraform', 'GCP', 'Dataflow', 'CircleCI', 'Pub/Sub', 'Redis'],
     color: 'cyan',
   },
   {
     company: 'Shopee',
-    role: { pt: 'Engenheiro de Dados Sênior', en: 'Senior Data Engineer', fr: 'Ingénieur de Données Senior' },
-    period: { pt: 'jan. 2024 – mai. 2025', en: 'Jan. 2024 – May 2025', fr: 'Janv. 2024 – Mai 2025' },
-    location: { pt: 'São Paulo · Híbrido', en: 'São Paulo · Hybrid', fr: 'São Paulo · Hybride' },
+    role: { pt: 'Engenheiro de Dados Sênior', en: 'Senior Data Engineer', fr: 'Ingénieur de Données Senior', es: 'Ingeniero de Datos Senior', ja: 'シニアデータエンジニア', zh: '高级数据工程师' },
+    period: { pt: 'jan. 2024 – mai. 2025', en: 'Jan. 2024 – May 2025', fr: 'Janv. 2024 – Mai 2025', es: 'Ene. 2024 – May. 2025', ja: '2024年1月 – 2025年5月', zh: '2024年1月 – 2025年5月' },
+    location: { pt: 'São Paulo · Híbrido', en: 'São Paulo · Hybrid', fr: 'São Paulo · Hybride', es: 'São Paulo · Híbrido', ja: 'サンパウロ · ハイブリッド', zh: '圣保罗 · 混合办公' },
     bullets: {
       pt: [
         'Liderança técnica em projetos de ingestão de dados em ambiente Kubernetes na GCP.',
@@ -54,15 +79,36 @@ const experiences = [
         'Pipelines PySpark pour plusieurs sources stockées en HDFS, interrogées via Hive.',
         'Déploiements automatisés avec GitLab CI sur Kubernetes.',
       ],
+      es: [
+        'Liderazgo técnico en proyectos de ingestión de datos en Kubernetes/GCP.',
+        'Pipelines de ingestión con Argo Workflows a gran escala.',
+        'Pipelines Near Real-Time con Kafka, Flink y Hudi.',
+        'Pipelines PySpark para múltiples fuentes en HDFS.',
+        'Automatización de despliegues con GitLab CI en Kubernetes.',
+      ],
+      ja: [
+        'Kubernetes/GCP環境におけるデータ注入プロジェクトのテクニカルリーダーシップ。',
+        'Argo Workflowsを使用した大規模な注入パイプライン。',
+        'Kafka、Flink、Hudiを使用したニアリアルタイムパイプライン。',
+        'HDFSに保存された複数のデータソース用のPySparkパイプライン。',
+        'Kubernetes上でのGitLab CIによる自動デプロイ。',
+      ],
+      zh: [
+        '在 Kubernetes/GCP 环境中负责数据摄取项目的技术领导。',
+        '使用 Argo Workflows 构建大规模数据摄取流水线。',
+        '使用 Kafka、Flink 和 Hudi 构建近实时流水线。',
+        '为 HDFS 中的多源数据构建 PySpark 流水线。',
+        '在 Kubernetes 上使用 GitLab CI 实现自动化部署。',
+      ],
     },
     tags: ['Apache Kafka', 'Apache Flink', 'Apache Hudi', 'PySpark', 'Kubernetes', 'GCP', 'Argo Workflows', 'Hive'],
     color: 'lime',
   },
   {
     company: 'Shopee',
-    role: { pt: 'Engenheiro de Dados', en: 'Data Engineer', fr: 'Ingénieur de Données' },
-    period: { pt: 'nov. 2022 – jan. 2024', en: 'Nov. 2022 – Jan. 2024', fr: 'Nov. 2022 – Janv. 2024' },
-    location: { pt: 'São Paulo · Híbrido', en: 'São Paulo · Hybrid', fr: 'São Paulo · Hybride' },
+    role: { pt: 'Engenheiro de Dados', en: 'Data Engineer', fr: 'Ingénieur de Données', es: 'Ingeniero de Datos', ja: 'データエンジニア', zh: '数据工程师' },
+    period: { pt: 'nov. 2022 – jan. 2024', en: 'Nov. 2022 – Jan. 2024', fr: 'Nov. 2022 – Janv. 2024', es: 'Nov. 2022 – Ene. 2024', ja: '2022年11月 – 2024年1月', zh: '2022年11月 – 2024年1月' },
+    location: { pt: 'São Paulo · Híbrido', en: 'São Paulo · Hybrid', fr: 'São Paulo · Hybride', es: 'São Paulo · Híbrido', ja: 'サンパウロ · ハイブリッド', zh: '圣保罗 · 混合办公' },
     bullets: {
       pt: [
         'Pipelines ETL/ELT para tabelas com bilhões de registros usando Airflow, PySpark e Amazon S3.',
@@ -82,15 +128,33 @@ const experiences = [
         'Automatisation des déploiements avec Jenkins.',
         'Direction de l\'implémentation d\'une architecture médaillon (bronze, argent, or).',
       ],
+      es: [
+        'Pipelines ETL/ELT para billones de registros con Airflow, PySpark y S3.',
+        'Operadores personalizados de Airflow reutilizables.',
+        'Automatización de despliegues con Jenkins.',
+        'Liderazgo en arquitectura de medallones.',
+      ],
+      ja: [
+        'Airflow、PySpark、S3を使用した数十億レコードのETL/ELTパイプライン。',
+        '再利用可能なカスタムAirflowオペレーター。',
+        'Jenkinsによるデプロイの自動化。',
+        'メダリオンアーキテクチャの実装。',
+      ],
+      zh: [
+        '使用 Airflow、PySpark 和 S3 构建处理数十亿条记录的 ETL/ELT 流水线。',
+        '开发可跨多个 DAG 重用的自定义 Airflow 算子。',
+        '使用 Jenkins 实现部署流程自动化。',
+        '领导奖章架构（铜、银、金）的实施。',
+      ],
     },
     tags: ['Apache Airflow', 'PySpark', 'Amazon S3', 'Jenkins', 'Hive'],
     color: 'lime',
   },
   {
     company: 'Icaro Tech',
-    role: { pt: 'Engenheiro de Dados', en: 'Data Engineer', fr: 'Ingénieur de Données' },
-    period: { pt: 'jun. 2022 – nov. 2022', en: 'Jun. 2022 – Nov. 2022', fr: 'Juin 2022 – Nov. 2022' },
-    location: { pt: 'Remoto', en: 'Remote', fr: 'Télétravail' },
+    role: { pt: 'Engenheiro de Dados', en: 'Data Engineer', fr: 'Ingénieur de Données', es: 'Ingeniero de Datos', ja: 'データエンジニア', zh: '数据工程师' },
+    period: { pt: 'jun. 2022 – nov. 2022', en: 'Jun. 2022 – Nov. 2022', fr: 'Juin 2022 – Nov. 2022', es: 'Jun. 2022 – Nov. 2022', ja: '2022年6月 – 2022年11月', zh: '2022年6月 – 2022年11月' },
+    location: { pt: 'Remoto', en: 'Remote', fr: 'Télétravail', es: 'Remoto', ja: 'リモート', zh: '远程' },
     bullets: {
       pt: [
         'ETL com Pentaho Data Integration e Oracle, garantindo integridade dos dados.',
@@ -107,15 +171,30 @@ const experiences = [
         'Procédures PL/SQL et routines d\'administration.',
         'En tant qu\'Analyste Junior : algorithmes de corrélation d\'alarmes pour l\'infrastructure télécom.',
       ],
+      es: [
+        'ETL con Pentaho y Oracle.',
+        'Procedimientos y rutinas en PL/SQL.',
+        'Algoritmos de correlación de alarmas.',
+      ],
+      ja: [
+        'PentahoとOracleを使用したETL。',
+        'PL/SQLによるプロシージャと管理ルーチン。',
+        'アラーム相関アルゴリズムの開発。',
+      ],
+      zh: [
+        '使用 Pentaho 和 Oracle 进行 ETL 开发。',
+        '编写 PL/SQL 存储过程和管理脚本。',
+        '开发告警相关性算法。',
+      ],
     },
     tags: ['Pentaho', 'Oracle', 'PL/SQL', 'ETL'],
     color: 'cyan',
   },
   {
     company: 'Intelbras',
-    role: { pt: 'Estagiário de Engenharia', en: 'Engineering Intern', fr: 'Stagiaire en Ingénierie' },
-    period: { pt: 'out. 2020 – abr. 2021', en: 'Oct. 2020 – Apr. 2021', fr: 'Oct. 2020 – Avr. 2021' },
-    location: { pt: 'São José, SC', en: 'São José, SC', fr: 'São José, SC' },
+    role: { pt: 'Estagiário de Engenharia', en: 'Engineering Intern', fr: 'Stagiaire en Ingénierie', es: 'Pasante de Ingeniería', ja: 'エンジニアリングインターン', zh: '工程实习生' },
+    period: { pt: 'out. 2020 – abr. 2021', en: 'Oct. 2020 – Apr. 2021', fr: 'Oct. 2020 – Avr. 2021', es: 'Oct. 2020 – Abr. 2021', ja: '2020年10月 – 2021年4月', zh: '2020年10月 – 2021年4月' },
+    location: { pt: 'São José, SC', en: 'São José, SC', fr: 'São José, SC', es: 'São José, SC', ja: 'サン・ジョゼ, SC', zh: '圣若泽, SC' },
     bullets: {
       pt: [
         'Integração Python entre equipamentos de teste e API de monitoramento na linha de produção.',
@@ -128,6 +207,18 @@ const experiences = [
       fr: [
         'Intégration Python entre les équipements de test et une API de surveillance sur la ligne de production.',
         'Tests de conformité des équipements réseau avec iPerf.',
+      ],
+      es: [
+        'Integración Python para equipos de prueba.',
+        'Pruebas de cumplimiento de red con iPerf.',
+      ],
+      ja: [
+        'Pythonを使用したテスト機器の統合。',
+        'iPerfによるネットワーク機器の適合性テスト。',
+      ],
+      zh: [
+        '使用 Python 进行测试设备集成。',
+        '使用 iPerf 进行网络设备合规性测试。',
       ],
     },
     tags: ['Python', 'iPerf'],
@@ -229,6 +320,11 @@ const skills = [
     <a href="/" class="text-neonCyan font-mono text-xs hover:underline mb-10 inline-flex items-center gap-1 pt-only">&larr; VOLTAR</a>
     <a href="/" class="text-neonCyan font-mono text-xs hover:underline mb-10 inline-flex items-center gap-1 en-only">&larr; BACK</a>
     <a href="/" class="text-neonCyan font-mono text-xs hover:underline mb-10 inline-flex items-center gap-1 fr-only">&larr; RETOUR</a>
+    <a href="/" class="text-neonCyan font-mono text-xs hover:underline mb-10 inline-flex items-center gap-1 es-only">&larr; VOLVER</a>
+    <a href="/" class="text-neonCyan font-mono text-xs hover:underline mb-10 inline-flex items-center gap-1 ja-only">&larr; 戻る</a>
+    <a href="/" class="text-neonCyan font-mono text-xs hover:underline mb-10 inline-flex items-center gap-1 zh-only">&larr; 返回</a>
+    <a href="/" class="text-neonCyan font-mono text-xs hover:underline mb-10 inline-flex items-center gap-1 de-only">&larr; ZURÜCK</a>
+    <a href="/" class="text-neonCyan font-mono text-xs hover:underline mb-10 inline-flex items-center gap-1 ru-only">&larr; НАЗАД</a>
 
     <!-- Hero -->
     <header class="mb-16 pb-10 border-b border-surfaceHighlight">
@@ -243,6 +339,11 @@ const skills = [
         <p class="font-mono text-sm text-textMuted mt-3 pt-only">São José, SC · trabalha remoto · dorme tarde</p>
         <p class="font-mono text-sm text-textMuted mt-3 en-only">São José, SC · works remote · sleeps late</p>
         <p class="font-mono text-sm text-textMuted mt-3 fr-only">São José, SC · télétravail · se couche tard</p>
+        <p class="font-mono text-sm text-textMuted mt-3 es-only">São José, SC · trabaja remoto · duerme tarde</p>
+        <p class="font-mono text-sm text-textMuted mt-3 ja-only">サン・ジョゼ, SC · リモートワーク · 夜更かし</p>
+        <p class="font-mono text-sm text-textMuted mt-3 zh-only">圣若泽, SC · 远程办公 · 熬夜</p>
+        <p class="font-mono text-sm text-textMuted mt-3 de-only">São José, SC · arbeitet remote · schläft spät</p>
+        <p class="font-mono text-sm text-textMuted mt-3 ru-only">Сан-Жозе, СК · работает удаленно · поздно ложится</p>
       </div>
 
       <!-- Bio — texto legível em textMain -->
@@ -262,6 +363,31 @@ const skills = [
           <p>J'aime me convaincre que j'aime la randonnée (même si j'en déteste chaque seconde), la photographie qui ressemble à de l'argentique, cuisiner un truc qui prend des heures un dimanche, et juste rester à la maison.</p>
           <p>Ce site c'est un peu un journal, une galerie de photos et un recueil des projets qui me semblent valoir la peine.</p>
         </div>
+        <div class="es-only space-y-4 text-textMain">
+          <p>Camino con una Canon intentando fotografiar cosas antes de que se vaya la luz.</p>
+          <p>Me gusta pensar que disfruto del senderismo (a pesar de odiar cada segundo), de la fotografía que parece analógica, de cocinar algo lento un domingo y de quedarme en casa.</p>
+          <p>Este sitio es como un diario, una galería de fotos y un registro de los proyectos que creo que valen la pena.</p>
+        </div>
+        <div class="ja-only space-y-4 text-textMain">
+          <p>Canonを持って、光が消える前に何かを撮影しようと歩き回っています。</p>
+          <p>ハイキングが好きだと思いたい（毎秒嫌いですが）、フィルムのような写真、日曜日に時間をかけて料理をすること、そしてただ家にいることが好きです。</p>
+          <p>このサイトは日記であり、フォトギャラリーであり、価値があると思うプロジェクトの記録でもあります。</p>
+        </div>
+        <div class="zh-only space-y-4 text-textMain">
+          <p>我拿着一台佳能相机四处走动，试图在光线消失之前拍下一些东西。</p>
+          <p>我喜欢认为自己喜欢徒步旅行（尽管我讨厌其中的每一秒）、喜欢看起来像胶片的照片、喜欢在周日花很长时间做饭，以及单纯地待在家里。</p>
+          <p>这个网站既是我的日记，也是一个照片库，同时记录了我认为值得保留的项目。</p>
+        </div>
+        <div class="de-only space-y-4 text-textMain">
+          <p>Ich laufe mit einer Canon herum und versuche, Dinge zu fotografieren, bevor das Licht verschwindet.</p>
+          <p>Ich bilde mir gerne ein, dass ich gerne wandere (obwohl ich jede Sekunde davon hasse), Fotografie, die wie Film aussieht, an einem Sonntag ewig lange koche und einfach zu Hause bleibe.</p>
+          <p>Diese Seite ist eine Art Tagebuch, eine Fotogalerie und ein Verzeichnis der Projekte, die ich für wertvoll halte.</p>
+        </div>
+        <div class="ru-only space-y-4 text-textMain">
+          <p>Я хожу с Canon, пытаясь сфотографировать что-то, пока не погас свет.</p>
+          <p>Мне нравится думать, что я люблю походы (хотя я ненавижу каждую их секунду), фотографию, похожую на пленку, долго готовить в воскресенье и просто сидеть дома.</p>
+          <p>Этот сайт — что-то вроде дневника, фотогалереи и записей о проектах, которые, по моему мнению, того стоят.</p>
+        </div>
       </div>
 
       <!-- Currently -->
@@ -269,11 +395,49 @@ const skills = [
         <p class="font-mono text-xs text-neonCyan mb-4 tracking-widest pt-only">// AGORA MESMO</p>
         <p class="font-mono text-xs text-neonCyan mb-4 tracking-widest en-only">// CURRENTLY</p>
         <p class="font-mono text-xs text-neonCyan mb-4 tracking-widest fr-only">// EN CE MOMENT</p>
+        <p class="font-mono text-xs text-neonCyan mb-4 tracking-widest es-only">// AHORA MISMO</p>
+        <p class="font-mono text-xs text-neonCyan mb-4 tracking-widest ja-only">// 現在</p>
+        <p class="font-mono text-xs text-neonCyan mb-4 tracking-widest de-only">// GERADE JETZT</p>
+        <p class="font-mono text-xs text-neonCyan mb-4 tracking-widest ru-only">// ПРЯМО СЕЙЧАС</p>
         <ul class="space-y-2 font-mono text-sm">
-          <li class="flex gap-3"><span class="text-neonLime flex-shrink-0">▸</span><span class="text-textMain pt-only">trabalhando em pipelines na RD Station</span><span class="text-textMain en-only">building pipelines at RD Station</span><span class="text-textMain fr-only">développement de pipelines chez RD Station</span></li>
-          <li class="flex gap-3"><span class="text-neonLime flex-shrink-0">▸</span><span class="text-textMain pt-only">voltando a estudar → Sistemas de Informação na UFSC</span><span class="text-textMain en-only">back to studying → Info Systems at UFSC</span><span class="text-textMain fr-only">retour aux études → Info à l'UFSC</span></li>
-          <li class="flex gap-3"><span class="text-neonLime flex-shrink-0">▸</span><span class="text-textMain pt-only">saindo pra fotografar sempre que dá</span><span class="text-textMain en-only">going out to shoot whenever I can</span><span class="text-textMain fr-only">sorties photo dès que possible</span></li>
-          <li class="flex gap-3"><span class="text-neonLime flex-shrink-0">▸</span><span class="text-textMain pt-only">construindo este site</span><span class="text-textMain en-only">building this site</span><span class="text-textMain fr-only">construisant ce site</span></li>
+          <li class="flex gap-3">
+            <span class="text-neonLime flex-shrink-0">▸</span>
+            <span class="text-textMain pt-only">trabalhando em pipelines na RD Station</span>
+            <span class="text-textMain en-only">building pipelines at RD Station</span>
+            <span class="text-textMain fr-only">développement de pipelines chez RD Station</span>
+            <span class="text-textMain es-only">construyendo pipelines en RD Station</span>
+            <span class="text-textMain ja-only">RD Stationでパイプラインを構築中</span>
+            <span class="text-textMain zh-only">正在 RD Station 构建数据流水线</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-neonLime flex-shrink-0">▸</span>
+            <span class="text-textMain pt-only">voltando a estudar → Sistemas de Informação na UFSC</span>
+            <span class="text-textMain en-only">back to studying → Info Systems at UFSC</span>
+            <span class="text-textMain fr-only">retour aux études → Info à l'UFSC</span>
+            <span class="text-textMain es-only">volviendo a estudiar → Sistemas de Inf. en la UFSC</span>
+            <span class="text-textMain ja-only">UFSCで情報システムを再履修中</span>
+            <span class="text-textMain zh-only">回到 UFSC 学习信息系统</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-neonLime flex-shrink-0">▸</span>
+            <span class="text-textMain pt-only">saindo pra fotografar sempre que dá</span>
+            <span class="text-textMain en-only">going out to shoot whenever I can</span>
+            <span class="text-textMain fr-only">sorties photo dès que possible</span>
+            <span class="text-textMain es-only">saliendo a fotografiar cuando puedo</span>
+            <span class="text-textMain ja-only">可能な限り撮影に出かけています</span>
+            <span class="text-textMain zh-only">尽可能出去拍照</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-neonLime flex-shrink-0">▸</span>
+            <span class="text-textMain pt-only">construindo este site</span>
+            <span class="text-textMain en-only">building this site</span>
+            <span class="text-textMain fr-only">construisant ce site</span>
+            <span class="text-textMain es-only">construyendo este sitio</span>
+            <span class="text-textMain ja-only">このサイトを構築中</span>
+            <span class="text-textMain zh-only">正在建设这个网站</span>
+            <span class="text-textMain de-only">an dieser Website bauen</span>
+            <span class="text-textMain ru-only">создаю этот сайт</span>
+          </li>
         </ul>
       </div>
 
@@ -282,9 +446,32 @@ const skills = [
         <p class="font-mono text-xs text-textMuted mb-4 pt-only">coisas que gosto:</p>
         <p class="font-mono text-xs text-textMuted mb-4 en-only">things i like:</p>
         <p class="font-mono text-xs text-textMuted mb-4 fr-only">des trucs que j'aime :</p>
+        <p class="font-mono text-xs text-textMuted mb-4 es-only">cosas que me gustan:</p>
+        <p class="font-mono text-xs text-textMuted mb-4 ja-only">好きなもの:</p>
+        <p class="font-mono text-xs text-textMuted mb-4 zh-only">我喜欢的东西：</p>
+        <p class="font-mono text-xs text-textMuted mb-4 de-only">Dinge, die ich mag:</p>
+        <p class="font-mono text-xs text-textMuted mb-4 ru-only">вещи, которые мне нравятся:</p>
         <div class="flex flex-wrap gap-2">
-          {['fotografia', 'cozinhar', 'Python (com moderação)', 'café', 'gatos', 'viajar de carro', 'música', 'ficar em casa'].map(tag => (
-            <span class="font-mono text-xs px-3 py-1.5 rounded-full bg-surface border border-surfaceHighlight text-textMain hover:border-neonLime/40 transition-colors">{tag}</span>
+          {[
+            { pt: 'fotografia', en: 'photography', fr: 'photographie', es: 'fotografía', ja: '写真', zh: '摄影', de: 'Fotografie', ru: 'фотография' },
+            { pt: 'cozinhar', en: 'cooking', fr: 'cuisine', es: 'cocinar', ja: '料理', zh: '烹饪', de: 'Kochen', ru: 'кулинария' },
+            { pt: 'Python', en: 'Python', fr: 'Python', es: 'Python', ja: 'Python', zh: 'Python', de: 'Python', ru: 'Python' },
+            { pt: 'café', en: 'coffee', fr: 'café', es: 'café', ja: 'コーヒー', zh: '咖啡', de: 'Kaffee', ru: 'кофе' },
+            { pt: 'gatos', en: 'cats', fr: 'chats', es: 'gatos', ja: '猫', zh: '猫', de: 'Katzen', ru: 'кошки' },
+            { pt: 'viajar', en: 'traveling', fr: 'voyager', es: 'viajar', ja: '旅行', zh: '旅行', de: 'Reisen', ru: 'путешествия' },
+            { pt: 'música', en: 'music', fr: 'musique', es: 'música', ja: '音楽', zh: '音乐', de: 'Musik', ru: 'музыка' },
+            { pt: 'ficar em casa', en: 'staying home', fr: 'rester à la maison', es: 'quedarse en casa', ja: '家にいること', zh: '宅在家里', de: 'zu Hause bleiben', ru: 'сидеть дома' }
+          ].map(tag => (
+            <>
+              <span class="font-mono text-xs px-3 py-1.5 rounded-full bg-surface border border-surfaceHighlight text-textMain hover:border-neonLime/40 transition-colors pt-only">{tag.pt}</span>
+              <span class="font-mono text-xs px-3 py-1.5 rounded-full bg-surface border border-surfaceHighlight text-textMain hover:border-neonLime/40 transition-colors en-only">{tag.en}</span>
+              <span class="font-mono text-xs px-3 py-1.5 rounded-full bg-surface border border-surfaceHighlight text-textMain hover:border-neonLime/40 transition-colors fr-only">{tag.fr}</span>
+              <span class="font-mono text-xs px-3 py-1.5 rounded-full bg-surface border border-surfaceHighlight text-textMain hover:border-neonLime/40 transition-colors es-only">{tag.es}</span>
+              <span class="font-mono text-xs px-3 py-1.5 rounded-full bg-surface border border-surfaceHighlight text-textMain hover:border-neonLime/40 transition-colors ja-only">{tag.ja}</span>
+              <span class="font-mono text-xs px-3 py-1.5 rounded-full bg-surface border border-surfaceHighlight text-textMain hover:border-neonLime/40 transition-colors zh-only">{tag.zh}</span>
+              <span class="font-mono text-xs px-3 py-1.5 rounded-full bg-surface border border-surfaceHighlight text-textMain hover:border-neonLime/40 transition-colors de-only">{tag.de}</span>
+              <span class="font-mono text-xs px-3 py-1.5 rounded-full bg-surface border border-surfaceHighlight text-textMain hover:border-neonLime/40 transition-colors ru-only">{tag.ru}</span>
+            </>
           ))}
         </div>
       </div>
@@ -294,6 +481,11 @@ const skills = [
         <a href="/photography" class="font-mono text-xs px-4 py-2 rounded-full bg-neonLime/10 border border-neonLime/30 text-neonLime hover:bg-neonLime/20 transition-colors pt-only">📷 ver álbuns</a>
         <a href="/photography" class="font-mono text-xs px-4 py-2 rounded-full bg-neonLime/10 border border-neonLime/30 text-neonLime hover:bg-neonLime/20 transition-colors en-only">📷 see essays</a>
         <a href="/photography" class="font-mono text-xs px-4 py-2 rounded-full bg-neonLime/10 border border-neonLime/30 text-neonLime hover:bg-neonLime/20 transition-colors fr-only">📷 voir essais</a>
+        <a href="/photography" class="font-mono text-xs px-4 py-2 rounded-full bg-neonLime/10 border border-neonLime/30 text-neonLime hover:bg-neonLime/20 transition-colors es-only">📷 ver álbumes</a>
+        <a href="/photography" class="font-mono text-xs px-4 py-2 rounded-full bg-neonLime/10 border border-neonLime/30 text-neonLime hover:bg-neonLime/20 transition-colors ja-only">📷 アルバムを見る</a>
+        <a href="/photography" class="font-mono text-xs px-4 py-2 rounded-full bg-neonLime/10 border border-neonLime/30 text-neonLime hover:bg-neonLime/20 transition-colors zh-only">📷 查看相册</a>
+        <a href="/photography" class="font-mono text-xs px-4 py-2 rounded-full bg-neonLime/10 border border-neonLime/30 text-neonLime hover:bg-neonLime/20 transition-colors de-only">📷 Alben ansehen</a>
+        <a href="/photography" class="font-mono text-xs px-4 py-2 rounded-full bg-neonLime/10 border border-neonLime/30 text-neonLime hover:bg-neonLime/20 transition-colors ru-only">📷 посмотреть альбомы</a>
         <a href="mailto:ramoslucas.lr@gmail.com" class="font-mono text-xs px-4 py-2 rounded-full bg-surfaceHighlight border border-surfaceHighlight text-textMuted hover:text-neonLime hover:border-neonLime/30 transition-colors">ramoslucas.lr@gmail.com</a>
         <a href="https://github.com/ramoslucas-lr" target="_blank" rel="noopener" class="font-mono text-xs px-4 py-2 rounded-full bg-surfaceHighlight border border-surfaceHighlight text-textMuted hover:text-neonCyan hover:border-neonCyan/30 transition-colors">GitHub ↗</a>
         <a href="https://www.linkedin.com/in/ramoslucas-lr/" target="_blank" rel="noopener" class="font-mono text-xs px-4 py-2 rounded-full bg-surfaceHighlight border border-surfaceHighlight text-textMuted hover:text-neonCyan hover:border-neonCyan/30 transition-colors">LinkedIn ↗</a>
@@ -305,9 +497,19 @@ const skills = [
       <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-2 pt-only">// O LADO PROFISSIONAL</h2>
       <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-2 en-only">// THE PROFESSIONAL SIDE</h2>
       <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-2 fr-only">// LE CÔTÉ PROFESSIONNEL</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-2 es-only">// EL LADO PROFESIONAL</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-2 ja-only">// プロフェッショナルな側面</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-2 zh-only">// 职业背景</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-2 de-only">// DIE PROFESSIONELLE SEITE</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-2 ru-only">// ПРОФЕССИОНАЛЬНАЯ СТОРОНА</h2>
       <p class="text-textMuted text-xs font-mono mb-8 pt-only">(caso você esteja aqui por isso)</p>
       <p class="text-textMuted text-xs font-mono mb-8 en-only">(in case you're here for this)</p>
       <p class="text-textMuted text-xs font-mono mb-8 fr-only">(au cas où c'est pour ça que vous êtes là)</p>
+      <p class="text-textMuted text-xs font-mono mb-8 es-only">(en caso de que estés aquí por esto)</p>
+      <p class="text-textMuted text-xs font-mono mb-8 ja-only">(もしそのためにここにいるのなら)</p>
+      <p class="text-textMuted text-xs font-mono mb-8 zh-only">(如果你是为此而来)</p>
+      <p class="text-textMuted text-xs font-mono mb-8 de-only">(falls du deswegen hier bist)</p>
+      <p class="text-textMuted text-xs font-mono mb-8 ru-only">(на случай, если вы здесь ради этого)</p>
 
       <div class="relative">
         <!-- linha vertical -->
@@ -326,14 +528,29 @@ const skills = [
                     <h3 class="text-lg font-bold mt-0.5 pt-only">{exp.role.pt}</h3>
                     <h3 class="text-lg font-bold mt-0.5 en-only">{exp.role.en}</h3>
                     <h3 class="text-lg font-bold mt-0.5 fr-only">{exp.role.fr}</h3>
+                    <h3 class="text-lg font-bold mt-0.5 es-only">{(exp.role as any).es || exp.role.en}</h3>
+                    <h3 class="text-lg font-bold mt-0.5 ja-only">{(exp.role as any).ja || exp.role.en}</h3>
+                    <h3 class="text-lg font-bold mt-0.5 zh-only">{(exp.role as any).zh || exp.role.en}</h3>
+                    <h3 class="text-lg font-bold mt-0.5 de-only">{(exp.role as any).de || exp.role.en}</h3>
+                    <h3 class="text-lg font-bold mt-0.5 ru-only">{(exp.role as any).ru || exp.role.en}</h3>
                   </div>
                   <div class="text-right">
                     <p class="font-mono text-xs text-textMuted pt-only">{exp.period.pt}</p>
                     <p class="font-mono text-xs text-textMuted en-only">{exp.period.en}</p>
                     <p class="font-mono text-xs text-textMuted fr-only">{exp.period.fr}</p>
+                    <p class="font-mono text-xs text-textMuted es-only">{(exp.period as any).es || exp.period.en}</p>
+                    <p class="font-mono text-xs text-textMuted ja-only">{(exp.period as any).ja || exp.period.en}</p>
+                    <p class="font-mono text-xs text-textMuted zh-only">{(exp.period as any).zh || exp.period.en}</p>
+                    <p class="font-mono text-xs text-textMuted de-only">{(exp.period as any).de || exp.period.en}</p>
+                    <p class="font-mono text-xs text-textMuted ru-only">{(exp.period as any).ru || exp.period.en}</p>
                     <p class="font-mono text-xs text-textMuted mt-0.5 pt-only">{exp.location.pt}</p>
                     <p class="font-mono text-xs text-textMuted mt-0.5 en-only">{exp.location.en}</p>
                     <p class="font-mono text-xs text-textMuted mt-0.5 fr-only">{exp.location.fr}</p>
+                    <p class="font-mono text-xs text-textMuted mt-0.5 es-only">{(exp.location as any).es || exp.location.en}</p>
+                    <p class="font-mono text-xs text-textMuted mt-0.5 ja-only">{(exp.location as any).ja || exp.location.en}</p>
+                    <p class="font-mono text-xs text-textMuted mt-0.5 zh-only">{(exp.location as any).zh || exp.location.en}</p>
+                    <p class="font-mono text-xs text-textMuted mt-0.5 de-only">{(exp.location as any).de || exp.location.en}</p>
+                    <p class="font-mono text-xs text-textMuted mt-0.5 ru-only">{(exp.location as any).ru || exp.location.en}</p>
                   </div>
                 </div>
 
@@ -346,6 +563,21 @@ const skills = [
                   ))}
                   {exp.bullets.fr.map((b) => (
                     <li class="text-sm text-textMuted fr-only flex gap-2"><span class="text-neonLime mt-0.5 flex-shrink-0">›</span><span>{b}</span></li>
+                  ))}
+                  {(exp.bullets as any).es?.map((b: string) => (
+                    <li class="text-sm text-textMuted es-only flex gap-2"><span class="text-neonLime mt-0.5 flex-shrink-0">›</span><span>{b}</span></li>
+                  ))}
+                  {(exp.bullets as any).ja?.map((b: string) => (
+                    <li class="text-sm text-textMuted ja-only flex gap-2"><span class="text-neonLime mt-0.5 flex-shrink-0">›</span><span>{b}</span></li>
+                  ))}
+                  {(exp.bullets as any).zh?.map((b: string) => (
+                    <li class="text-sm text-textMuted zh-only flex gap-2"><span class="text-neonLime mt-0.5 flex-shrink-0">›</span><span>{b}</span></li>
+                  ))}
+                  {(exp.bullets as any).de?.map((b: string) => (
+                    <li class="text-sm text-textMuted de-only flex gap-2"><span class="text-neonLime mt-0.5 flex-shrink-0">›</span><span>{b}</span></li>
+                  ))}
+                  {(exp.bullets as any).ru?.map((b: string) => (
+                    <li class="text-sm text-textMuted ru-only flex gap-2"><span class="text-neonLime mt-0.5 flex-shrink-0">›</span><span>{b}</span></li>
                   ))}
                 </ul>
 
@@ -366,6 +598,11 @@ const skills = [
       <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-8 pt-only">// COMPETÊNCIAS TÉCNICAS</h2>
       <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-8 en-only">// TECHNICAL SKILLS</h2>
       <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-8 fr-only">// COMPÉTENCES TECHNIQUES</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-8 es-only">// COMPETENCIAS TÉCNICAS</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-8 ja-only">// テクニカルスキル</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-8 zh-only">// 技术技能</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-8 de-only">// TECHNISCHE FÄHIGKEITEN</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-8 ru-only">// ТЕХНИЧЕСКИЕ НАВЫКИ</h2>
 
       <div class="flex flex-wrap gap-2">
         {skills.map((skill) => (
@@ -384,6 +621,11 @@ const skills = [
         <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 pt-only">// FORMAÇÃO</h2>
         <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 en-only">// EDUCATION</h2>
         <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 fr-only">// FORMATION</h2>
+        <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 es-only">// EDUCACIÓN</h2>
+        <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 ja-only">// 教育</h2>
+        <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 zh-only">// 教育背景</h2>
+        <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 de-only">// BILDUNG</h2>
+        <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 ru-only">// ОБРАЗОВАНИЕ</h2>
 
         <div class="flex flex-col gap-4">
           <div class="bg-surface border border-surfaceHighlight rounded-2xl p-5">
@@ -391,6 +633,11 @@ const skills = [
             <p class="font-bold text-sm mt-1 pt-only">Bacharelado em Sistemas de Informação</p>
             <p class="font-bold text-sm mt-1 en-only">B.Sc. in Information Systems</p>
             <p class="font-bold text-sm mt-1 fr-only">Licence en Systèmes d'Information</p>
+            <p class="font-bold text-sm mt-1 es-only">Grado en Sistemas de Información</p>
+            <p class="font-bold text-sm mt-1 ja-only">情報システムの学士号</p>
+            <p class="font-bold text-sm mt-1 zh-only">信息系统学士</p>
+            <p class="font-bold text-sm mt-1 de-only">Bachelor in Wirtschaftsinformatik</p>
+            <p class="font-bold text-sm mt-1 ru-only">Бакалавр информационных систем</p>
             <p class="font-mono text-xs text-textMuted mt-1">2025 – 2029</p>
           </div>
           <div class="bg-surface border border-surfaceHighlight rounded-2xl p-5">
@@ -398,6 +645,11 @@ const skills = [
             <p class="font-bold text-sm mt-1 pt-only">Engenharia Elétrica (curso interrompido)</p>
             <p class="font-bold text-sm mt-1 en-only">Electrical Engineering (incomplete)</p>
             <p class="font-bold text-sm mt-1 fr-only">Génie Électrique (non terminé)</p>
+            <p class="font-bold text-sm mt-1 es-only">Ingeniería Eléctrica (incompleto)</p>
+            <p class="font-bold text-sm mt-1 ja-only">電気工学（未完了）</p>
+            <p class="font-bold text-sm mt-1 zh-only">电气工程（未完成）</p>
+            <p class="font-bold text-sm mt-1 de-only">Elektrotechnik (nicht abgeschlossen)</p>
+            <p class="font-bold text-sm mt-1 ru-only">Электротехника (неоконченное)</p>
             <p class="font-mono text-xs text-textMuted mt-1">2016 – …</p>
           </div>
           <div class="bg-surface border border-surfaceHighlight rounded-2xl p-5">
@@ -405,6 +657,11 @@ const skills = [
             <p class="font-bold text-sm mt-1 pt-only">Técnico em Informática Integrado ao Ensino Médio</p>
             <p class="font-bold text-sm mt-1 en-only">High School with Technical IT Degree</p>
             <p class="font-bold text-sm mt-1 fr-only">Bac Technologique en Informatique</p>
+            <p class="font-bold text-sm mt-1 es-only">Técnico en Informática (Secundaria)</p>
+            <p class="font-bold text-sm mt-1 ja-only">IT技術学位付き高校卒業</p>
+            <p class="font-bold text-sm mt-1 zh-only">计算机技术高中毕业</p>
+            <p class="font-bold text-sm mt-1 de-only">Fachabitur mit technischem Informatik-Schwerpunkt</p>
+            <p class="font-bold text-sm mt-1 ru-only">Техническое образование в области ИТ</p>
             <p class="font-mono text-xs text-textMuted mt-1">2013 – 2015</p>
           </div>
         </div>
@@ -416,6 +673,11 @@ const skills = [
           <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 pt-only">// CERTIFICAÇÕES</h2>
           <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 en-only">// CERTIFICATIONS</h2>
           <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 fr-only">// CERTIFICATIONS</h2>
+          <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 es-only">// CERTIFICACIONES</h2>
+          <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 ja-only">// 資格</h2>
+          <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 zh-only">// 认证</h2>
+          <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 de-only">// ZERTIFIKATE</h2>
+          <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 ru-only">// СЕРТИФИКАТЫ</h2>
 
           <div class="flex flex-col gap-3">
             <div class="bg-surface border border-surfaceHighlight rounded-2xl p-5">
@@ -440,6 +702,11 @@ const skills = [
           <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 pt-only">// IDIOMAS</h2>
           <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 en-only">// LANGUAGES</h2>
           <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 fr-only">// LANGUES</h2>
+          <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 es-only">// IDIOMAS</h2>
+          <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 ja-only">// 言語</h2>
+          <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 zh-only">// 语言</h2>
+          <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 de-only">// SPRACHEN</h2>
+          <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 ru-only">// ЯЗЫКИ</h2>
 
           <div class="flex flex-col gap-3">
             {[
@@ -453,6 +720,9 @@ const skills = [
                   <span class="font-mono text-xs text-textMuted pt-only">{l.level.pt}</span>
                   <span class="font-mono text-xs text-textMuted en-only">{l.level.en}</span>
                   <span class="font-mono text-xs text-textMuted fr-only">{l.level.fr}</span>
+                  <span class="font-mono text-xs text-textMuted es-only">{(l.level as any).es || l.level.en}</span>
+                  <span class="font-mono text-xs text-textMuted ja-only">{(l.level as any).ja || l.level.en}</span>
+                  <span class="font-mono text-xs text-textMuted zh-only">{(l.level as any).zh || l.level.en}</span>
                 </div>
                 <div class="h-1 bg-surfaceHighlight rounded-full overflow-hidden">
                   <div class={`h-full bg-gradient-to-r ${l.color} rounded-full`} style={`width: ${l.pct}%`}></div>
@@ -469,10 +739,20 @@ const skills = [
       <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 pt-only">// RECOMENDAÇÃO</h2>
       <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 en-only">// RECOMMENDATION</h2>
       <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 fr-only">// RECOMMANDATION</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 es-only">// RECOMENDACIÓN</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 ja-only">// 推薦</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 zh-only">// 推荐</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 de-only">// EMPFEHLUNGEN</h2>
+      <h2 class="text-xs font-mono tracking-widest text-neonCyan mb-6 ru-only">// РЕКОМЕНДАЦИИ</h2>
 
       <blockquote class="bg-surface border border-surfaceHighlight rounded-2xl p-6 relative">
         <span class="absolute top-4 left-5 text-5xl text-neonLime leading-none opacity-40 font-serif select-none">"</span>
-        <p class="text-textMuted leading-relaxed pl-6 italic">Lucas é um profissional excelente! Sendo criativo e altamente qualificado tecnicamente, é com certeza um valioso quadro para qualquer empresa. Adorei trabalhar com o Lucas e o recomendo fortemente.</p>
+        <p class="text-textMuted leading-relaxed pl-6 italic pt-only">Lucas é um profissional excelente! Sendo criativo e altamente qualificado tecnicamente, é com certeza um valioso quadro para qualquer empresa. Adorei trabalhar com o Lucas e o recomendo fortemente.</p>
+        <p class="text-textMuted leading-relaxed pl-6 italic en-only">Lucas is an excellent professional! Creative and highly qualified technically, he is certainly a valuable asset to any company. I loved working with Lucas and strongly recommend him.</p>
+        <p class="text-textMuted leading-relaxed pl-6 italic fr-only">Lucas est un excellent professionnel ! Créatif et hautement qualifié techniquement, il est certainement un atout précieux pour toute entreprise. J'ai adoré travailler avec Lucas et je le recommande vivement.</p>
+        <p class="text-textMuted leading-relaxed pl-6 italic es-only">¡Lucas es un excelente profesional! Creativo y altamente calificado técnicamente, es sin duda un activo valioso para cualquier empresa. Me encantó trabajar con Lucas y lo recomiendo encarecidamente.</p>
+        <p class="text-textMuted leading-relaxed pl-6 italic ja-only">ルーカスは素晴らしいプロフェッショナルです！創造的で技術的にも非常に優れており、間違いなくどの企業にとっても貴重な存在です。ルーカスと一緒に働けたことは素晴らしく、彼を強く推薦します。</p>
+        <p class="text-textMuted leading-relaxed pl-6 italic zh-only">Lucas 是一位出色的专业人士！他富有创意且技术精湛，无疑是任何公司的宝贵资产。我非常喜欢与 Lucas 共事，并强烈推荐他。</p>
         <footer class="mt-4 pl-6 flex items-center gap-3">
           <div class="w-8 h-8 rounded-full bg-surfaceHighlight flex items-center justify-center font-mono text-xs font-bold text-neonCyan">AR</div>
           <div>

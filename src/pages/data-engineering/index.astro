@@ -11,9 +11,15 @@ const entries = await getCollection('data-engineering');
     <h1 class="text-4xl font-bold mb-2 pt-only">Engenharia de Dados<span class="text-neonCyan">.</span></h1>
     <h1 class="text-4xl font-bold mb-2 en-only">Data Engineering<span class="text-neonCyan">.</span></h1>
     <h1 class="text-4xl font-bold mb-2 fr-only">Ingénierie des Données<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 es-only">Ingeniería de Datos<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 ja-only">データエンジニアリング<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 zh-only">数据工程<span class="text-neonCyan">.</span></h1>
     <p class="text-textMuted font-mono text-sm pt-only">Pipelines, automação e arquitetura de dados em larga escala. Chato, eu sei, mas alguém tem que fazer.</p>
     <p class="text-textMuted font-mono text-sm en-only">Pipelines, automation, and large-scale data architecture. Boring, I know, but someone's gotta do it.</p>
     <p class="text-textMuted font-mono text-sm fr-only">Pipelines, automatisation et architecture de données à grande échelle. Ennuyeux, je sais, mais quelqu'un doit le faire.</p>
+    <p class="text-textMuted font-mono text-sm es-only">Pipelines, automatización y arquitectura de datos a gran escala. Aburrido, lo sé, pero alguien tiene que hacerlo.</p>
+    <p class="text-textMuted font-mono text-sm ja-only">パイプライン、自動化、大規模データアーキテクチャ。退屈かもしれませんが、誰かがやらなければなりません。</p>
+    <p class="text-textMuted font-mono text-sm zh-only">数据管道、自动化和大规模数据架构。我知道这很乏味，但总得有人去做。</p>
   </header>
 
   <main>
@@ -25,9 +31,15 @@ const entries = await getCollection('data-engineering');
               <span class="text-xs font-mono text-neonCyan mb-2 block pt-only">{entry.data.date.toLocaleDateString('pt-BR')}</span>
               <span class="text-xs font-mono text-neonCyan mb-2 block en-only">{entry.data.date.toLocaleDateString('en-US')}</span>
               <span class="text-xs font-mono text-neonCyan mb-2 block fr-only">{entry.data.date.toLocaleDateString('fr-FR')}</span>
+              <span class="text-xs font-mono text-neonCyan mb-2 block es-only">{entry.data.date.toLocaleDateString('es-ES')}</span>
+              <span class="text-xs font-mono text-neonCyan mb-2 block ja-only">{entry.data.date.toLocaleDateString('ja-JP')}</span>
+              <span class="text-xs font-mono text-neonCyan mb-2 block zh-only">{entry.data.date.toLocaleDateString('zh-CN')}</span>
               <h3 class="font-bold text-xl mb-4 pt-only">{entry.data.title}</h3>
               <h3 class="font-bold text-xl mb-4 en-only">{entry.data.titleEn || entry.data.title}</h3>
               <h3 class="font-bold text-xl mb-4 fr-only">{entry.data.titleFr || entry.data.title}</h3>
+              <h3 class="font-bold text-xl mb-4 es-only">{entry.data.titleEs || entry.data.title}</h3>
+              <h3 class="font-bold text-xl mb-4 ja-only">{entry.data.titleJa || entry.data.title}</h3>
+              <h3 class="font-bold text-xl mb-4 zh-only">{entry.data.titleZh || entry.data.title}</h3>
               <div class="flex flex-wrap gap-2">
                 {entry.data.technologies.map((tech: string) => (
                   <span class="text-[10px] font-mono border border-surfaceHighlight px-2 py-1 rounded-full text-textMuted">{tech}</span>

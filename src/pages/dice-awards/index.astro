@@ -13,9 +13,15 @@ const diceEntries = await getCollection('dice-awards');
     <h1 class="text-4xl font-bold mb-2 pt-only">Game Reviews<span class="text-neonLime">.</span></h1>
     <h1 class="text-4xl font-bold mb-2 en-only">Game Reviews<span class="text-neonLime">.</span></h1>
     <h1 class="text-4xl font-bold mb-2 fr-only">Critiques de Jeux<span class="text-neonLime">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 es-only">Reseñas de Juegos<span class="text-neonLime">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 ja-only">ゲームレビュー<span class="text-neonLime">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 zh-only">游戏评论<span class="text-neonLime">.</span></h1>
     <p class="text-textMuted font-mono text-sm pt-only">Projeto pessoal de reviews focado nos jogos nomeados a Game of the Year no DICE Awards. Essa era a ideia, mas na verdade pode ser review de qualquer coisa. Inclusive da pizza 10/10 que eu comi quando fiz esse site.</p>
     <p class="text-textMuted font-mono text-sm en-only">Personal analytical review project focused on Game of the Year nominees at the DICE Awards. That was the idea, but actually it can be a review of anything. Including the 10/10 pizza I ate when I made this site.</p>
     <p class="text-textMuted font-mono text-sm fr-only">Projet personnel de critiques analytiques axé sur les jeux nominés au titre de Jeu de l'Année (GOTY) aux DICE Awards. C'était l'idée, mais en fait ça peut être une critique de n'importe quoi. Y compris de la pizza 10/10 que j'ai mangée quand j'ai fait ce site.</p>
+    <p class="text-textMuted font-mono text-sm es-only">Proyecto personal de reseñas analíticas centrado en los nominados a Juego del Año en los DICE Awards. Esa era la idea, pero en realidad puede ser una reseña de cualquier cosa. Incluyendo la pizza 10/10 que comí cuando hice este sitio.</p>
+    <p class="text-textMuted font-mono text-sm ja-only">DICEアワードのゲーム・オブ・ザ・イヤー候補作に焦点を当てた個人レビュープロジェクト。それが当初のアイデアでしたが、実際には何でもレビューできます。このサイトを作った時に食べた10/10のピザも含めて。</p>
+    <p class="text-textMuted font-mono text-sm zh-only">这是一个个人分析评论项目，专注于 DICE 大奖的年度游戏提名作品。这是最初的想法，但实际上它可以是对任何事物的评论。包括我在制作这个网站时吃的那块 10/10 的披萨。</p>
   </header>
 
   <main>
@@ -40,6 +46,9 @@ const diceEntries = await getCollection('dice-awards');
                   <h4 class="text-sm text-gray-300 pt-only">{entry.data.title}</h4>
                   <h4 class="text-sm text-gray-300 en-only">{entry.data.titleEn || entry.data.title}</h4>
                   <h4 class="text-sm text-gray-300 fr-only">{entry.data.titleFr || entry.data.title}</h4>
+                  <h4 class="text-sm text-gray-300 es-only">{entry.data.titleEs || entry.data.title}</h4>
+                  <h4 class="text-sm text-gray-300 ja-only">{entry.data.titleJa || entry.data.title}</h4>
+                  <h4 class="text-sm text-gray-300 zh-only">{entry.data.titleZh || entry.data.title}</h4>
                 </div>
                 <div class="mt-6 flex items-end justify-between">
                   <span class="text-3xl font-bold text-gray-100">{entry.data.rating}<span class="text-sm text-gray-400">/10</span></span>
@@ -54,6 +63,9 @@ const diceEntries = await getCollection('dice-awards');
                 <h4 class="text-sm text-textMuted pt-only">{entry.data.title}</h4>
                 <h4 class="text-sm text-textMuted en-only">{entry.data.titleEn || entry.data.title}</h4>
                 <h4 class="text-sm text-textMuted fr-only">{entry.data.titleFr || entry.data.title}</h4>
+                <h4 class="text-sm text-textMuted es-only">{entry.data.titleEs || entry.data.title}</h4>
+                <h4 class="text-sm text-textMuted ja-only">{entry.data.titleJa || entry.data.title}</h4>
+                <h4 class="text-sm text-textMuted zh-only">{entry.data.titleZh || entry.data.title}</h4>
               </div>
               <div class="mt-6 flex items-end justify-between">
                 <span class="text-3xl font-bold">{entry.data.rating}<span class="text-sm text-textMuted">/10</span></span>

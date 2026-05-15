@@ -13,9 +13,19 @@ const sortedPhotos = photoEntries.sort((a, b) => (b.data.date?.valueOf() || 0) -
     <h1 class="text-4xl font-bold mb-2 pt-only">Fotografia<span class="text-neonLime">.</span></h1>
     <h1 class="text-4xl font-bold mb-2 en-only">Photography<span class="text-neonLime">.</span></h1>
     <h1 class="text-4xl font-bold mb-2 fr-only">Photographie<span class="text-neonLime">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 es-only">Fotografía<span class="text-neonLime">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 ja-only">写真<span class="text-neonLime">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 zh-only">摄影<span class="text-neonLime">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 de-only">Fotografie<span class="text-neonLime">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 ru-only">Фотография<span class="text-neonLime">.</span></h1>
     <p class="text-textMuted font-mono text-sm pt-only">As fotos que eu gostei vêm parar aqui. Pelo menos as que eu quero compartilhar; algumas ficam só comigo.</p>
     <p class="text-textMuted font-mono text-sm en-only">The photos I liked end up here. At least the ones I want to share; some are just for me.</p>
     <p class="text-textMuted font-mono text-sm fr-only">Les photos que j'ai aimées finissent ici. Du moins celles que je veux partager ; certaines restent juste pour moi.</p>
+    <p class="text-textMuted font-mono text-sm es-only">Las fotos que me gustaron terminan aquí. Al menos las que quiero compartir; algunas se quedan solo conmigo.</p>
+    <p class="text-textMuted font-mono text-sm ja-only">気に入った写真がここにあります。少なくとも共有したいもの。いくつかは自分だけのものです。</p>
+    <p class="text-textMuted font-mono text-sm zh-only">我喜欢的照片都在这里。至少是我想分享的；有些只属于我。</p>
+    <p class="text-textMuted font-mono text-sm de-only">Die Fotos, die mir gefallen haben, landen hier. Zumindest die, die ich teilen möchte; einige sind nur für mich.</p>
+    <p class="text-textMuted font-mono text-sm ru-only">Фотографии, которые мне понравились, попадают сюда. По крайней мере те, которыми я хочу поделиться; некоторые только для меня.</p>
   </header>
 
   <main>
@@ -37,6 +47,11 @@ const sortedPhotos = photoEntries.sort((a, b) => (b.data.date?.valueOf() || 0) -
               <h3 class="text-2xl font-bold mb-1 text-gray-100 pt-only">{entry.data.title}</h3>
               <h3 class="text-2xl font-bold mb-1 text-gray-100 en-only">{entry.data.titleEn || entry.data.title}</h3>
               <h3 class="text-2xl font-bold mb-1 text-gray-100 fr-only">{entry.data.titleFr || entry.data.title}</h3>
+              <h3 class="text-2xl font-bold mb-1 text-gray-100 es-only">{entry.data.titleEs || entry.data.title}</h3>
+              <h3 class="text-2xl font-bold mb-1 text-gray-100 ja-only">{entry.data.titleJa || entry.data.title}</h3>
+              <h3 class="text-2xl font-bold mb-1 text-gray-100 zh-only">{entry.data.titleZh || entry.data.title}</h3>
+              <h3 class="text-2xl font-bold mb-1 text-gray-100 de-only">{entry.data.titleDe || entry.data.title}</h3>
+              <h3 class="text-2xl font-bold mb-1 text-gray-100 ru-only">{entry.data.titleRu || entry.data.title}</h3>
               {entry.data.date && (
                 <>
                   <p class="text-xs font-mono text-neonLime mb-2 pt-only">
@@ -47,6 +62,21 @@ const sortedPhotos = photoEntries.sort((a, b) => (b.data.date?.valueOf() || 0) -
                   </p>
                   <p class="text-xs font-mono text-neonLime mb-2 fr-only">
                     {entry.data.date.toLocaleDateString('fr-FR')}
+                  </p>
+                  <p class="text-xs font-mono text-neonLime mb-2 es-only">
+                    {entry.data.date.toLocaleDateString('es-ES')}
+                  </p>
+                  <p class="text-xs font-mono text-neonLime mb-2 ja-only">
+                    {entry.data.date.toLocaleDateString('ja-JP')}
+                  </p>
+                  <p class="text-xs font-mono text-neonLime mb-2 zh-only">
+                    {entry.data.date.toLocaleDateString('zh-CN')}
+                  </p>
+                  <p class="text-xs font-mono text-neonLime mb-2 de-only">
+                    {entry.data.date.toLocaleDateString('de-DE')}
+                  </p>
+                  <p class="text-xs font-mono text-neonLime mb-2 ru-only">
+                    {entry.data.date.toLocaleDateString('ru-RU')}
                   </p>
                 </>
               )}

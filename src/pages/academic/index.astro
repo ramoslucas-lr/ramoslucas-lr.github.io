@@ -11,9 +11,15 @@ const entries = await getCollection('academic');
     <h1 class="text-4xl font-bold mb-2 pt-only">Arquivo Acadêmico<span class="text-neonCyan">.</span></h1>
     <h1 class="text-4xl font-bold mb-2 en-only">Academic Archive<span class="text-neonCyan">.</span></h1>
     <h1 class="text-4xl font-bold mb-2 fr-only">Archives Académiques<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 es-only">Archivo Académico<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 ja-only">学術アーカイブ<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 zh-only">学术档案<span class="text-neonCyan">.</span></h1>
     <p class="text-textMuted font-mono text-sm pt-only">Relatórios, pesquisas e notas universitárias. Principalmente as que eu achei interessantes o suficiente para me fazerem escrever. Ou seja: talvez fique vazio por um tempo (sinto muito).</p>
     <p class="text-textMuted font-mono text-sm en-only">Reports, research, and university notes. Mostly the ones I found interesting enough to write about. Meaning: it might stay empty for a while (sorry).</p>
     <p class="text-textMuted font-mono text-sm fr-only">Rapports, recherches et notes universitaires. Principalement celles que j'ai trouvées assez intéressantes pour me faire écrire. Autrement dit : ça risque de rester vide un moment (désolé).</p>
+    <p class="text-textMuted font-mono text-sm es-only">Informes, investigaciones y notas universitarias. Principalmente las que me parecieron lo suficientemente interesantes como para escribirlas. O sea: tal vez se quede vacío por un tiempo (lo siento).</p>
+    <p class="text-textMuted font-mono text-sm ja-only">レポート、研究、大学のノート。主に私が書くのに十分興味深いと思ったものです。つまり、しばらく空のままかもしれません（ごめんなさい）。</p>
+    <p class="text-textMuted font-mono text-sm zh-only">报告、研究和大学笔记。主要是我觉得足够有趣并值得记录的内容。这意味着：它可能会空置一段时间（抱歉）。</p>
   </header>
 
   <main>
@@ -25,9 +31,15 @@ const entries = await getCollection('academic');
               <span class="text-xs font-mono text-neonCyan mb-2 block pt-only">{entry.data.semester} | {entry.data.course}</span>
               <span class="text-xs font-mono text-neonCyan mb-2 block en-only">{entry.data.semester} | {entry.data.courseEn || entry.data.course}</span>
               <span class="text-xs font-mono text-neonCyan mb-2 block fr-only">{entry.data.semester} | {entry.data.courseFr || entry.data.course}</span>
+              <span class="text-xs font-mono text-neonCyan mb-2 block es-only">{entry.data.semester} | {entry.data.courseEs || entry.data.course}</span>
+              <span class="text-xs font-mono text-neonCyan mb-2 block ja-only">{entry.data.semester} | {entry.data.courseJa || entry.data.course}</span>
+              <span class="text-xs font-mono text-neonCyan mb-2 block zh-only">{entry.data.semester} | {entry.data.courseZh || entry.data.course}</span>
               <h3 class="font-bold text-lg mb-2 pt-only">{entry.data.title}</h3>
               <h3 class="font-bold text-lg mb-2 en-only">{entry.data.titleEn || entry.data.title}</h3>
               <h3 class="font-bold text-lg mb-2 fr-only">{entry.data.titleFr || entry.data.title}</h3>
+              <h3 class="font-bold text-lg mb-2 es-only">{entry.data.titleEs || entry.data.title}</h3>
+              <h3 class="font-bold text-lg mb-2 ja-only">{entry.data.titleJa || entry.data.title}</h3>
+              <h3 class="font-bold text-lg mb-2 zh-only">{entry.data.titleZh || entry.data.title}</h3>
             </div>
             <div class="mt-6 flex items-end justify-between">
               <span class="text-2xl font-bold font-mono text-neonCyan">{entry.data.grade || 'N/A'}</span>

@@ -2,6 +2,11 @@
 title: 'Viagem à Torres | Torres, RS'
 titleEn: 'Trip to Torres | Torres, RS'
 titleFr: 'Voyage à Torres | Torres, RS'
+titleEs: 'Viaje a Torres | Torres, RS'
+titleJa: 'トーレスへの旅 | トーレス、RS'
+titleZh: '托雷斯之旅 | 托雷斯，RS'
+titleDe: 'Reise nach Torres | Torres, RS'
+titleRu: 'Поездка в Торрес | Торрес, RS'
 cover: >-
   https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/viagem-torres/55248845622_1184fa1c09_o.jpg
 coverThumb: >-

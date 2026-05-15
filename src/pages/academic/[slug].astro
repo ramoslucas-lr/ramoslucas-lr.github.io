@@ -20,17 +20,29 @@ const { Content } = await entry.render();
     <a href="/academic" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block pt-only">&lt; VOLTAR PARA ACADÊMICO</a>
     <a href="/academic" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block en-only">&lt; BACK TO ACADEMIC</a>
     <a href="/academic" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block fr-only">&lt; RETOUR À ACADÉMIQUE</a>
+    <a href="/academic" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block es-only">&lt; VOLVER A ACADÉMICO</a>
+    <a href="/academic" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block ja-only">&lt; 学術に戻る</a>
+    <a href="/academic" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block zh-only">&lt; 返回学术</a>
     
     <header class="mb-12 border-b border-surfaceHighlight pb-8">
       <span class="text-neonCyan font-mono text-sm block mb-4 pt-only">{entry.data.semester} | {entry.data.course}</span>
       <span class="text-neonCyan font-mono text-sm block mb-4 en-only">{entry.data.semester} | {entry.data.courseEn || entry.data.course}</span>
       <span class="text-neonCyan font-mono text-sm block mb-4 fr-only">{entry.data.semester} | {entry.data.courseFr || entry.data.course}</span>
+      <span class="text-neonCyan font-mono text-sm block mb-4 es-only">{entry.data.semester} | {entry.data.courseEs || entry.data.course}</span>
+      <span class="text-neonCyan font-mono text-sm block mb-4 ja-only">{entry.data.semester} | {entry.data.courseJa || entry.data.course}</span>
+      <span class="text-neonCyan font-mono text-sm block mb-4 zh-only">{entry.data.semester} | {entry.data.courseZh || entry.data.course}</span>
       <h1 class="text-4xl font-bold mb-4 pt-only">{entry.data.title}</h1>
       <h1 class="text-4xl font-bold mb-4 en-only">{entry.data.titleEn || entry.data.title}</h1>
       <h1 class="text-4xl font-bold mb-4 fr-only">{entry.data.titleFr || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 es-only">{entry.data.titleEs || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 ja-only">{entry.data.titleJa || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 zh-only">{entry.data.titleZh || entry.data.title}</h1>
       <div class="mt-4 text-neonCyan font-mono text-xl pt-only">NOTA: <span class="font-bold">{entry.data.grade || 'N/A'}</span></div>
       <div class="mt-4 text-neonCyan font-mono text-xl en-only">GRADE: <span class="font-bold">{entry.data.grade || 'N/A'}</span></div>
       <div class="mt-4 text-neonCyan font-mono text-xl fr-only">NOTE: <span class="font-bold">{entry.data.grade || 'N/A'}</span></div>
+      <div class="mt-4 text-neonCyan font-mono text-xl es-only">NOTA: <span class="font-bold">{entry.data.grade || 'N/A'}</span></div>
+      <div class="mt-4 text-neonCyan font-mono text-xl ja-only">成績: <span class="font-bold">{entry.data.grade || 'N/A'}</span></div>
+      <div class="mt-4 text-neonCyan font-mono text-xl zh-only">成绩: <span class="font-bold">{entry.data.grade || 'N/A'}</span></div>
     </header>
 
     <div class="text-textMuted leading-relaxed space-y-6 [&>p]:mb-4">
