@@ -54,9 +54,9 @@ const experiences = [
   },
   {
     company: 'Shopee',
-    role: { pt: 'Engenheiro de Dados Sênior', en: 'Senior Data Engineer', fr: 'Ingénieur de Données Senior', es: 'Ingeniero de Datos Senior', ja: 'シニアデータエンジニア', zh: '高级数据工程师' },
-    period: { pt: 'jan. 2024 – mai. 2025', en: 'Jan. 2024 – May 2025', fr: 'Janv. 2024 – Mai 2025', es: 'Ene. 2024 – May. 2025', ja: '2024年1月 – 2025年5月', zh: '2024年1月 – 2025年5月' },
-    location: { pt: 'São Paulo · Híbrido', en: 'São Paulo · Hybrid', fr: 'São Paulo · Hybride', es: 'São Paulo · Híbrido', ja: 'サンパウロ · ハイブリッド', zh: '圣保罗 · 混合办公' },
+    role: { pt: 'Engenheiro de Dados Sênior', en: 'Senior Data Engineer', fr: 'Ingénieur de Données Senior', es: 'Ingeniero de Datos Senior', ja: 'シニアデータエンジニア', zh: '高级数据工程师', de: 'Senior Daten-Ingenieur', ru: 'Старший инженер данных' },
+    period: { pt: 'jan. 2024 – mai. 2025', en: 'Jan. 2024 – May 2025', fr: 'Janv. 2024 – Mai 2025', es: 'Ene. 2024 – May. 2025', ja: '2024年1月 – 2025年5月', zh: '2024年1月 – 2025年5月', de: 'Jan. 2024 – Mai 2025', ru: 'Янв. 2024 – Май 2025' },
+    location: { pt: 'São Paulo · Híbrido', en: 'São Paulo · Hybrid', fr: 'São Paulo · Hybride', es: 'São Paulo · Híbrido', ja: 'サンパウロ · ハイブリッド', zh: '圣保罗 · 混合办公', de: 'São Paulo · Hybrid', ru: 'Сан-Паулу · Гибридный' },
     bullets: {
       pt: [
         'Liderança técnica em projetos de ingestão de dados em ambiente Kubernetes na GCP.',
@@ -100,15 +100,29 @@ const experiences = [
         '为 HDFS 中的多源数据构建 PySpark 流水线。',
         '在 Kubernetes 上使用 GitLab CI 实现自动化部署。',
       ],
+      de: [
+        'Technische Leitung von Datenaufnahmeprojekten in einer Kubernetes/GCP-Umgebung.',
+        'Aufnahmepipelines mit Argo Workflows im großen Maßstab.',
+        'Near Real-Time-Pipelines mit Kafka, Flink und Hudi.',
+        'PySpark-Pipelines für mehrere in HDFS gespeicherte Datenquellen.',
+        'Automatisierte Deployments mit GitLab CI auf Kubernetes.',
+      ],
+      ru: [
+        'Техническое руководство проектами по приему данных в среде Kubernetes/GCP.',
+        'Масштабные конвейеры приема данных с использованием Argo Workflows.',
+        'Конвейеры близкие к реальному времени с Kafka, Flink и Hudi.',
+        'Конвейеры PySpark для нескольких источников данных в HDFS.',
+        'Автоматизированное развертывание с помощью GitLab CI в Kubernetes.',
+      ],
     },
     tags: ['Apache Kafka', 'Apache Flink', 'Apache Hudi', 'PySpark', 'Kubernetes', 'GCP', 'Argo Workflows', 'Hive'],
     color: 'lime',
   },
   {
     company: 'Shopee',
-    role: { pt: 'Engenheiro de Dados', en: 'Data Engineer', fr: 'Ingénieur de Données', es: 'Ingeniero de Datos', ja: 'データエンジニア', zh: '数据工程师' },
-    period: { pt: 'nov. 2022 – jan. 2024', en: 'Nov. 2022 – Jan. 2024', fr: 'Nov. 2022 – Janv. 2024', es: 'Nov. 2022 – Ene. 2024', ja: '2022年11月 – 2024年1月', zh: '2022年11月 – 2024年1月' },
-    location: { pt: 'São Paulo · Híbrido', en: 'São Paulo · Hybrid', fr: 'São Paulo · Hybride', es: 'São Paulo · Híbrido', ja: 'サンパウロ · ハイブリッド', zh: '圣保罗 · 混合办公' },
+    role: { pt: 'Engenheiro de Dados', en: 'Data Engineer', fr: 'Ingénieur de Données', es: 'Ingeniero de Datos', ja: 'データエンジニア', zh: '数据工程师', de: 'Daten-Ingenieur', ru: 'Инженер данных' },
+    period: { pt: 'nov. 2022 – jan. 2024', en: 'Nov. 2022 – Jan. 2024', fr: 'Nov. 2022 – Janv. 2024', es: 'Nov. 2022 – Ene. 2024', ja: '2022年11月 – 2024年1月', zh: '2022年11月 – 2024年1月', de: 'Nov. 2022 – Jan. 2024', ru: 'Ноя. 2022 – Янв. 2024' },
+    location: { pt: 'São Paulo · Híbrido', en: 'São Paulo · Hybrid', fr: 'São Paulo · Hybride', es: 'São Paulo · Híbrido', ja: 'サンパウロ · ハイブリッド', zh: '圣保罗 · 混合办公', de: 'São Paulo · Hybrid', ru: 'Сан-Паулу · Гибридный' },
     bullets: {
       pt: [
         'Pipelines ETL/ELT para tabelas com bilhões de registros usando Airflow, PySpark e Amazon S3.',
@@ -146,15 +160,27 @@ const experiences = [
         '使用 Jenkins 实现部署流程自动化。',
         '领导奖章架构（铜、银、金）的实施。',
       ],
+      de: [
+        'ETL/ELT-Pipelines für Milliarden von Datensätzen mit Airflow, PySpark und S3.',
+        'Wiederverwendbare benutzerdefinierte Airflow-Operatoren.',
+        'Automatisierung von Deployments mit Jenkins.',
+        'Leitung bei der Implementierung einer Medaillon-Architektur.',
+      ],
+      ru: [
+        'Конвейеры ETL/ELT для миллиардов записей с использованием Airflow, PySpark и S3.',
+        'Повторно используемые пользовательские операторы Airflow.',
+        'Автоматизация развертывания с помощью Jenkins.',
+        'Руководство внедрением медальонной архитектуры.',
+      ],
     },
     tags: ['Apache Airflow', 'PySpark', 'Amazon S3', 'Jenkins', 'Hive'],
     color: 'lime',
   },
   {
     company: 'Icaro Tech',
-    role: { pt: 'Engenheiro de Dados', en: 'Data Engineer', fr: 'Ingénieur de Données', es: 'Ingeniero de Datos', ja: 'データエンジニア', zh: '数据工程师' },
-    period: { pt: 'jun. 2022 – nov. 2022', en: 'Jun. 2022 – Nov. 2022', fr: 'Juin 2022 – Nov. 2022', es: 'Jun. 2022 – Nov. 2022', ja: '2022年6月 – 2022年11月', zh: '2022年6月 – 2022年11月' },
-    location: { pt: 'Remoto', en: 'Remote', fr: 'Télétravail', es: 'Remoto', ja: 'リモート', zh: '远程' },
+    role: { pt: 'Engenheiro de Dados', en: 'Data Engineer', fr: 'Ingénieur de Données', es: 'Ingeniero de Datos', ja: 'データエンジニア', zh: '数据工程师', de: 'Daten-Ingenieur', ru: 'Инженер данных' },
+    period: { pt: 'jun. 2022 – nov. 2022', en: 'Jun. 2022 – Nov. 2022', fr: 'Juin 2022 – Nov. 2022', es: 'Jun. 2022 – Nov. 2022', ja: '2022年6月 – 2022年11月', zh: '2022年6月 – 2022年11月', de: 'Jun. 2022 – Nov. 2022', ru: 'Июн. 2022 – Ноя. 2022' },
+    location: { pt: 'Remoto', en: 'Remote', fr: 'Télétravail', es: 'Remoto', ja: 'リモート', zh: '远程', de: 'Remote', ru: 'Удаленно' },
     bullets: {
       pt: [
         'ETL com Pentaho Data Integration e Oracle, garantindo integridade dos dados.',
@@ -186,15 +212,25 @@ const experiences = [
         '编写 PL/SQL 存储过程和管理脚本。',
         '开发告警相关性算法。',
       ],
+      de: [
+        'ETL mit Pentaho und Oracle.',
+        'Prozeduren und Routinen in PL/SQL.',
+        'Algorithmen zur Alarmkorrelation.',
+      ],
+      ru: [
+        'ETL с использованием Pentaho и Oracle.',
+        'Процедуры и подпрограммы на PL/SQL.',
+        'Алгоритмы корреляции аварийных сигналов.',
+      ],
     },
     tags: ['Pentaho', 'Oracle', 'PL/SQL', 'ETL'],
     color: 'cyan',
   },
   {
     company: 'Intelbras',
-    role: { pt: 'Estagiário de Engenharia', en: 'Engineering Intern', fr: 'Stagiaire en Ingénierie', es: 'Pasante de Ingeniería', ja: 'エンジニアリングインターン', zh: '工程实习生' },
-    period: { pt: 'out. 2020 – abr. 2021', en: 'Oct. 2020 – Apr. 2021', fr: 'Oct. 2020 – Avr. 2021', es: 'Oct. 2020 – Abr. 2021', ja: '2020年10月 – 2021年4月', zh: '2020年10月 – 2021年4月' },
-    location: { pt: 'São José, SC', en: 'São José, SC', fr: 'São José, SC', es: 'São José, SC', ja: 'サン・ジョゼ, SC', zh: '圣若泽, SC' },
+    role: { pt: 'Estagiário de Engenharia', en: 'Engineering Intern', fr: 'Stagiaire en Ingénierie', es: 'Pasante de Ingeniería', ja: 'エンジニアリングインターン', zh: '工程实习生', de: 'Praktikant im Ingenieurwesen', ru: 'Инженер-стажер' },
+    period: { pt: 'out. 2020 – abr. 2021', en: 'Oct. 2020 – Apr. 2021', fr: 'Oct. 2020 – Avr. 2021', es: 'Oct. 2020 – Abr. 2021', ja: '2020年10月 – 2021年4月', zh: '2020年10月 – 2021年4月', de: 'Okt. 2020 – Apr. 2021', ru: 'Окт. 2020 – Апр. 2021' },
+    location: { pt: 'São José, SC', en: 'São José, SC', fr: 'São José, SC', es: 'São José, SC', ja: 'サン・ジョゼ, SC', zh: '圣若泽, SC', de: 'São José, SC', ru: 'Сан-Жозе, СК' },
     bullets: {
       pt: [
         'Integração Python entre equipamentos de teste e API de monitoramento na linha de produção.',
@@ -219,6 +255,14 @@ const experiences = [
       zh: [
         '使用 Python 进行测试设备集成。',
         '使用 iPerf 进行网络设备合规性测试。',
+      ],
+      de: [
+        'Python-Integration für Testgeräte.',
+        'Netzwerk-Konformitätstests mit iPerf.',
+      ],
+      ru: [
+        'Интеграция Python для тестового оборудования.',
+        'Тестирование на соответствие сети с помощью iPerf.',
       ],
     },
     tags: ['Python', 'iPerf'],
@@ -488,6 +532,8 @@ const skills = [
             <span class="text-textMain es-only">construyendo pipelines en RD Station</span>
             <span class="text-textMain ja-only">RD Stationでパイプラインを構築中</span>
             <span class="text-textMain zh-only">正在 RD Station 构建数据流水线</span>
+            <span class="text-textMain de-only">Erstellung von Pipelines bei RD Station</span>
+            <span class="text-textMain ru-only">создание конвейеров в RD Station</span>
           </li>
           <li class="flex gap-3">
             <span class="text-neonLime flex-shrink-0">▸</span>
@@ -497,6 +543,8 @@ const skills = [
             <span class="text-textMain es-only">volviendo a estudiar → Sistemas de Inf. en la UFSC</span>
             <span class="text-textMain ja-only">UFSCで情報システムを再履修中</span>
             <span class="text-textMain zh-only">回到 UFSC 学习信息系统</span>
+            <span class="text-textMain de-only">wieder studieren → Informationssysteme an der UFSC</span>
+            <span class="text-textMain ru-only">возвращение к учебе → Информационные системы в UFSC</span>
           </li>
           <li class="flex gap-3">
             <span class="text-neonLime flex-shrink-0">▸</span>
@@ -506,6 +554,8 @@ const skills = [
             <span class="text-textMain es-only">saliendo a fotografiar cuando puedo</span>
             <span class="text-textMain ja-only">可能な限り撮影に出かけています</span>
             <span class="text-textMain zh-only">尽可能出去拍照</span>
+            <span class="text-textMain de-only">rausgehen zum Fotografieren, wann immer ich kann</span>
+            <span class="text-textMain ru-only">выхожу фотографировать при любой возможности</span>
           </li>
           <li class="flex gap-3">
             <span class="text-neonLime flex-shrink-0">▸</span>
@@ -790,9 +840,9 @@ const skills = [
 
           <div class="flex flex-col gap-3">
             {[
-              { lang: 'Português', level: { pt: 'Nativo', en: 'Native', fr: 'Langue maternelle' }, pct: 100, color: 'from-neonCyan to-neonLime' },
-              { lang: 'Inglês / English', level: { pt: 'Avançado', en: 'Advanced', fr: 'Avancé' }, pct: 88, color: 'from-neonCyan to-neonLime' },
-              { lang: 'Français', level: { pt: 'Avançado', en: 'Advanced', fr: 'Avancé' }, pct: 80, color: 'from-neonCyan to-neonLime' },
+              { lang: 'Português', level: { pt: 'Nativo', en: 'Native', fr: 'Langue maternelle', es: 'Nativo', ja: 'ネイティブ', zh: '母语', de: 'Muttersprache', ru: 'Родной' }, pct: 100, color: 'from-neonCyan to-neonLime' },
+              { lang: 'Inglês / English', level: { pt: 'Avançado', en: 'Advanced', fr: 'Avancé', es: 'Avanzado', ja: '上級', zh: '高级', de: 'Fortgeschritten', ru: 'Продвинутый' }, pct: 88, color: 'from-neonCyan to-neonLime' },
+              { lang: 'Français', level: { pt: 'Avançado', en: 'Advanced', fr: 'Avancé', es: 'Avanzado', ja: '上級', zh: '高级', de: 'Fortgeschritten', ru: 'Продвинутый' }, pct: 80, color: 'from-neonCyan to-neonLime' },
             ].map((l) => (
               <div class="bg-surface border border-surfaceHighlight rounded-2xl p-4">
                 <div class="flex justify-between items-center mb-2">
@@ -800,9 +850,11 @@ const skills = [
                   <span class="font-mono text-xs text-textMuted pt-only">{l.level.pt}</span>
                   <span class="font-mono text-xs text-textMuted en-only">{l.level.en}</span>
                   <span class="font-mono text-xs text-textMuted fr-only">{l.level.fr}</span>
-                  <span class="font-mono text-xs text-textMuted es-only">{(l.level as any).es || l.level.en}</span>
-                  <span class="font-mono text-xs text-textMuted ja-only">{(l.level as any).ja || l.level.en}</span>
-                  <span class="font-mono text-xs text-textMuted zh-only">{(l.level as any).zh || l.level.en}</span>
+                  <span class="font-mono text-xs text-textMuted es-only">{l.level.es}</span>
+                  <span class="font-mono text-xs text-textMuted ja-only">{l.level.ja}</span>
+                  <span class="font-mono text-xs text-textMuted zh-only">{l.level.zh}</span>
+                  <span class="font-mono text-xs text-textMuted de-only">{l.level.de}</span>
+                  <span class="font-mono text-xs text-textMuted ru-only">{l.level.ru}</span>
                 </div>
                 <div class="h-1 bg-surfaceHighlight rounded-full overflow-hidden">
                   <div class={`h-full bg-gradient-to-r ${l.color} rounded-full`} style={`width: ${l.pct}%`}></div>
@@ -833,6 +885,8 @@ const skills = [
         <p class="text-textMuted leading-relaxed pl-6 italic es-only">¡Lucas es un excelente profesional! Creativo y altamente calificado técnicamente, es sin duda un activo valioso para cualquier empresa. Me encantó trabajar con Lucas y lo recomiendo encarecidamente.</p>
         <p class="text-textMuted leading-relaxed pl-6 italic ja-only">ルーカスは素晴らしいプロフェッショナルです！創造的で技術的にも非常に優れており、間違いなくどの企業にとっても貴重な存在です。ルーカスと一緒に働けたことは素晴らしく、彼を強く推薦します。</p>
         <p class="text-textMuted leading-relaxed pl-6 italic zh-only">Lucas 是一位出色的专业人士！他富有创意且技术精湛，无疑是任何公司的宝贵资产。我非常喜欢与 Lucas 共事，并强烈推荐他。</p>
+        <p class="text-textMuted leading-relaxed pl-6 italic de-only">Lucas ist ein ausgezeichneter Profi! Kreativ und fachlich hochqualifiziert, ist er definitiv eine Bereicherung für jedes Unternehmen. Ich habe die Zusammenarbeit mit Lucas sehr genossen und kann ihn wärmstens empfehlen.</p>
+        <p class="text-textMuted leading-relaxed pl-6 italic ru-only">Лукас — отличный профессионал! Творческий и высококвалифицированный технический специалист, он, безусловно, является ценным активом для любой компании. Мне очень понравилось работать с Лукасом, и я настоятельно его рекомендую.</p>
         <footer class="mt-4 pl-6 flex items-center gap-3">
           <div class="w-8 h-8 rounded-full bg-surfaceHighlight flex items-center justify-center font-mono text-xs font-bold text-neonCyan">AR</div>
           <div>
