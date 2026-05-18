@@ -1,0 +1,53 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('blog');
+  return entries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+type Props = { entry: CollectionEntry<'blog'> };
+const { entry }: Props = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={`${entry.data.title} | Lucas Ramos`}>
+  <article class="max-w-4xl mx-auto py-8">
+    <a href="/blog" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block pt-only">&lt; VOLTAR PARA O BLOG</a>
+    <a href="/blog" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block en-only">&lt; BACK TO BLOG</a>
+    <a href="/blog" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block fr-only">&lt; RETOUR AU BLOG</a>
+    <a href="/blog" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block es-only">&lt; VOLVER AL BLOG</a>
+    <a href="/blog" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block ja-only">&lt; ブログに戻る</a>
+    <a href="/blog" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block zh-only">&lt; 返回博客</a>
+    <a href="/blog" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block de-only">&lt; ZURÜCK ZUM BLOG</a>
+    <a href="/blog" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block ru-only">&lt; ВЕРНУТЬСЯ В БЛОГ</a>
+    
+    <header class="mb-12 border-b border-surfaceHighlight pb-8">
+      <span class="text-neonCyan font-mono text-sm block mb-4 pt-only">{entry.data.date.toLocaleDateString('pt-BR')}</span>
+      <span class="text-neonCyan font-mono text-sm block mb-4 en-only">{entry.data.date.toLocaleDateString('en-US')}</span>
+      <span class="text-neonCyan font-mono text-sm block mb-4 fr-only">{entry.data.date.toLocaleDateString('fr-FR')}</span>
+      <span class="text-neonCyan font-mono text-sm block mb-4 es-only">{entry.data.date.toLocaleDateString('es-ES')}</span>
+      <span class="text-neonCyan font-mono text-sm block mb-4 ja-only">{entry.data.date.toLocaleDateString('ja-JP')}</span>
+      <span class="text-neonCyan font-mono text-sm block mb-4 zh-only">{entry.data.date.toLocaleDateString('zh-CN')}</span>
+      <span class="text-neonCyan font-mono text-sm block mb-4 de-only">{entry.data.date.toLocaleDateString('de-DE')}</span>
+      <span class="text-neonCyan font-mono text-sm block mb-4 ru-only">{entry.data.date.toLocaleDateString('ru-RU')}</span>
+      
+      <h1 class="text-4xl font-bold mb-6 pt-only">{entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-6 en-only">{entry.data.titleEn || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-6 fr-only">{entry.data.titleFr || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-6 es-only">{entry.data.titleEs || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-6 ja-only">{entry.data.titleJa || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-6 zh-only">{entry.data.titleZh || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-6 de-only">{entry.data.titleDe || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-6 ru-only">{entry.data.titleRu || entry.data.title}</h1>
+    </header>
+
+    <div class="text-textMuted leading-relaxed space-y-6 [&>p]:mb-4 [&_pre]:p-6 [&_pre]:rounded-2xl [&_pre]:overflow-x-auto [&_pre]:border [&_pre]:border-surfaceHighlight [&_code]:font-mono [&_code]:text-sm">
+      <Content />
+    </div>
+  </article>
+</Layout>

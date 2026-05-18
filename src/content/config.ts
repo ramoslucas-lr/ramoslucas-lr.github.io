@@ -103,10 +103,35 @@ const diceAwardsCollection = defineCollection({
   }),
 });
 
+const blogCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    titleEn: z.string().optional(),
+    titleFr: z.string().optional(),
+    titleEs: z.string().optional(),
+    titleJa: z.string().optional(),
+    titleZh: z.string().optional(),
+    titleDe: z.string().optional(),
+    titleRu: z.string().optional(),
+    date: z.date(),
+    description: z.string().optional(),
+    descriptionEn: z.string().optional(),
+    descriptionFr: z.string().optional(),
+    descriptionEs: z.string().optional(),
+    descriptionJa: z.string().optional(),
+    descriptionZh: z.string().optional(),
+    descriptionDe: z.string().optional(),
+    descriptionRu: z.string().optional(),
+    cover: z.string().optional(),
+  }),
+});
+
 export const collections = {
   'homepage': homepageCollection,
   'photography': photographyCollection,
   'data-engineering': dataEngineeringCollection,
   'academic': academicCollection,
   'dice-awards': diceAwardsCollection,
+  'blog': blogCollection,
 };

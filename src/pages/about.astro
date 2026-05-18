@@ -226,9 +226,9 @@ const experiences = [
   },
   {
     company: 'Bionexo',
-    role: { pt: 'Analista de Produto Júnior', en: 'Junior Product Analyst', fr: 'Analyste Produit Junior' },
-    period: { pt: 'jan. 2020 – set. 2020', en: 'Jan. 2020 – Sep. 2020', fr: 'Janv. 2020 – Sept. 2020' },
-    location: { pt: 'Florianópolis, SC', en: 'Florianópolis, SC', fr: 'Florianópolis, SC' },
+    role: { pt: 'Analista de Produto Júnior', en: 'Junior Product Analyst', fr: 'Analyste Produit Junior', es: 'Analista de Producto Junior', ja: 'ジュニアプロダクトアナリスト', zh: '初级产品分析师', de: 'Junior Produktanalyst', ru: 'Младший продуктовый аналитик' },
+    period: { pt: 'jan. 2020 – set. 2020', en: 'Jan. 2020 – Sep. 2020', fr: 'Janv. 2020 – Sept. 2020', es: 'Ene. 2020 – Sep. 2020', ja: '2020年1月 – 2020年9月', zh: '2020年1月 – 2020年9月', de: 'Jan. 2020 – Sep. 2020', ru: 'Янв. 2020 – Сен. 2020' },
+    location: { pt: 'Florianópolis, SC', en: 'Florianópolis, SC', fr: 'Florianópolis, SC', es: 'Florianópolis, SC', ja: 'フロリアノポリス, SC', zh: '弗洛里亚诺波利斯, SC', de: 'Florianópolis, SC', ru: 'Флорианополис, СК' },
     bullets: {
       pt: [
         'Desenvolvimento de tecnologias e melhorias do Coldchain, armário refrigerado com leitor RFID.',
@@ -248,15 +248,45 @@ const experiences = [
         'Encodage en masse de tags RFID UHF et développement d\'interfaces via LLRP et APIs propriétaires.',
         'Contact direct avec les fournisseurs et fabricants partenaires.',
       ],
+      es: [
+        'Desarrollo de tecnologías y mejoras de Coldchain, armario refrigerado con lector RFID.',
+        'Pruebas para obtener las mejores configuraciones de lectura RFID.',
+        'Codificación masiva de etiquetas RFID UHF y desarrollo de interfaces vía LLRP y APIs propietarias.',
+        'Contacto directo con proveedores y fabricantes asociados.',
+      ],
+      ja: [
+        'RFIDリーダー搭載の冷蔵キャビネットColdchainの技術開発と改善。',
+        '最適なRFID読み取り設定を達成するためのテスト。',
+        'UHF RFIDタグのバルクエンコーディング、LLRPおよび独自APIを介したインターフェース開発。',
+        'パートナーサプライヤーやメーカーとの直接連絡。',
+      ],
+      zh: [
+        '开发带 RFID 读写器的冷链冷藏柜技术并进行改进。',
+        '进行测试以获得最佳的 RFID 读取配置。',
+        'UHF RFID 标签的批量编码，以及通过 LLRP 和专有 API 开发接口。',
+        '直接与合作伙伴供应商和制造商联系。',
+      ],
+      de: [
+        'Entwicklung von Technologien und Verbesserungen für Coldchain, ein Kühlschrank mit RFID-Lesegerät.',
+        'Tests zur Ermittlung der besten RFID-Lesekonfigurationen.',
+        'Massenkodierung von UHF-RFID-Tags und Schnittstellenentwicklung über LLRP und proprietäre APIs.',
+        'Direkter Kontakt mit Partnerlieferanten und Herstellern.',
+      ],
+      ru: [
+        'Разработка технологий и улучшение Coldchain, холодильного шкафа со считывателем RFID.',
+        'Тестирование для получения оптимальных настроек считывания RFID.',
+        'Массовое кодирование UHF RFID-меток и разработка интерфейсов через LLRP и проприетарные API.',
+        'Прямой контакт с поставщиками-партнерами и производителями.',
+      ],
     },
     tags: ['RFID', 'LLRP', 'Python'],
     color: 'lime',
   },
   {
     company: 'GTT Healthcare',
-    role: { pt: 'Estagiário de Produto', en: 'Product Intern', fr: 'Stagiaire Produit' },
-    period: { pt: 'nov. 2018 – dez. 2019', en: 'Nov. 2018 – Dec. 2019', fr: 'Nov. 2018 – Déc. 2019' },
-    location: { pt: 'Florianópolis, SC', en: 'Florianópolis, SC', fr: 'Florianópolis, SC' },
+    role: { pt: 'Estagiário de Produto', en: 'Product Intern', fr: 'Stagiaire Produit', es: 'Pasante de Producto', ja: 'プロダクトインターン', zh: '产品实习生', de: 'Produktpraktikant', ru: 'Продуктовый стажер' },
+    period: { pt: 'nov. 2018 – dez. 2019', en: 'Nov. 2018 – Dec. 2019', fr: 'Nov. 2018 – Déc. 2019', es: 'Nov. 2018 – Dic. 2019', ja: '2018年11月 – 2019年12月', zh: '2018年11月 – 2019年12月', de: 'Nov. 2018 – Dez. 2019', ru: 'Ноя. 2018 – Дек. 2019' },
+    location: { pt: 'Florianópolis, SC', en: 'Florianópolis, SC', fr: 'Florianópolis, SC', es: 'Florianópolis, SC', ja: 'フロリアノポリス, SC', zh: '弗洛里亚诺波利斯, SC', de: 'Florianópolis, SC', ru: 'Флорианополис, СК' },
     bullets: {
       pt: [
         'Pesquisa e testes de componentes e tecnologias RFID para supply chain na área da saúde.',
@@ -273,15 +303,40 @@ const experiences = [
         'Assemblage et tests d\'équipements en phase de production avant livraison client.',
         'Création d\'un produit d\'encodage en masse RFID, réduisant considérablement le temps de mise en service.',
       ],
+      es: [
+        'Investigación y pruebas de componentes RFID para la cadena de suministro en el área de la salud.',
+        'Ensamblaje y pruebas de equipos en la fase de producción antes de la entrega al cliente.',
+        'Creación de un nuevo producto de codificación masiva RFID, reduciendo significativamente el tiempo de puesta en servicio.',
+      ],
+      ja: [
+        '医療分野のサプライチェーン向けRFIDコンポーネントの研究とテスト。',
+        '顧客への納品前の生産段階での機器の組み立てとテスト。',
+        '新しいRFIDバルクエンコーディング製品を作成し、コミッショニング時間を大幅に短縮。',
+      ],
+      zh: [
+        '医疗保健供应链领域 RFID 组件和技术的研究与测试。',
+        '在交付给客户之前的生产阶段进行设备的组装和测试。',
+        '创建新的 RFID 批量编码产品，显著缩短了调试时间。',
+      ],
+      de: [
+        'Forschung und Tests von RFID-Komponenten für die Lieferkette im Gesundheitswesen.',
+        'Montage und Test von Geräten in der Produktionsphase vor der Auslieferung an den Kunden.',
+        'Entwicklung eines neuen Produkts für die Massenkodierung von RFID, das die Inbetriebnahmezeit erheblich reduziert.',
+      ],
+      ru: [
+        'Исследование и тестирование компонентов RFID для цепочки поставок в сфере здравоохранения.',
+        'Сборка и тестирование оборудования на этапе производства перед отправкой клиенту.',
+        'Создание нового продукта для массового кодирования RFID, значительно сокращающего время ввода в эксплуатацию.',
+      ],
     },
     tags: ['RFID', 'Supply Chain'],
     color: 'cyan',
   },
   {
     company: 'PET EEL · UFSC',
-    role: { pt: 'Bolsista de Pesquisa', en: 'Research Fellow', fr: 'Boursier de Recherche' },
-    period: { pt: 'mar. 2017 – nov. 2018', en: 'Mar. 2017 – Nov. 2018', fr: 'Mars 2017 – Nov. 2018' },
-    location: { pt: 'Florianópolis, SC', en: 'Florianópolis, SC', fr: 'Florianópolis, SC' },
+    role: { pt: 'Bolsista de Pesquisa', en: 'Research Fellow', fr: 'Boursier de Recherche', es: 'Becario de Investigación', ja: '研究フェロー', zh: '研究员', de: 'Forschungsstipendiat', ru: 'Научный сотрудник' },
+    period: { pt: 'mar. 2017 – nov. 2018', en: 'Mar. 2017 – Nov. 2018', fr: 'Mars 2017 – Nov. 2018', es: 'Mar. 2017 – Nov. 2018', ja: '2017年3月 – 2018年11月', zh: '2017年3月 – 2018年11月', de: 'Mär. 2017 – Nov. 2018', ru: 'Мар. 2017 – Ноя. 2018' },
+    location: { pt: 'Florianópolis, SC', en: 'Florianópolis, SC', fr: 'Florianópolis, SC', es: 'Florianópolis, SC', ja: 'フロリアノポリス, SC', zh: '弗洛里亚诺波利斯, SC', de: 'Florianópolis, SC', ru: 'Флорианополис, СК' },
     bullets: {
       pt: [
         'Grupo acadêmico financiado pelo Governo Federal com foco em pesquisa, ensino e extensão.',
@@ -297,6 +352,31 @@ const experiences = [
         'Groupe académique financé par le gouvernement axé sur la recherche, l\'enseignement et l\'extension.',
         'Organisation d\'événements académiques et participation à la recherche scientifique.',
         'Projets en Python, PHP et R ; développement de compétences en environnement universitaire.',
+      ],
+      es: [
+        'Grupo académico financiado por el gobierno centrado en la investigación, la enseñanza y la extensión.',
+        'Organización de eventos académicos y participación en investigaciones científicas.',
+        'Proyectos con Python, PHP y R; desarrollo de habilidades en un entorno universitario.',
+      ],
+      ja: [
+        '研究、教育、地域貢献に焦点を当てた政府資金による学術グループ。',
+        '学術イベントの開催と科学研究への参加。',
+        'Python、PHP、Rを使用したプロジェクト。大学環境でのスキルの開発。',
+      ],
+      zh: [
+        '由政府资助的学术团体，专注于研究、教学和推广。',
+        '组织学术活动并参与科学研究。',
+        '使用 Python、PHP 和 R 进行项目开发；在大学环境中培养各项技能。',
+      ],
+      de: [
+        'Regierungsfinanzierte akademische Gruppe mit Fokus auf Forschung, Lehre und Erweiterung.',
+        'Organisation akademischer Veranstaltungen und Teilnahme an wissenschaftlicher Forschung.',
+        'Projekte mit Python, PHP und R; Entwicklung von Fähigkeiten in einem universitären Umfeld.',
+      ],
+      ru: [
+        'Академическая группа, финансируемая правительством, ориентированная на исследования, преподавание и расширение.',
+        'Организация академических мероприятий и участие в научных исследованиях.',
+        'Проекты с использованием Python, PHP и R; развитие навыков в университетской среде.',
       ],
     },
     tags: ['Python', 'PHP', 'R'],

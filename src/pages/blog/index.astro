@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BentoBox from '../../components/BentoBox.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('blog');
+// sort by date descending
+entries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="Blog | Lucas Ramos">
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold mb-2 pt-only">Blog<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 en-only">Blog<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 fr-only">Blog<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 es-only">Blog<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 ja-only">ブログ<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 zh-only">博客<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 de-only">Blog<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 ru-only">Блог<span class="text-neonCyan">.</span></h1>
+    <p class="text-textMuted font-mono text-sm pt-only">Pensamentos, tutoriais e coisas que escrevo.</p>
+    <p class="text-textMuted font-mono text-sm en-only">Thoughts, tutorials, and things I write.</p>
+    <p class="text-textMuted font-mono text-sm fr-only">Pensées, tutoriels et choses que j'écris.</p>
+    <p class="text-textMuted font-mono text-sm es-only">Pensamientos, tutoriales y cosas que escribo.</p>
+    <p class="text-textMuted font-mono text-sm ja-only">考え、チュートリアル、そして私が書くもの。</p>
+    <p class="text-textMuted font-mono text-sm zh-only">想法、教程和我写的东西。</p>
+    <p class="text-textMuted font-mono text-sm de-only">Gedanken, Tutorials und Dinge, die ich schreibe.</p>
+    <p class="text-textMuted font-mono text-sm ru-only">Мысли, учебные пособия и то, что я пишу.</p>
+  </header>
+
+  <main>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {entries.map(entry => (
+        <BentoBox glowColor="lime" href={`/blog/${entry.slug}`}>
+          <div class="flex flex-col h-full justify-between">
+            <div>
+              <span class="text-xs font-mono text-neonLime mb-2 block pt-only">{entry.data.date.toLocaleDateString('pt-BR')}</span>
+              <span class="text-xs font-mono text-neonLime mb-2 block en-only">{entry.data.date.toLocaleDateString('en-US')}</span>
+              <span class="text-xs font-mono text-neonLime mb-2 block fr-only">{entry.data.date.toLocaleDateString('fr-FR')}</span>
+              <span class="text-xs font-mono text-neonLime mb-2 block es-only">{entry.data.date.toLocaleDateString('es-ES')}</span>
+              <span class="text-xs font-mono text-neonLime mb-2 block ja-only">{entry.data.date.toLocaleDateString('ja-JP')}</span>
+              <span class="text-xs font-mono text-neonLime mb-2 block zh-only">{entry.data.date.toLocaleDateString('zh-CN')}</span>
+              <span class="text-xs font-mono text-neonLime mb-2 block de-only">{entry.data.date.toLocaleDateString('de-DE')}</span>
+              <span class="text-xs font-mono text-neonLime mb-2 block ru-only">{entry.data.date.toLocaleDateString('ru-RU')}</span>
+              <h3 class="font-bold text-xl mb-2 pt-only">{entry.data.title}</h3>
+              <h3 class="font-bold text-xl mb-2 en-only">{entry.data.titleEn || entry.data.title}</h3>
+              <h3 class="font-bold text-xl mb-2 fr-only">{entry.data.titleFr || entry.data.title}</h3>
+              <h3 class="font-bold text-xl mb-2 es-only">{entry.data.titleEs || entry.data.title}</h3>
+              <h3 class="font-bold text-xl mb-2 ja-only">{entry.data.titleJa || entry.data.title}</h3>
+              <h3 class="font-bold text-xl mb-2 zh-only">{entry.data.titleZh || entry.data.title}</h3>
+              <h3 class="font-bold text-xl mb-2 de-only">{entry.data.titleDe || entry.data.title}</h3>
+              <h3 class="font-bold text-xl mb-2 ru-only">{entry.data.titleRu || entry.data.title}</h3>
+              
+              <p class="text-sm text-textMuted pt-only">{entry.data.description || ''}</p>
+              <p class="text-sm text-textMuted en-only">{entry.data.descriptionEn || entry.data.description || ''}</p>
+              <p class="text-sm text-textMuted fr-only">{entry.data.descriptionFr || entry.data.description || ''}</p>
+              <p class="text-sm text-textMuted es-only">{entry.data.descriptionEs || entry.data.description || ''}</p>
+              <p class="text-sm text-textMuted ja-only">{entry.data.descriptionJa || entry.data.description || ''}</p>
+              <p class="text-sm text-textMuted zh-only">{entry.data.descriptionZh || entry.data.description || ''}</p>
+              <p class="text-sm text-textMuted de-only">{entry.data.descriptionDe || entry.data.description || ''}</p>
+              <p class="text-sm text-textMuted ru-only">{entry.data.descriptionRu || entry.data.description || ''}</p>
+            </div>
+          </div>
+        </BentoBox>
+      ))}
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BentoBox from '../components/BentoBox.astro';
+import { getCollection } from 'astro:content';
+
+// Get all content
+const blog = await getCollection('blog');
+const dataEngineering = await getCollection('data-engineering');
+const academic = await getCollection('academic');
+const photography = await getCollection('photography');
+
+// Standardize posts for the all posts feed
+const allPosts = [
+  ...blog.map(p => ({ ...p, section: 'blog', date: p.data.date })),
+  ...dataEngineering.map(p => ({ ...p, section: 'data-engineering', date: p.data.date })),
+  ...academic.map(p => ({ ...p, section: 'academic', date: new Date('2024-01-01') })), // Assuming no date, fallback to 2024
+  ...photography.map(p => ({ ...p, section: 'photography', date: p.data.date || new Date('2024-01-01') })), // Using fallback date if missing
+];
+
+// Sort by date descending
+allPosts.sort((a, b) => b.date.valueOf() - a.date.valueOf());
+
+const sectionColors: Record<string, 'cyan' | 'lime' | 'none'> = {
+  'blog': 'lime',
+  'data-engineering': 'cyan',
+  'academic': 'cyan',
+  'photography': 'lime'
+};
+
+const getTitle = (entry: any, lang: string) => {
+  if (lang === 'pt') return entry.data.title;
+  const langKey = 'title' + lang.charAt(0).toUpperCase() + lang.slice(1);
+  return entry.data[langKey] || entry.data.title;
+};
+---
+
+<Layout title="Todos os Posts | Lucas Ramos">
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold mb-2 pt-only">Todos os Posts<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 en-only">All Posts<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 fr-only">Tous les Articles<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 es-only">Todos los Posts<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 ja-only">すべての投稿<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 zh-only">所有文章<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 de-only">Alle Beiträge<span class="text-neonCyan">.</span></h1>
+    <h1 class="text-4xl font-bold mb-2 ru-only">Все посты<span class="text-neonCyan">.</span></h1>
+    <p class="text-textMuted font-mono text-sm pt-only">Tudo que eu já publiquei, de todas as seções.</p>
+    <p class="text-textMuted font-mono text-sm en-only">Everything I've published, across all sections.</p>
+    <p class="text-textMuted font-mono text-sm fr-only">Tout ce que j'ai publié, dans toutes les sections.</p>
+    <p class="text-textMuted font-mono text-sm es-only">Todo lo que he publicado, en todas las secciones.</p>
+    <p class="text-textMuted font-mono text-sm ja-only">すべてのセクションに公開したすべてのもの。</p>
+    <p class="text-textMuted font-mono text-sm zh-only">我在所有版块发布的所有内容。</p>
+    <p class="text-textMuted font-mono text-sm de-only">Alles, was ich veröffentlicht habe, in allen Abschnitten.</p>
+    <p class="text-textMuted font-mono text-sm ru-only">Все, что я публиковал, во всех разделах.</p>
+  </header>
+
+  <main>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {allPosts.map(entry => (
+        <BentoBox glowColor={sectionColors[entry.section] || 'cyan'} href={`/${entry.section}/${entry.slug}`}>
+          <div class="flex flex-col h-full justify-between">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full border border-surfaceHighlight text-textMuted uppercase">
+                  {entry.section}
+                </span>
+                
+                <span class="text-xs font-mono text-textMuted pt-only">{entry.date.toLocaleDateString('pt-BR')}</span>
+                <span class="text-xs font-mono text-textMuted en-only">{entry.date.toLocaleDateString('en-US')}</span>
+                <span class="text-xs font-mono text-textMuted fr-only">{entry.date.toLocaleDateString('fr-FR')}</span>
+                <span class="text-xs font-mono text-textMuted es-only">{entry.date.toLocaleDateString('es-ES')}</span>
+                <span class="text-xs font-mono text-textMuted ja-only">{entry.date.toLocaleDateString('ja-JP')}</span>
+                <span class="text-xs font-mono text-textMuted zh-only">{entry.date.toLocaleDateString('zh-CN')}</span>
+                <span class="text-xs font-mono text-textMuted de-only">{entry.date.toLocaleDateString('de-DE')}</span>
+                <span class="text-xs font-mono text-textMuted ru-only">{entry.date.toLocaleDateString('ru-RU')}</span>
+              </div>
+              
+              <h3 class="font-bold text-xl mb-4 pt-only mt-2">{getTitle(entry, 'pt')}</h3>
+              <h3 class="font-bold text-xl mb-4 en-only mt-2">{getTitle(entry, 'en')}</h3>
+              <h3 class="font-bold text-xl mb-4 fr-only mt-2">{getTitle(entry, 'fr')}</h3>
+              <h3 class="font-bold text-xl mb-4 es-only mt-2">{getTitle(entry, 'es')}</h3>
+              <h3 class="font-bold text-xl mb-4 ja-only mt-2">{getTitle(entry, 'ja')}</h3>
+              <h3 class="font-bold text-xl mb-4 zh-only mt-2">{getTitle(entry, 'zh')}</h3>
+              <h3 class="font-bold text-xl mb-4 de-only mt-2">{getTitle(entry, 'de')}</h3>
+              <h3 class="font-bold text-xl mb-4 ru-only mt-2">{getTitle(entry, 'ru')}</h3>
+            </div>
+          </div>
+        </BentoBox>
+      ))}
+    </div>
+  </main>
+</Layout>

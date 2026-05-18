@@ -17,6 +17,9 @@ const latestDice = diceEntries[0];
 
 const academicEntries = await getCollection('academic');
 const latestAcademic = academicEntries[0];
+
+const blogEntries = await getCollection('blog');
+const latestBlog = blogEntries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())[0];
 ---
 
 <Layout title="Lucas Ramos | Portfolio">
@@ -328,6 +331,86 @@ const latestAcademic = academicEntries[0];
              <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain ru-only">ДОСТУП К АРХИВУ</span>
           </div>
         )}
+      </BentoBox>
+
+      <!-- Blog Box -->
+      <BentoBox spanCol="col-span-4 md:col-span-2" spanRow="row-span-1" glowColor="lime" href="/blog">
+        {latestBlog ? (
+          <div class="flex flex-col h-full justify-between">
+            <div>
+              <span class="text-xs font-mono text-neonLime mb-1 block pt-only">ÚLTIMO POST DO BLOG</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block en-only">LATEST BLOG POST</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block fr-only">DERNIER ARTICLE DE BLOG</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block es-only">ÚLTIMO POST DEL BLOG</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block ja-only">最新のブログ記事</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block zh-only">最新博客文章</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block de-only">LETZTER BLOGBEITRAG</span>
+              <span class="text-xs font-mono text-neonLime mb-1 block ru-only">ПОСЛЕДНИЙ ПОСТ В БЛОГЕ</span>
+              <h3 class="font-bold text-lg mb-2 mt-2 pt-only">{latestBlog.data.title}</h3>
+              <h3 class="font-bold text-lg mb-2 mt-2 en-only">{latestBlog.data.titleEn || latestBlog.data.title}</h3>
+              <h3 class="font-bold text-lg mb-2 mt-2 fr-only">{latestBlog.data.titleFr || latestBlog.data.title}</h3>
+              <h3 class="font-bold text-lg mb-2 mt-2 es-only">{latestBlog.data.titleEs || latestBlog.data.title}</h3>
+              <h3 class="font-bold text-lg mb-2 mt-2 ja-only">{latestBlog.data.titleJa || latestBlog.data.title}</h3>
+              <h3 class="font-bold text-lg mb-2 mt-2 zh-only">{latestBlog.data.titleZh || latestBlog.data.title}</h3>
+              <h3 class="font-bold text-lg mb-2 mt-2 de-only">{latestBlog.data.titleDe || latestBlog.data.title}</h3>
+              <h3 class="font-bold text-lg mb-2 mt-2 ru-only">{latestBlog.data.titleRu || latestBlog.data.title}</h3>
+              <p class="text-sm text-textMuted line-clamp-2 pt-only">{latestBlog.data.description}</p>
+              <p class="text-sm text-textMuted line-clamp-2 en-only">{latestBlog.data.descriptionEn || latestBlog.data.description}</p>
+              <p class="text-sm text-textMuted line-clamp-2 fr-only">{latestBlog.data.descriptionFr || latestBlog.data.description}</p>
+              <p class="text-sm text-textMuted line-clamp-2 es-only">{latestBlog.data.descriptionEs || latestBlog.data.description}</p>
+              <p class="text-sm text-textMuted line-clamp-2 ja-only">{latestBlog.data.descriptionJa || latestBlog.data.description}</p>
+              <p class="text-sm text-textMuted line-clamp-2 zh-only">{latestBlog.data.descriptionZh || latestBlog.data.description}</p>
+              <p class="text-sm text-textMuted line-clamp-2 de-only">{latestBlog.data.descriptionDe || latestBlog.data.description}</p>
+              <p class="text-sm text-textMuted line-clamp-2 ru-only">{latestBlog.data.descriptionRu || latestBlog.data.description}</p>
+            </div>
+            <div class="mt-4 flex items-end justify-between">
+              <span class="text-xs text-textMuted font-mono pt-only">{latestBlog.data.date.toLocaleDateString('pt-BR')}</span>
+              <span class="text-xs text-textMuted font-mono en-only">{latestBlog.data.date.toLocaleDateString('en-US')}</span>
+              <span class="text-xs text-textMuted font-mono fr-only">{latestBlog.data.date.toLocaleDateString('fr-FR')}</span>
+              <span class="text-xs text-textMuted font-mono es-only">{latestBlog.data.date.toLocaleDateString('es-ES')}</span>
+              <span class="text-xs text-textMuted font-mono ja-only">{latestBlog.data.date.toLocaleDateString('ja-JP')}</span>
+              <span class="text-xs text-textMuted font-mono zh-only">{latestBlog.data.date.toLocaleDateString('zh-CN')}</span>
+              <span class="text-xs text-textMuted font-mono de-only">{latestBlog.data.date.toLocaleDateString('de-DE')}</span>
+              <span class="text-xs text-textMuted font-mono ru-only">{latestBlog.data.date.toLocaleDateString('ru-RU')}</span>
+              
+              <span class="text-xs font-mono text-neonLime pt-only">VER BLOG &rarr;</span>
+              <span class="text-xs font-mono text-neonLime en-only">VIEW BLOG &rarr;</span>
+              <span class="text-xs font-mono text-neonLime fr-only">VOIR BLOG &rarr;</span>
+              <span class="text-xs font-mono text-neonLime es-only">VER BLOG &rarr;</span>
+              <span class="text-xs font-mono text-neonLime ja-only">ブログを見る &rarr;</span>
+              <span class="text-xs font-mono text-neonLime zh-only">查看博客 &rarr;</span>
+              <span class="text-xs font-mono text-neonLime de-only">BLOG ANSEHEN &rarr;</span>
+              <span class="text-xs font-mono text-neonLime ru-only">СМОТРЕТЬ БЛОГ &rarr;</span>
+            </div>
+          </div>
+        ) : (
+          <div class="flex flex-col h-full justify-center items-center group">
+             <svg class="w-8 h-8 text-surfaceHighlight group-hover:text-neonLime transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2.5 2.5 0 00-2.5-2.5H15M9 11l3 3m0 0l3-3m-3 3V8"></path></svg>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain pt-only">VER BLOG</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain en-only">VIEW BLOG</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain fr-only">VOIR BLOG</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain es-only">VER BLOG</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain ja-only">ブログを見る</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain zh-only">查看博客</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain de-only">BLOG ANSEHEN</span>
+             <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain ru-only">СМОТРЕТЬ БЛОГ</span>
+          </div>
+        )}
+      </BentoBox>
+
+      <!-- View All Posts Box -->
+      <BentoBox spanCol="col-span-4 md:col-span-2" spanRow="row-span-1" glowColor="cyan" href="/posts" className="group">
+        <div class="flex flex-col h-full justify-center items-center">
+           <svg class="w-8 h-8 text-surfaceHighlight group-hover:text-neonCyan transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+           <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain pt-only">VER TODOS OS POSTS</span>
+           <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain en-only">VIEW ALL POSTS</span>
+           <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain fr-only">VOIR TOUS LES POSTS</span>
+           <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain es-only">VER TODOS LOS POSTS</span>
+           <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain ja-only">すべての投稿を見る</span>
+           <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain zh-only">查看所有文章</span>
+           <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain de-only">ALLE BEITRÄGE ANSEHEN</span>
+           <span class="text-xs font-mono text-textMuted mt-2 group-hover:text-textMain ru-only">СМОТРЕТЬ ВСЕ ПОСТЫ</span>
+        </div>
       </BentoBox>
 
     </div>
