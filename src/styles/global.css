@@ -24,7 +24,39 @@
     --color-accent-2: #ceb53a;
     --color-text-main: #eaeee9;
     --color-text-muted: #95a399;
+  }
+
+  .galaxy {
+    --color-base: #000000;
+    --color-surface: rgba(15, 15, 25, 0.6);
+    --color-surface-highlight: #2a2a40;
+    --color-accent-1: #00e5ff;
+    --color-accent-2: #b57cff;
+    --color-text-main: #e0e0e0;
+    --color-text-muted: #8080a0;
     color-scheme: dark;
+  }
+
+  .galaxy body {
+    background-color: #050510;
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+      radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.9) 2px, transparent 2px),
+      radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+      radial-gradient(circle at 70% 10%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+      radial-gradient(circle at 10% 90%, rgba(255, 255, 255, 0.7) 2px, transparent 2px),
+      radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 1) 1px, transparent 1px);
+    background-size: 150px 150px;
+    animation: stardrift 60s linear infinite;
+  }
+
+  @keyframes stardrift {
+    from { background-position: 0 0; }
+    to { background-position: -1500px 750px; }
+  }
+
+  .galaxy * {
+    transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease;
   }
 
   /* Language Toggle Logic */
