@@ -45,6 +45,12 @@
       "title": "Viagem à Torres | Torres, RS",
       "date": "2026-02-21",
       "folder": "viagem-torres"
+    },
+    {
+      "id": "viagem-paris",
+      "title": "Viagem à Paris | Paris, França",
+      "date": "2022-08-11",
+      "folder": "paris"
     }
   ]
 }
