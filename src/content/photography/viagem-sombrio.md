@@ -13,6 +13,15 @@ coverThumb: >-
   https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/viagem-sombrio/55248794862_45a3182481_o.webp
 gallery:
   - src: >-
+      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/viagem-sombrio/55249839913_9127600c91_o.jpg
+    thumb: >-
+      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/viagem-sombrio/55249839913_9127600c91_o.webp
+    camera: Canon EOS M50m2
+    lens: EF-M22mm f/2 STM
+    aperture: f/2.0
+    iso: 1250
+    shutterSpeed: 1/200s
+  - src: >-
       https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/viagem-sombrio/55248794862_45a3182481_o.jpg
     thumb: >-
       https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/viagem-sombrio/55248794862_45a3182481_o.webp
@@ -30,15 +39,6 @@ gallery:
     aperture: f/2.0
     iso: 100
     shutterSpeed: 1/320s
-  - src: >-
-      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/viagem-sombrio/55249839913_9127600c91_o.jpg
-    thumb: >-
-      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/viagem-sombrio/55249839913_9127600c91_o.webp
-    camera: Canon EOS M50m2
-    lens: EF-M22mm f/2 STM
-    aperture: f/2.0
-    iso: 1250
-    shutterSpeed: 1/200s
   - src: >-
       https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/viagem-sombrio/55249933284_1452ffa94d_o.jpg
     thumb: >-
