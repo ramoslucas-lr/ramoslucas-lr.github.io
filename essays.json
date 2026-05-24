@@ -51,6 +51,12 @@
       "title": "Viagem à Paris | Paris, França",
       "date": "2022-08-11",
       "folder": "paris"
+    },
+    {
+      "id": "argentina",
+      "title": "Viagem à Argentina | Argentina",
+      "date": "2024-03-13",
+      "folder": "argentina-2024"
     }
   ]
 }
