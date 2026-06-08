@@ -30,7 +30,7 @@ Se você acha que a ficha caiu e eu tranquei o curso, você subestima a minha te
 
 Sim, eu tentei fazer um TCC de um curso com o qual eu não tinha contato há dois anos, a 700 km de distância da universidade. Sem orientador. Sem tema. Trabalhando 8h por dia no modelo híbrido, e com 1h de deslocamento entre minha casa na estação São Judas e o escritório na Faria Lima. Minha última tentativa de TCC foi com uma professora da computação, inclusive.
 
-Foi aí que a matemática básica real bateu à porta: para fazer qualquer coisa, você precisa de tempo ou de interesse.
+Foi aí que a matemática básica bateu à porta: para fazer qualquer coisa, você precisa de tempo ou de interesse.
 * Sem tempo, mas com interesse, a gente dá um jeito.
 * Sem interesse, mas com tempo, a gente enrola, mas faz.
 * Agora, sem tempo E sem interesse? É impossível.
