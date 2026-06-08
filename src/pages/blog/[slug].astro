@@ -36,17 +36,26 @@ const { Content } = await entry.render();
       <span class="text-neonCyan font-mono text-sm block mb-4 de-only">{entry.data.date.toLocaleDateString('de-DE')}</span>
       <span class="text-neonCyan font-mono text-sm block mb-4 ru-only">{entry.data.date.toLocaleDateString('ru-RU')}</span>
       
-      <h1 class="text-4xl font-bold mb-6 pt-only">{entry.data.title}</h1>
-      <h1 class="text-4xl font-bold mb-6 en-only">{entry.data.titleEn || entry.data.title}</h1>
-      <h1 class="text-4xl font-bold mb-6 fr-only">{entry.data.titleFr || entry.data.title}</h1>
-      <h1 class="text-4xl font-bold mb-6 es-only">{entry.data.titleEs || entry.data.title}</h1>
-      <h1 class="text-4xl font-bold mb-6 ja-only">{entry.data.titleJa || entry.data.title}</h1>
-      <h1 class="text-4xl font-bold mb-6 zh-only">{entry.data.titleZh || entry.data.title}</h1>
-      <h1 class="text-4xl font-bold mb-6 de-only">{entry.data.titleDe || entry.data.title}</h1>
-      <h1 class="text-4xl font-bold mb-6 ru-only">{entry.data.titleRu || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 pt-only">{entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 en-only">{entry.data.titleEn || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 fr-only">{entry.data.titleFr || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 es-only">{entry.data.titleEs || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 ja-only">{entry.data.titleJa || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 zh-only">{entry.data.titleZh || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 de-only">{entry.data.titleDe || entry.data.title}</h1>
+      <h1 class="text-4xl font-bold mb-4 ru-only">{entry.data.titleRu || entry.data.title}</h1>
+
+      {entry.data.description && <p class="text-xl text-textMuted italic pt-only">{entry.data.description}</p>}
+      {(entry.data.descriptionEn || entry.data.description) && <p class="text-xl text-textMuted italic en-only">{entry.data.descriptionEn || entry.data.description}</p>}
+      {(entry.data.descriptionFr || entry.data.description) && <p class="text-xl text-textMuted italic fr-only">{entry.data.descriptionFr || entry.data.description}</p>}
+      {(entry.data.descriptionEs || entry.data.description) && <p class="text-xl text-textMuted italic es-only">{entry.data.descriptionEs || entry.data.description}</p>}
+      {(entry.data.descriptionJa || entry.data.description) && <p class="text-xl text-textMuted italic ja-only">{entry.data.descriptionJa || entry.data.description}</p>}
+      {(entry.data.descriptionZh || entry.data.description) && <p class="text-xl text-textMuted italic zh-only">{entry.data.descriptionZh || entry.data.description}</p>}
+      {(entry.data.descriptionDe || entry.data.description) && <p class="text-xl text-textMuted italic de-only">{entry.data.descriptionDe || entry.data.description}</p>}
+      {(entry.data.descriptionRu || entry.data.description) && <p class="text-xl text-textMuted italic ru-only">{entry.data.descriptionRu || entry.data.description}</p>}
     </header>
 
-    <div class="text-textMuted leading-relaxed space-y-6 [&>p]:mb-4 [&_pre]:p-6 [&_pre]:rounded-2xl [&_pre]:overflow-x-auto [&_pre]:border [&_pre]:border-surfaceHighlight [&_code]:font-mono [&_code]:text-sm">
+    <div class="text-textMuted leading-relaxed space-y-6 [&_p]:mb-6 [&_p]:text-justify [&_pre]:p-6 [&_pre]:rounded-2xl [&_pre]:overflow-x-auto [&_pre]:border [&_pre]:border-surfaceHighlight [&_code]:font-mono [&_code]:text-sm">
       <Content />
     </div>
   </article>
