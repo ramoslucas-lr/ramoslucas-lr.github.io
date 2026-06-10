@@ -13,8 +13,8 @@ const photography = await getCollection('photography');
 const allPosts = [
   ...blog.map(p => ({ ...p, section: 'blog', date: p.data.date })),
   ...dataEngineering.map(p => ({ ...p, section: 'data-engineering', date: p.data.date })),
-  ...academic.map(p => ({ ...p, section: 'academic', date: new Date('2024-01-01') })), // Assuming no date, fallback to 2024
-  ...photography.map(p => ({ ...p, section: 'photography', date: p.data.date || new Date('2024-01-01') })), // Using fallback date if missing
+  ...academic.map(p => ({ ...p, section: 'academic', date: p.data.date || new Date('2024-01-01') })),
+  ...photography.map(p => ({ ...p, section: 'photography', date: p.data.date || new Date('2024-01-01') })),
 ];
 
 // Sort by date descending
