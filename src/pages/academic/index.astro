@@ -4,6 +4,35 @@ import BentoBox from '../../components/BentoBox.astro';
 import { getCollection } from 'astro:content';
 
 const entries = await getCollection('academic');
+
+function getMetadata(entry: any, lang: string) {
+  const parts = [];
+  if (entry.data.semester) {
+    parts.push(entry.data.semester);
+  }
+  
+  let courseName = entry.data.course;
+  if (lang !== 'pt') {
+    const langSuffix = lang.charAt(0).toUpperCase() + lang.slice(1);
+    courseName = entry.data[`course${langSuffix}`] || entry.data.course;
+  }
+  if (courseName) {
+    parts.push(courseName);
+  }
+  
+  if (parts.length > 0) {
+    return parts.join(' | ');
+  }
+  
+  if (entry.data.date) {
+    const localeMap: Record<string, string> = {
+      pt: 'pt-BR', en: 'en-US', fr: 'fr-FR', es: 'es-ES', ja: 'ja-JP', zh: 'zh-CN', de: 'de-DE', ru: 'ru-RU'
+    };
+    return entry.data.date.toLocaleDateString(localeMap[lang] || 'pt-BR');
+  }
+  
+  return '';
+}
 ---
 
 <Layout title="Academic Archive | Lucas Ramos">
@@ -28,12 +57,12 @@ const entries = await getCollection('academic');
         <BentoBox glowColor="cyan" href={`/academic/${entry.slug}`}>
           <div class="flex flex-col h-full justify-between">
             <div>
-              <span class="text-xs font-mono text-neonCyan mb-2 block pt-only">{entry.data.semester} | {entry.data.course}</span>
-              <span class="text-xs font-mono text-neonCyan mb-2 block en-only">{entry.data.semester} | {entry.data.courseEn || entry.data.course}</span>
-              <span class="text-xs font-mono text-neonCyan mb-2 block fr-only">{entry.data.semester} | {entry.data.courseFr || entry.data.course}</span>
-              <span class="text-xs font-mono text-neonCyan mb-2 block es-only">{entry.data.semester} | {entry.data.courseEs || entry.data.course}</span>
-              <span class="text-xs font-mono text-neonCyan mb-2 block ja-only">{entry.data.semester} | {entry.data.courseJa || entry.data.course}</span>
-              <span class="text-xs font-mono text-neonCyan mb-2 block zh-only">{entry.data.semester} | {entry.data.courseZh || entry.data.course}</span>
+              {getMetadata(entry, 'pt') && <span class="text-xs font-mono text-neonCyan mb-2 block pt-only">{getMetadata(entry, 'pt')}</span>}
+              {getMetadata(entry, 'en') && <span class="text-xs font-mono text-neonCyan mb-2 block en-only">{getMetadata(entry, 'en')}</span>}
+              {getMetadata(entry, 'fr') && <span class="text-xs font-mono text-neonCyan mb-2 block fr-only">{getMetadata(entry, 'fr')}</span>}
+              {getMetadata(entry, 'es') && <span class="text-xs font-mono text-neonCyan mb-2 block es-only">{getMetadata(entry, 'es')}</span>}
+              {getMetadata(entry, 'ja') && <span class="text-xs font-mono text-neonCyan mb-2 block ja-only">{getMetadata(entry, 'ja')}</span>}
+              {getMetadata(entry, 'zh') && <span class="text-xs font-mono text-neonCyan mb-2 block zh-only">{getMetadata(entry, 'zh')}</span>}
               <h3 class="font-bold text-lg mb-2 pt-only">{entry.data.title}</h3>
               <h3 class="font-bold text-lg mb-2 en-only">{entry.data.titleEn || entry.data.title}</h3>
               <h3 class="font-bold text-lg mb-2 fr-only">{entry.data.titleFr || entry.data.title}</h3>
@@ -41,9 +70,11 @@ const entries = await getCollection('academic');
               <h3 class="font-bold text-lg mb-2 ja-only">{entry.data.titleJa || entry.data.title}</h3>
               <h3 class="font-bold text-lg mb-2 zh-only">{entry.data.titleZh || entry.data.title}</h3>
             </div>
-            <div class="mt-6 flex items-end justify-between">
-              <span class="text-2xl font-bold font-mono text-neonCyan">{entry.data.grade || 'N/A'}</span>
-            </div>
+            {entry.data.grade && (
+              <div class="mt-6 flex items-end justify-between">
+                <span class="text-2xl font-bold font-mono text-neonCyan">{entry.data.grade}</span>
+              </div>
+            )}
           </div>
         </BentoBox>
       ))}

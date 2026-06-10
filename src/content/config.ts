@@ -72,7 +72,7 @@ const academicCollection = defineCollection({
     titleZh: z.string().optional(),
     titleDe: z.string().optional(),
     titleRu: z.string().optional(),
-    course: z.string(),
+    course: z.string().optional(),
     courseEn: z.string().optional(),
     courseFr: z.string().optional(),
     courseEs: z.string().optional(),
@@ -80,8 +80,9 @@ const academicCollection = defineCollection({
     courseZh: z.string().optional(),
     courseDe: z.string().optional(),
     courseRu: z.string().optional(),
-    semester: z.string(),
+    semester: z.string().optional(),
     grade: z.string().optional(),
+    date: z.date().optional(),
   }),
 });
 

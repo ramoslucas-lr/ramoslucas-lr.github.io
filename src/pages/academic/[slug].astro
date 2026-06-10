@@ -13,6 +13,35 @@ export async function getStaticPaths() {
 type Props = { entry: CollectionEntry<'academic'> };
 const { entry }: Props = Astro.props;
 const { Content } = await entry.render();
+
+function getMetadata(entry: any, lang: string) {
+  const parts = [];
+  if (entry.data.semester) {
+    parts.push(entry.data.semester);
+  }
+  
+  let courseName = entry.data.course;
+  if (lang !== 'pt') {
+    const langSuffix = lang.charAt(0).toUpperCase() + lang.slice(1);
+    courseName = entry.data[`course${langSuffix}`] || entry.data.course;
+  }
+  if (courseName) {
+    parts.push(courseName);
+  }
+  
+  if (parts.length > 0) {
+    return parts.join(' | ');
+  }
+  
+  if (entry.data.date) {
+    const localeMap: Record<string, string> = {
+      pt: 'pt-BR', en: 'en-US', fr: 'fr-FR', es: 'es-ES', ja: 'ja-JP', zh: 'zh-CN', de: 'de-DE', ru: 'ru-RU'
+    };
+    return entry.data.date.toLocaleDateString(localeMap[lang] || 'pt-BR');
+  }
+  
+  return '';
+}
 ---
 
 <Layout title={`${entry.data.title} | Lucas Ramos`}>
@@ -25,24 +54,28 @@ const { Content } = await entry.render();
     <a href="/academic" class="text-neonCyan font-mono text-xs hover:underline mb-8 inline-block zh-only">&lt; 返回学术</a>
     
     <header class="mb-12 border-b border-surfaceHighlight pb-8">
-      <span class="text-neonCyan font-mono text-sm block mb-4 pt-only">{entry.data.semester} | {entry.data.course}</span>
-      <span class="text-neonCyan font-mono text-sm block mb-4 en-only">{entry.data.semester} | {entry.data.courseEn || entry.data.course}</span>
-      <span class="text-neonCyan font-mono text-sm block mb-4 fr-only">{entry.data.semester} | {entry.data.courseFr || entry.data.course}</span>
-      <span class="text-neonCyan font-mono text-sm block mb-4 es-only">{entry.data.semester} | {entry.data.courseEs || entry.data.course}</span>
-      <span class="text-neonCyan font-mono text-sm block mb-4 ja-only">{entry.data.semester} | {entry.data.courseJa || entry.data.course}</span>
-      <span class="text-neonCyan font-mono text-sm block mb-4 zh-only">{entry.data.semester} | {entry.data.courseZh || entry.data.course}</span>
+      {getMetadata(entry, 'pt') && <span class="text-neonCyan font-mono text-sm block mb-4 pt-only">{getMetadata(entry, 'pt')}</span>}
+      {getMetadata(entry, 'en') && <span class="text-neonCyan font-mono text-sm block mb-4 en-only">{getMetadata(entry, 'en')}</span>}
+      {getMetadata(entry, 'fr') && <span class="text-neonCyan font-mono text-sm block mb-4 fr-only">{getMetadata(entry, 'fr')}</span>}
+      {getMetadata(entry, 'es') && <span class="text-neonCyan font-mono text-sm block mb-4 es-only">{getMetadata(entry, 'es')}</span>}
+      {getMetadata(entry, 'ja') && <span class="text-neonCyan font-mono text-sm block mb-4 ja-only">{getMetadata(entry, 'ja')}</span>}
+      {getMetadata(entry, 'zh') && <span class="text-neonCyan font-mono text-sm block mb-4 zh-only">{getMetadata(entry, 'zh')}</span>}
       <h1 class="text-4xl font-bold mb-4 pt-only">{entry.data.title}</h1>
       <h1 class="text-4xl font-bold mb-4 en-only">{entry.data.titleEn || entry.data.title}</h1>
       <h1 class="text-4xl font-bold mb-4 fr-only">{entry.data.titleFr || entry.data.title}</h1>
       <h1 class="text-4xl font-bold mb-4 es-only">{entry.data.titleEs || entry.data.title}</h1>
       <h1 class="text-4xl font-bold mb-4 ja-only">{entry.data.titleJa || entry.data.title}</h1>
       <h1 class="text-4xl font-bold mb-4 zh-only">{entry.data.titleZh || entry.data.title}</h1>
-      <div class="mt-4 text-neonCyan font-mono text-xl pt-only">NOTA: <span class="font-bold">{entry.data.grade || 'N/A'}</span></div>
-      <div class="mt-4 text-neonCyan font-mono text-xl en-only">GRADE: <span class="font-bold">{entry.data.grade || 'N/A'}</span></div>
-      <div class="mt-4 text-neonCyan font-mono text-xl fr-only">NOTE: <span class="font-bold">{entry.data.grade || 'N/A'}</span></div>
-      <div class="mt-4 text-neonCyan font-mono text-xl es-only">NOTA: <span class="font-bold">{entry.data.grade || 'N/A'}</span></div>
-      <div class="mt-4 text-neonCyan font-mono text-xl ja-only">成績: <span class="font-bold">{entry.data.grade || 'N/A'}</span></div>
-      <div class="mt-4 text-neonCyan font-mono text-xl zh-only">成绩: <span class="font-bold">{entry.data.grade || 'N/A'}</span></div>
+      {entry.data.grade && (
+        <>
+          <div class="mt-4 text-neonCyan font-mono text-xl pt-only">NOTA: <span class="font-bold">{entry.data.grade}</span></div>
+          <div class="mt-4 text-neonCyan font-mono text-xl en-only">GRADE: <span class="font-bold">{entry.data.grade}</span></div>
+          <div class="mt-4 text-neonCyan font-mono text-xl fr-only">NOTE: <span class="font-bold">{entry.data.grade}</span></div>
+          <div class="mt-4 text-neonCyan font-mono text-xl es-only">NOTA: <span class="font-bold">{entry.data.grade}</span></div>
+          <div class="mt-4 text-neonCyan font-mono text-xl ja-only">成績: <span class="font-bold">{entry.data.grade}</span></div>
+          <div class="mt-4 text-neonCyan font-mono text-xl zh-only">成绩: <span class="font-bold">{entry.data.grade}</span></div>
+        </>
+      )}
     </header>
 
     <div class="text-textMuted leading-relaxed space-y-6 [&_p]:mb-6 [&_p]:text-justify [&_pre]:p-6 [&_pre]:rounded-2xl [&_pre]:overflow-x-auto [&_pre]:border [&_pre]:border-surfaceHighlight [&_code]:font-mono [&_code]:text-sm">

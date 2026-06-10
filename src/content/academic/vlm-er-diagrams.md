@@ -8,7 +8,6 @@ titleZh: '从概念到逻辑：评估VLM在ER图转换中的表现'
 titleDe: 'Vom Konzept zur Logik: Evaluierung von VLMs bei der Konvertierung von ER-Diagrammen'
 titleRu: 'От концептуального к логическому: оценка VLM в преобразовании ER-диаграмм'
 date: 2026-06-10
-technologies: ['Vision-Language Models', 'LLMs', 'Data Engineering', 'Database Design', 'Qwen', 'Claude', 'Gemini']
 ---
 
 <div class="pt-only">

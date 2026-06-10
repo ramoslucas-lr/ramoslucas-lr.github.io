@@ -20,6 +20,35 @@ const latestAcademic = academicEntries[0];
 
 const blogEntries = await getCollection('blog');
 const latestBlog = blogEntries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())[0];
+
+function getMetadata(entry: any, lang: string) {
+  const parts = [];
+  if (entry.data.semester) {
+    parts.push(entry.data.semester);
+  }
+  
+  let courseName = entry.data.course;
+  if (lang !== 'pt') {
+    const langSuffix = lang.charAt(0).toUpperCase() + lang.slice(1);
+    courseName = entry.data[`course${langSuffix}`] || entry.data.course;
+  }
+  if (courseName) {
+    parts.push(courseName);
+  }
+  
+  if (parts.length > 0) {
+    return parts.join(' | ');
+  }
+  
+  if (entry.data.date) {
+    const localeMap: Record<string, string> = {
+      pt: 'pt-BR', en: 'en-US', fr: 'fr-FR', es: 'es-ES', ja: 'ja-JP', zh: 'zh-CN', de: 'de-DE', ru: 'ru-RU'
+    };
+    return entry.data.date.toLocaleDateString(localeMap[lang] || 'pt-BR');
+  }
+  
+  return '';
+}
 ---
 
 <Layout title="Lucas Ramos | Portfolio">
@@ -308,14 +337,14 @@ const latestBlog = blogEntries.sort((a, b) => b.data.date.valueOf() - a.data.dat
               <h3 class="font-bold text-sm mb-2 mt-2 ru-only">{latestAcademic.data.titleRu || latestAcademic.data.title}</h3>
             </div>
             <div class="mt-4 flex items-end justify-between">
-              <span class="text-xs text-textMuted font-mono pt-only">{latestAcademic.data.semester} | {latestAcademic.data.course}</span>
-              <span class="text-xs text-textMuted font-mono en-only">{latestAcademic.data.semester} | {latestAcademic.data.courseEn || latestAcademic.data.course}</span>
-              <span class="text-xs text-textMuted font-mono fr-only">{latestAcademic.data.semester} | {latestAcademic.data.courseFr || latestAcademic.data.course}</span>
-              <span class="text-xs text-textMuted font-mono es-only">{latestAcademic.data.semester} | {latestAcademic.data.courseEs || latestAcademic.data.course}</span>
-              <span class="text-xs text-textMuted font-mono ja-only">{latestAcademic.data.semester} | {latestAcademic.data.courseJa || latestAcademic.data.course}</span>
-              <span class="text-xs text-textMuted font-mono zh-only">{latestAcademic.data.semester} | {latestAcademic.data.courseZh || latestAcademic.data.course}</span>
-              <span class="text-xs text-textMuted font-mono de-only">{latestAcademic.data.semester} | {latestAcademic.data.courseDe || latestAcademic.data.course}</span>
-              <span class="text-xs text-textMuted font-mono ru-only">{latestAcademic.data.semester} | {latestAcademic.data.courseRu || latestAcademic.data.course}</span>
+              {getMetadata(latestAcademic, 'pt') && <span class="text-xs text-textMuted font-mono pt-only">{getMetadata(latestAcademic, 'pt')}</span>}
+              {getMetadata(latestAcademic, 'en') && <span class="text-xs text-textMuted font-mono en-only">{getMetadata(latestAcademic, 'en')}</span>}
+              {getMetadata(latestAcademic, 'fr') && <span class="text-xs text-textMuted font-mono fr-only">{getMetadata(latestAcademic, 'fr')}</span>}
+              {getMetadata(latestAcademic, 'es') && <span class="text-xs text-textMuted font-mono es-only">{getMetadata(latestAcademic, 'es')}</span>}
+              {getMetadata(latestAcademic, 'ja') && <span class="text-xs text-textMuted font-mono ja-only">{getMetadata(latestAcademic, 'ja')}</span>}
+              {getMetadata(latestAcademic, 'zh') && <span class="text-xs text-textMuted font-mono zh-only">{getMetadata(latestAcademic, 'zh')}</span>}
+              {getMetadata(latestAcademic, 'de') && <span class="text-xs text-textMuted font-mono de-only">{getMetadata(latestAcademic, 'de')}</span>}
+              {getMetadata(latestAcademic, 'ru') && <span class="text-xs text-textMuted font-mono ru-only">{getMetadata(latestAcademic, 'ru')}</span>}
             </div>
           </div>
         ) : (
