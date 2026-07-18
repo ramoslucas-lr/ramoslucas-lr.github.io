@@ -4,14 +4,14 @@ import Layout from '../../layouts/Layout.astro';
 
 // getStaticPaths diz ao Astro para gerar as páginas individuais na hora do build
 export async function getStaticPaths() {
-  const diceEntries = await getCollection('dice-awards');
-  return diceEntries.map(entry => ({
+  const gamesEntries = await getCollection('games');
+  return gamesEntries.map(entry => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
 }
 
-type Props = { entry: CollectionEntry<'dice-awards'> };
+type Props = { entry: CollectionEntry<'games'> };
 const { entry }: Props = Astro.props;
 // Content é o componente que renderiza o markdown propriamente dito
 const { Content } = await entry.render();
@@ -19,9 +19,9 @@ const { Content } = await entry.render();
 
 <Layout title={`${entry.data.game} Review | Lucas Ramos`}>
   <article class="max-w-3xl mx-auto py-8">
-    <a href="/dice-awards" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block pt-only">&lt; VOLTAR PARA REVIEWS</a>
-    <a href="/dice-awards" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block en-only">&lt; BACK TO REVIEWS</a>
-    <a href="/dice-awards" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block fr-only">&lt; RETOUR AUX CRITIQUES</a>
+    <a href="/games" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block pt-only">&lt; VOLTAR PARA REVIEWS</a>
+    <a href="/games" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block en-only">&lt; BACK TO REVIEWS</a>
+    <a href="/games" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block fr-only">&lt; RETOUR AUX CRITIQUES</a>
     
     {entry.data.cover && (
       <div class="w-full h-[300px] mb-12 rounded-2xl overflow-hidden relative">

@@ -12,8 +12,8 @@ const latestPhoto = photoEntries
 const dataEntries = await getCollection('data-engineering');
 const latestDataProject = dataEntries[0];
 
-const diceEntries = await getCollection('dice-awards');
-const latestDice = diceEntries[0];
+const gamesEntries = await getCollection('games');
+const latestGame = gamesEntries[0];
 
 const academicEntries = await getCollection('academic');
 const latestAcademic = academicEntries[0];
@@ -255,12 +255,12 @@ function getMetadata(entry: any, lang: string) {
         )}
       </BentoBox>
 
-      <!-- Latest DICE Review -->
-      <BentoBox spanCol="col-span-2 md:col-span-1" spanRow="row-span-1" glowColor="lime" href="/dice-awards" noPadding={!!latestDice?.data?.cover} className="group overflow-hidden">
-        {latestDice?.data?.cover ? (
+      <!-- Latest Game Review -->
+      <BentoBox spanCol="col-span-2 md:col-span-1" spanRow="row-span-1" glowColor="lime" href="/games" noPadding={!!latestGame?.data?.cover} className="group overflow-hidden">
+        {latestGame?.data?.cover ? (
           <div class="relative h-full w-full min-h-[150px]">
              <div class="absolute inset-0 z-0">
-                <img src={latestDice.data.cover} alt={latestDice.data.game} class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy" />
+                <img src={latestGame.data.cover} alt={latestGame.data.game} class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" loading="lazy" />
                 <div class="absolute inset-0 bg-gradient-to-t from-base via-base/80 to-transparent pointer-events-none"></div>
              </div>
              <div class="relative z-10 p-6 flex flex-col h-full justify-between">
@@ -273,15 +273,15 @@ function getMetadata(entry: any, lang: string) {
                   <span class="text-xs font-mono text-neonLime mb-1 block zh-only">最新评论</span>
                   <span class="text-xs font-mono text-neonLime mb-1 block de-only">LETZTE BEWERTUNG</span>
                   <span class="text-xs font-mono text-neonLime mb-1 block ru-only">ПОСЛЕДНИЙ ОБЗОР</span>
-                  <h3 class="font-bold text-sm truncate text-gray-100 mt-2">{latestDice.data.game}</h3>
+                  <h3 class="font-bold text-sm truncate text-gray-100 mt-2">{latestGame.data.game}</h3>
                </div>
                <div class="mt-4 flex items-end justify-between">
-                  <span class="text-2xl font-bold text-gray-100">{latestDice.data.rating}<span class="text-xs text-gray-400">/10</span></span>
-                  <span class="text-xs text-gray-300 font-mono">{latestDice.data.year}</span>
+                  <span class="text-2xl font-bold text-gray-100">{latestGame.data.rating}<span class="text-xs text-gray-400">/10</span></span>
+                  <span class="text-xs text-gray-300 font-mono">{latestGame.data.year}</span>
                </div>
              </div>
           </div>
-        ) : latestDice ? (
+        ) : latestGame ? (
           <div class="flex flex-col h-full justify-between">
             <div>
               <span class="text-xs font-mono text-neonLime mb-1 block pt-only">ÚLTIMA REVIEW</span>
@@ -292,11 +292,11 @@ function getMetadata(entry: any, lang: string) {
               <span class="text-xs font-mono text-neonLime mb-1 block zh-only">最新评论</span>
               <span class="text-xs font-mono text-neonLime mb-1 block de-only">LETZTE BEWERTUNG</span>
               <span class="text-xs font-mono text-neonLime mb-1 block ru-only">ПОСЛЕДНИЙ ОБЗОР</span>
-              <h3 class="font-bold text-sm truncate mt-2">{latestDice.data.game}</h3>
+              <h3 class="font-bold text-sm truncate mt-2">{latestGame.data.game}</h3>
             </div>
             <div class="mt-4 flex items-end justify-between">
-              <span class="text-2xl font-bold">{latestDice.data.rating}<span class="text-xs text-textMuted">/10</span></span>
-              <span class="text-xs text-textMuted font-mono">{latestDice.data.year}</span>
+              <span class="text-2xl font-bold">{latestGame.data.rating}<span class="text-xs text-textMuted">/10</span></span>
+              <span class="text-xs text-textMuted font-mono">{latestGame.data.year}</span>
             </div>
           </div>
         ) : (

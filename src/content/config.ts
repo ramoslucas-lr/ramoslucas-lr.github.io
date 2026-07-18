@@ -86,7 +86,7 @@ const academicCollection = defineCollection({
   }),
 });
 
-const diceAwardsCollection = defineCollection({
+const gamesCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
@@ -133,6 +133,6 @@ export const collections = {
   'photography': photographyCollection,
   'data-engineering': dataEngineeringCollection,
   'academic': academicCollection,
-  'dice-awards': diceAwardsCollection,
+  'games': gamesCollection,
   'blog': blogCollection,
 };

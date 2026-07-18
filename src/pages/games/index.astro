@@ -3,8 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import BentoBox from '../../components/BentoBox.astro';
 import { getCollection } from 'astro:content';
 
-// Obtém todas as reviews da coleção 'dice-awards'
-const diceEntries = await getCollection('dice-awards');
+// Obtém todas as reviews da coleção 'games'
+const gamesEntries = await getCollection('games');
 // Em um caso real, você poderia fazer um sort() por data ou rating aqui
 ---
 
@@ -20,14 +20,14 @@ const diceEntries = await getCollection('dice-awards');
     <p class="text-textMuted font-mono text-sm en-only">Personal analytical review project focused on Game of the Year nominees at the DICE Awards. That was the idea, but actually it can be a review of anything. Including the 10/10 pizza I ate when I made this site.</p>
     <p class="text-textMuted font-mono text-sm fr-only">Projet personnel de critiques analytiques axé sur les jeux nominés au titre de Jeu de l'Année (GOTY) aux DICE Awards. C'était l'idée, mais en fait ça peut être une critique de n'importe quoi. Y compris de la pizza 10/10 que j'ai mangée quand j'ai fait ce site.</p>
     <p class="text-textMuted font-mono text-sm es-only">Proyecto personal de reseñas analíticas centrado en los nominados a Juego del Año en los DICE Awards. Esa era la idea, pero en realidad puede ser una reseña de cualquier cosa. Incluyendo la pizza 10/10 que comí cuando hice este sitio.</p>
-    <p class="text-textMuted font-mono text-sm ja-only">DICEアワードのゲーム・オブ・ザ・イヤー候補作に焦点を当てた個人レビュープロジェクト。それが当初のアイデアでしたが、実際には何でもレビューできます。このサイトを作った時に食べた10/10のピザも含めて。</p>
+    <p class="text-textMuted font-mono text-sm ja-only">DICEアワード de Game of the Year候補作に焦点を当てた個人レビュープロジェクト。それが当初のアイデアでしたが、実際には何でもレビューできます。このサイトを作った時に食べた10/10のピザも含めて。</p>
     <p class="text-textMuted font-mono text-sm zh-only">这是一个个人分析评论项目，专注于 DICE 大奖的年度游戏提名作品。这是最初的想法，但实际上它可以是对任何事物的评论。包括我在制作这个网站时吃的那块 10/10 的披萨。</p>
   </header>
 
   <main>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {diceEntries.map(entry => (
-        <BentoBox glowColor="lime" href={`/dice-awards/${entry.slug}`} noPadding={!!entry.data.cover} className="group overflow-hidden">
+      {gamesEntries.map(entry => (
+        <BentoBox glowColor="lime" href={`/games/${entry.slug}`} noPadding={!!entry.data.cover} className="group overflow-hidden">
           {entry.data.cover ? (
             <div class="relative h-full min-h-[200px]">
               <div class="absolute inset-0 z-0">
