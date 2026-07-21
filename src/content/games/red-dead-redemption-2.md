@@ -7,11 +7,12 @@ game: "Red Dead Redemption 2"
 year: 2018
 date: '2026-07-17T22:16:18.000-03:00'
 rating: 10
-cover: "https://assets.nuuvem.com/image/upload/v1/products/5fbd76bbc883e62934046c52/sharing_images/cmgmrtz9ajyluyqnrwkb.jpg"
+cover: "https://image.api.playstation.com/vulcan/img/rnd/202011/1215/WyHa1BM3ISDVqYSEUMB9VZJs.png"
+coverThumb: "https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/games/red-dead-redemption-2.webp"
 ---
 <div class="pt-only">
 
-## “There is nothing to be afraid of, Mr. Morgan. Take a gamble that love exists, and do a loving act.” - Sister Calderón
+> "There is nothing to be afraid of, Mr. Morgan. Take a gamble that love exists, and do a loving act." — Sister Calderón
 
 Eu não achei que red dead redemption 2 fosse para mim. Me pareceu lento demais, demorado demais, masculino demais para ser um jogo com o qual eu consigo me conectar. Veja bem, não estou dizendo que eu achei que fosse um jogo ruim, longe disso, mas talvez ele só não fosse pra mim.
 
@@ -29,7 +30,7 @@ Red Dead Redemption 2 é o tipo de jogo que você esquece que é, de fato, um jo
 
 <div class="en-only">
 
-## “There is nothing to be afraid of, Mr. Morgan. Take a gamble that love exists, and do a loving act.” - Sister Calderón
+> "There is nothing to be afraid of, Mr. Morgan. Take a gamble that love exists, and do a loving act." — Sister Calderón
 
 I didn't think Red Dead Redemption 2 was for me. It seemed too slow, too long, too masculine to be a game I could connect with. Mind you, I'm not saying I thought it was a bad game, far from it, but maybe it just wasn't for me.
 
@@ -47,7 +48,7 @@ Red Dead Redemption 2 is the kind of game where you forget that it is, in fact, 
 
 <div class="es-only">
 
-## “There is nothing to be afraid of, Mr. Morgan. Take a gamble that love exists, and do a loving act.” - Sister Calderón
+> "There is nothing to be afraid of, Mr. Morgan. Take a gamble that love exists, and do a loving act." — Sister Calderón
 
 No pensé que Red Dead Redemption 2 fuera para mí. Me pareció demasiado lento, demasiado largo, demasiado masculino para ser un juego con el que pudiera conectar. Ojo, no digo que pensara que era un mal juego, ni mucho menos, pero tal vez simplemente no era para mí.
 
@@ -65,7 +66,7 @@ Red Dead Redemption 2 es el tipo de juego que te hace olvidar que es, de hecho, 
 
 <div class="fr-only">
 
-## “There is nothing to be afraid of, Mr. Morgan. Take a gamble that love exists, and do a loving act.” - Sister Calderón
+> "There is nothing to be afraid of, Mr. Morgan. Take a gamble that love exists, and do a loving act." — Sister Calderón
 
 Je ne pensais pas que Red Dead Redemption 2 était pour moi. Il m'a semblé trop lent, trop long, trop masculin pour être un jeu avec lequel je pourrais me connecter. Attention, je ne dis pas que je pensais que c'était un mauvais jeu, loin de là, mais peut-être qu'il n'était tout simplement pas pour moi.
 

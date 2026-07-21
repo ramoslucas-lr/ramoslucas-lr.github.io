@@ -24,9 +24,8 @@ const { Content } = await entry.render();
     <a href="/games" class="text-neonLime font-mono text-xs hover:underline mb-8 inline-block fr-only">&lt; RETOUR AUX CRITIQUES</a>
     
     {entry.data.cover && (
-      <div class="w-full h-[300px] mb-12 rounded-2xl overflow-hidden relative">
-        <img src={entry.data.cover} alt={entry.data.game} class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-base to-transparent opacity-80"></div>
+      <div class="w-full mb-12 rounded-2xl overflow-hidden relative">
+        <img src={entry.data.cover} alt={entry.data.game} class="w-full h-auto block" />
       </div>
     )}
 
@@ -53,7 +52,7 @@ const { Content } = await entry.render();
     </header>
 
     <!-- Área onde o corpo do arquivo Markdown será injetado -->
-    <div class="text-textMuted leading-relaxed space-y-6 [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:text-textMain [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-textMain [&_h2]:mt-10 [&_h2]:mb-4 [&_p]:mb-6 [&_ul]:list-disc [&_ul]:ml-6 [&_a]:text-neonCyan hover:[&_a]:underline">
+    <div class="text-textMuted leading-relaxed space-y-6 text-justify [&_h1]:text-3xl [&_h1]:font-bold [&_h1]:text-textMain [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-textMain [&_h2]:mt-10 [&_h2]:mb-4 [&_p]:mb-6 [&_ul]:list-disc [&_ul]:ml-6 [&_a]:text-neonCyan hover:[&_a]:underline [&_blockquote]:border-l-4 [&_blockquote]:border-neonLime [&_blockquote]:pl-6 [&_blockquote]:italic [&_blockquote]:text-textMain [&_blockquote]:my-10 [&_blockquote]:text-lg">
       <Content />
     </div>
   </article>

@@ -102,6 +102,7 @@ const gamesCollection = defineCollection({
     year: z.number(),
     rating: z.number().min(1).max(10),
     cover: z.string().optional(),
+    coverThumb: z.string().optional(),
   }),
 });
 
