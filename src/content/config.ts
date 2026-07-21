@@ -97,6 +97,7 @@ const gamesCollection = defineCollection({
     titleZh: z.string().optional(),
     titleDe: z.string().optional(),
     titleRu: z.string().optional(),
+    date: z.coerce.date().optional(),
     game: z.string(),
     year: z.number(),
     rating: z.number().min(1).max(10),

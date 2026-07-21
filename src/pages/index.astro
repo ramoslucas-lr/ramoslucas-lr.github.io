@@ -13,7 +13,8 @@ const dataEntries = await getCollection('data-engineering');
 const latestDataProject = dataEntries[0];
 
 const gamesEntries = await getCollection('games');
-const latestGame = gamesEntries[0];
+const sortedGames = gamesEntries.sort((a, b) => (b.data.date?.valueOf() || 0) - (a.data.date?.valueOf() || 0));
+const latestGame = sortedGames[0];
 
 const academicEntries = await getCollection('academic');
 const latestAcademic = academicEntries[0];

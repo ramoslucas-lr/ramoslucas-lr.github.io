@@ -5,8 +5,9 @@ titleEs: "La complejidad de la experiencia humana"
 titleFr: "La complexité de l'expérience humaine"
 game: "Red Dead Redemption 2"
 year: 2018
+date: '2026-07-17T22:16:18.000-03:00'
 rating: 10
-cover: ""
+cover: "https://assets.nuuvem.com/image/upload/v1/products/5fbd76bbc883e62934046c52/sharing_images/cmgmrtz9ajyluyqnrwkb.jpg"
 ---
 <div class="pt-only">
 

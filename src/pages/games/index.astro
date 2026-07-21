@@ -3,9 +3,9 @@ import Layout from '../../layouts/Layout.astro';
 import BentoBox from '../../components/BentoBox.astro';
 import { getCollection } from 'astro:content';
 
-// Obtém todas as reviews da coleção 'games'
+// Obtém todas as reviews da coleção 'games' e ordena por data
 const gamesEntries = await getCollection('games');
-// Em um caso real, você poderia fazer um sort() por data ou rating aqui
+const sortedGames = gamesEntries.sort((a, b) => (b.data.date?.valueOf() || 0) - (a.data.date?.valueOf() || 0));
 ---
 
 <Layout title="Game Reviews | Lucas Ramos">
@@ -26,7 +26,7 @@ const gamesEntries = await getCollection('games');
 
   <main>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {gamesEntries.map(entry => (
+      {sortedGames.map(entry => (
         <BentoBox glowColor="lime" href={`/games/${entry.slug}`} noPadding={!!entry.data.cover} className="group overflow-hidden">
           {entry.data.cover ? (
             <div class="relative h-full min-h-[200px]">
