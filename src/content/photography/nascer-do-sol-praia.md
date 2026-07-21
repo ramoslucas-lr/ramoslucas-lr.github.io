@@ -8,10 +8,19 @@ titleZh: 海滩日出 - Florianópolis, SC
 titleDe: Sonnenaufgang am Strand - Florianópolis, SC
 titleRu: Восход солнца на пляже - Florianópolis, SC
 cover: >-
-  https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/2026_07_NascerDoSolPraia/IMG_7414.jpg
+  https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/2026_07_NascerDoSolPraia/IMG_7467.jpg
 coverThumb: >-
-  https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/2026_07_NascerDoSolPraia/IMG_7414.webp
+  https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/2026_07_NascerDoSolPraia/IMG_7467.webp
 gallery:
+  - src: >-
+      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/2026_07_NascerDoSolPraia/IMG_7467.jpg
+    thumb: >-
+      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/2026_07_NascerDoSolPraia/IMG_7467.webp
+    camera: Canon EOS M50m2
+    lens: EF-M15-45mm f/3.5-6.3 IS STM
+    aperture: f/6.3
+    iso: 100
+    shutterSpeed: 1/500s
   - src: >-
       https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/2026_07_NascerDoSolPraia/IMG_7414.jpg
     thumb: >-
@@ -183,15 +192,6 @@ gallery:
     aperture: f/6.3
     iso: 100
     shutterSpeed: 1/400s
-  - src: >-
-      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/2026_07_NascerDoSolPraia/IMG_7467.jpg
-    thumb: >-
-      https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/thumbs/2026_07_NascerDoSolPraia/IMG_7467.webp
-    camera: Canon EOS M50m2
-    lens: EF-M15-45mm f/3.5-6.3 IS STM
-    aperture: f/6.3
-    iso: 100
-    shutterSpeed: 1/500s
   - src: >-
       https://pub-7975d8f1bc8343e09e66dcb7affd1721.r2.dev/2026_07_NascerDoSolPraia/IMG_7488.jpg
     thumb: >-
