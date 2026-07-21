@@ -8,6 +8,7 @@ const blog = await getCollection('blog');
 const dataEngineering = await getCollection('data-engineering');
 const academic = await getCollection('academic');
 const photography = await getCollection('photography');
+const games = await getCollection('games');
 
 // Standardize posts for the all posts feed
 const allPosts = [
@@ -15,6 +16,7 @@ const allPosts = [
   ...dataEngineering.map(p => ({ ...p, section: 'data-engineering', date: p.data.date })),
   ...academic.map(p => ({ ...p, section: 'academic', date: p.data.date || new Date('2024-01-01') })),
   ...photography.map(p => ({ ...p, section: 'photography', date: p.data.date || new Date('2024-01-01') })),
+  ...games.map(p => ({ ...p, section: 'games', date: p.data.date || new Date('2024-01-01') })),
 ];
 
 // Sort by date descending
@@ -24,7 +26,8 @@ const sectionColors: Record<string, 'cyan' | 'lime' | 'none'> = {
   'blog': 'lime',
   'data-engineering': 'cyan',
   'academic': 'cyan',
-  'photography': 'lime'
+  'photography': 'lime',
+  'games': 'lime'
 };
 
 const getTitle = (entry: any, lang: string) => {
