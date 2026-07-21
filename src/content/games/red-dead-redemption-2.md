@@ -1,8 +1,8 @@
 ---
-title: "A complexidade da experiência humana"
-titleEn: "The complexity of human experience"
-titleEs: "La complejidad de la experiencia humana"
-titleFr: "La complexité de l'expérience humaine"
+title: "Dutch, você me paga!!"
+titleEn: "Dutch, you'll pay for this!"
+titleEs: "¡Dutch, me las vas a pagar!"
+titleFr: "Dutch, tu vas me le payer !"
 game: "Red Dead Redemption 2"
 year: 2018
 date: '2026-07-17T22:16:18.000-03:00'
@@ -24,7 +24,7 @@ Apesar disso, decidi investir pelo menos até sair da neve, terminando o primeir
 
 Com a fundação posta, os capítulos restantes não precisam te convencer a continuar jogando. Você quer saber o que acontece com a Sadie, com o John, com a Tilly, com o Dutch e, principalmente, com o Arthur. Realmente, o jogo de velho oeste, com cowboys e pistoleiros não é pra mim. Mas Red Dead não é isso. É um jogo sobre a experiência humana, sobre entender que o ser humano é complexo e ninguém é inerentemente bom ou ruim, sobre perceber que nunca é tarde para fazer o certo e o justo. É por isso que eu, também, estava errado.
 
-Red Dead Redemption 2 é o tipo de jogo que você esquece que é, de fato, um jogo. Você esquece a interface que existe entre você e a história que a Rockstar quis contar aqui porque não há nada que atrapalhe sua imersão. É, sem dúvida, uma obra prima.
+Se você superar o começo, não há nada que fique entre você e a história que a Rockstar quis contar aqui. É, sem dúvida, uma obra prima.
 
 </div>
 
@@ -42,7 +42,7 @@ Despite this, I decided to invest at least until I got out of the snow, finishin
 
 With the foundation laid, the remaining chapters don't need to convince you to keep playing. You want to know what happens to Sadie, to John, to Tilly, to Dutch and, mostly, to Arthur. Really, the wild west game, with cowboys and gunslingers isn't for me. But Red Dead isn't that. It's a game about the human experience, about understanding that human beings are complex and no one is inherently good or bad, about realizing that it's never too late to do what's right and just. That's why I, too, was wrong.
 
-Red Dead Redemption 2 is the kind of game where you forget that it is, in fact, a game. You forget the interface that exists between you and the story Rockstar wanted to tell here because there is nothing to hinder your immersion. It is, without a doubt, a masterpiece.
+If you get past the beginning, there is nothing standing between you and the story Rockstar wanted to tell here. It is, without a doubt, a masterpiece.
 
 </div>
 
@@ -60,7 +60,7 @@ A pesar de esto, decidí invertir al menos hasta salir de la nieve, terminando e
 
 Con los cimientos puestos, los capítulos restantes no necesitan convencerte para seguir jugando. Quieres saber qué pasa con Sadie, con John, con Tilly, con Dutch y, principalmente, con Arthur. Realmente, el juego del lejano oeste, con vaqueros y pistoleros no es para mí. Pero Red Dead no es eso. Es un juego sobre la experiencia humana, sobre entender que el ser humano es complejo y nadie es inherentemente bueno o malo, sobre darse cuenta de que nunca es tarde para hacer lo correcto y lo justo. Es por eso que yo, también, estaba equivocado.
 
-Red Dead Redemption 2 es el tipo de juego que te hace olvidar que es, de hecho, un juego. Olvidas la interfaz que existe entre tú y la historia que Rockstar quiso contar aquí porque no hay nada que entorpezca tu inmersión. Es, sin duda, una obra maestra.
+Si logras superar el comienzo, no hay nada que se interponga entre tú y la historia que Rockstar quiso contar aquí. Es, sin duda alguna, una obra maestra.
 
 </div>
 
@@ -78,7 +78,7 @@ Malgré cela, j'ai décidé de m'investir au moins jusqu'à sortir de la neige, 
 
 Avec les bases posées, les chapitres restants n'ont pas besoin de vous convaincre de continuer à jouer. Vous voulez savoir ce qui arrive à Sadie, à John, à Tilly, à Dutch et, principalement, à Arthur. Vraiment, le jeu du far west, avec des cow-boys et des pistoleros n'est pas pour moi. Mais Red Dead n'est pas ça. C'est un jeu sur l'expérience humaine, sur la compréhension que l'être humain est complexe et que personne n'est intrinsèquement bon ou mauvais, sur la réalisation qu'il n'est jamais trop tard pour faire ce qui est juste et bon. C'est pourquoi moi aussi j'avais tort.
 
-Red Dead Redemption 2 est le genre de jeu où vous oubliez qu'il s'agit, en fait, d'un jeu. Vous oubliez l'interface qui existe entre vous et l'histoire que Rockstar a voulu raconter ici car il n'y a rien pour entraver votre immersion. C'est, sans aucun doute, un chef-d'œuvre.
+Si tu arrives à passer le début, il n'y a plus rien entre toi et l'histoire que Rockstar a voulu raconter ici. C'est, sans aucun doute, un chef-d'œuvre
 
 </div>
 
