@@ -91,6 +91,12 @@ No SIFT1M (1M x 128d) em `0,95–0,97` de recall, o OspreyDB bateu 382,8 MiB de 
 
 O código e a suíte de benchmarks estão no GitHub sob licença Apache-2.0 (`ospreydb/ospreydb` e `ospreydb/benchmarks`).
 
+## Um aviso grande sobre vibecoding e produção
+
+> Sim, a arquitetura do OspreyDB faz sentido no papel e nos benchmarks, mas não existe cenário nenhum em que eu colocaria isso em um sistema de produção. Eu posso usar para indexar minha biblioteca pessoal de arquivos aqui em casa e, como o código é aberto, quem quiser pode brincar com ele do mesmo jeito. Mas eu não tenho a menor pretensão de transformar o OspreyDB em produto ou projeto comercial, até porque eu mesmo não saberia dar suporte direito para uma base de código vibecodada.
+>
+> Voltando àquela minha aposta lá do começo: para projeto de fim de semana, experimento e ferramenta pessoal, vibecoding funciona muito bem. Para produção de verdade, ainda não rola.
+
 </div>
 
 <div class="en-only">
@@ -167,6 +173,12 @@ On SIFT1M (1M x 128d) at `0.95–0.97` recall, OspreyDB peaked at 382.8 MiB of R
 
 Both the database and the benchmark suite are Apache-2.0 on GitHub (`ospreydb/ospreydb` and `ospreydb/benchmarks`).
 
+## A big disclaimer on vibecoding and production
+
+> Yes, OspreyDB makes sense technically on paper and in the benchmarks, but there is no world where it should be used in a production system. I can run it at home to index my personal file library, and since it is open source, anyone else can tinker with it the same way. Still, I have zero plans to turn OspreyDB into a for-profit project or product, because I honestly wouldn't even know how to properly support a vibecoded codebase.
+>
+> Wrapping up that personal bet from the intro: for a hobby, an experiment, or a personal tool, vibecoding works great. For real production, no chance.
+
 </div>
 
 <div class="es-only">
@@ -201,6 +213,12 @@ Medir todo también sirvió para pillar una optimización que empeoraba las cosa
 
 En contenedores aislados (Ryzen 5 7600, limpiando el page cache con `dd iflag=nocache count=0` y midiendo `cgroup v2 memory.peak`, búsqueda estática de solo lectura), OspreyDB alcanzó 382,8 MiB de RAM en SIFT1M (~18–19k QPS) y 2.028,3 MiB en Cohere 1M (~6,3–8,4k QPS), frente a 2,9–8,5 GiB en Qdrant y `pgvector`. El código y los benchmarks están bajo Apache-2.0 en `ospreydb/ospreydb` y `ospreydb/benchmarks`.
 
+## Un aviso importante sobre vibecoding y producción
+
+> Sí, la arquitectura de OspreyDB tiene sentido técnico y los benchmarks acompañan, pero no hay ningún mundo en el que esto deba usarse en producción. Puedo usarlo para indexar mi biblioteca personal de archivos y, al ser open source, cualquiera puede hacer lo mismo. Pero no pienso convertir OspreyDB en un proyecto con fines de lucro, básicamente porque ni yo mismo sabría dar soporte serio a un código vibecodeado.
+>
+> Cerrando aquella apuesta del principio: para hobby y herramientas personales, vibecoding va bien. Para producción, ni hablar.
+
 </div>
 
 <div class="fr-only">
@@ -230,6 +248,12 @@ OspreyDB abandonne HNSW et sépare `.osi` (index quantifié chaud en mémoire) d
 Nos mesures sur MinIO (`tc netem 15ms +- 3ms`, `--cache-mb 0`) ont aussi montré un piège : la fusion DP des `Range-GET` S3 aide en 1-bit (`1,33x–3,30x` moins de GETs), mais sur les 20 pages éparses du 4-bit progressif elle dépassait la fenêtre TCP initiale et faisait bondir le `P99` de 22,07 ms à 61,98 ms. La désactiver en mode 4-bit épars a ramené 20,26 ms P50 / 22,07 ms P99 à `0,9555` de recall (`~1 066 Mio` `VmHWM`).
 
 En conteneurs isolés (Ryzen 5 7600, page cache vidé via `dd iflag=nocache count=0`, `cgroup v2 memory.peak`, recherche statique en lecture seule), OspreyDB plafonne à 382,8 Mio sur SIFT1M (~18–19k QPS) et 2 028,3 Mio sur Cohere 1M (~6,3–8,4k QPS), contre 2,9 à 8,5 Gio pour Qdrant et `pgvector`. Le tout est sous licence Apache-2.0 sur GitHub (`ospreydb/ospreydb` et `ospreydb/benchmarks`).
+
+## Un gros avertissement sur le vibecoding et la production
+
+> Oui, OspreyDB tient la route techniquement et dans les benchmarks, mais il n'existe aucun monde où il devrait tourner en production. Je peux l'utiliser pour indexer ma bibliothèque personnelle de fichiers, et comme c'est open source, n'importe qui peut faire pareil. En revanche, je n'ai aucune intention d'en faire un projet commercial, tout simplement parce que je ne saurais même pas maintenir et supporter sérieusement une base de code vibecodée.
+>
+> Pour boucler le pari du début : pour un hobby ou un outil perso, le vibecoding passe très bien. Pour la vraie production, c'est non.
 
 </div>
 
